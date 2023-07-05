@@ -31,3 +31,25 @@ Cypress.Commands.add('login', (user) => {
     })
     cy.get('.btn').click()
 })
+
+Cypress.Commands.add('addJbtTugas', (jabatanTugas) => {
+    cy.fixture('jabatanTugas').then((data) => {
+        //Jabatan Tugas
+        cy.get('#select2-idjabatantugas-container').type(data[jabatanTugas].jbtTugas+'{enter}')
+
+        //Kategori Kegiatan
+        cy.get('#select2-idrubrikkegiatan-container').type(data[jabatanTugas].kategoriKegiatan+'{enter}')
+
+        // SK Kegiatan
+        cy.get('#iddokumen_label').click({force: true})
+        cy.get('.odd > .text-center > .btn > .fa').click()
+
+        cy.get('#tglterhitungmulai').type(data[jabatanTugas].tglMulai)
+        cy.get('#lokasipenugasan').type(data[jabatanTugas].lokasi)
+
+        cy.get('.btn-success').contains("Simpan").click()
+
+        cy.get('.modal-footer > .btn-primary').click()
+    })
+    
+})

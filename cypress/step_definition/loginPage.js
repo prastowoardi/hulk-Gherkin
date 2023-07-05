@@ -5,7 +5,7 @@ Given("User login siakad", () => {
 })
 
 When('User memasukkan username dan password', () => {
-    cy.LoginAdminPT(0)
+    cy.login(0)
 })
 
 Then('User masuk ke dalam sistem', () => {
