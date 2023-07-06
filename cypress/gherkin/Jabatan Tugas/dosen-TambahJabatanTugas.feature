@@ -32,3 +32,7 @@ Feature: Dosen Menambah data Jabatan Tugas
         Given User login sebagai "Dosen"
         When Dosen mengisi form dengan mengosongkan "Lokasi Penugasan"
         Then "Dosen" melihat modal informasi
+
+    Scenario: Negatif : Admin menambahkan data tetapi dokumen pendukung tidak lengkap 
+        When Dosen mengisi data "Jabatan Tugas" dengan mengosongkan "Dokumen Pendukung"
+        Then "Dosen" melihat modal informasi

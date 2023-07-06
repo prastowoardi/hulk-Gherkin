@@ -27,3 +27,7 @@ Feature: Admin Menambah data Jabatan Tugas
         # Given User login sebagai "Admin"
         When Admin mengisi data "Jabatan Tugas" dengan mengosongkan "Lokasi Penugasan"
         Then "Admin" melihat modal informasi
+    
+    Scenario: Negatif : Admin menambahkan data tetapi dokumen pendukung tidak lengkap 
+        When Admin mengisi data "Jabatan Tugas" dengan mengosongkan "Dokumen Pendukung"
+        Then "Admin" melihat modal informasi

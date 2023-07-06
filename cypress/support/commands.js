@@ -23,7 +23,6 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
-// const image = 'images/ijazah.jpg'
 Cypress.Commands.add('login', (user) => {
     cy.contains('Masuk dengan akun Anda').should('be.visible')
     cy.fixture('user').then((userdata) => {
@@ -48,6 +47,10 @@ Cypress.Commands.add('addJbtTugas', (jabatanTugas) => {
         cy.get('#tglterhitungmulai').type(data[jabatanTugas].tglMulai)
         cy.get('#lokasipenugasan').type(data[jabatanTugas].lokasi)
 
+        cy.get(':nth-child(100) > :nth-child(2) > .filedokumen > .form-control').selectFile('cypress/fixtures/File Upload/ijazah.jpg')
+        cy.get('[id="namadokumen[0]"]').type("Ijazah")
+        cy.get('[id="select2-idjenisdokumen0-container"]').type("ijazah{enter}")
+
         cy.get('.btn-success').contains("Simpan").click()
 
         cy.get('.modal-footer > .btn-primary').click()
@@ -70,6 +73,9 @@ Cypress.Commands.add('addPublikasi', (publikasi) => {
             
         }
 
+        cy.get(':nth-child(100) > :nth-child(2) > .filedokumen > .form-control').selectFile('cypress/fixtures/File Upload/ijazah.jpg')
+        cy.get('[id="namadokumen[0]"]').type("Ijazah")
+        cy.get('[id="select2-idjenisdokumen0-container"]').type("ijazah{enter}")
         cy.get('.btn-success').contains("Simpan").click()
         cy.get('.btn-primary').click()
     })

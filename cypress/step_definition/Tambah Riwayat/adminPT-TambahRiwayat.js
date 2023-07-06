@@ -35,6 +35,10 @@ When("User mengisi data {string} dengan benar", (menu) => {
         cy.get('#tglterhitungmulai').type("18-07-2023")
         cy.get('#lokasipenugasan').type("Jakarta Pusat")
 
+        cy.get(':nth-child(100) > :nth-child(2) > .filedokumen > .form-control').selectFile('cypress/fixtures/File Upload/ijazah.jpg')
+        cy.get('[id="namadokumen[0]"]').type("Ijazah")
+        cy.get('[id="select2-idjenisdokumen0-container"]').type("ijazah{enter}")
+
         cy.get('.btn-success').contains("Simpan").click()
 
         cy.get('.modal-footer > .btn-primary').click()
@@ -48,6 +52,10 @@ When("User mengisi data {string} dengan benar", (menu) => {
         cy.get("#select2-idrubrikkegiatan0-container").type("Hasil penelitian atau hasil pemikiran yang Dipresentasikan secara oral dan dimuat dalam prosiding yang dipublikasikan (ber ISSN/ISBN): Nasional{enter}")
         cy.get('[id="peran[0]"]').select("Penulis")
         cy.get('[id="corresponding[0]"]').check()
+
+        cy.get(':nth-child(100) > :nth-child(2) > .filedokumen > .form-control').selectFile('cypress/fixtures/File Upload/ijazah.jpg')
+        cy.get('[id="namadokumen[0]"]').type("Ijazah")
+        cy.get('[id="select2-idjenisdokumen0-container"]').type("ijazah{enter}")
 
         cy.get('.btn-success').contains("Simpan").click()
         cy.get('.modal-footer > .btn-primary').click()
@@ -79,7 +87,11 @@ When("Admin mengisi data {string} dengan mengosongkan {string}", (menu,fieldName
         
             cy.get('#tglterhitungmulai').type("18-07-2023")
             cy.get('#lokasipenugasan').type("Jakarta Pusat")
-        
+            
+            cy.get(':nth-child(100) > :nth-child(2) > .filedokumen > .form-control').selectFile('cypress/fixtures/File Upload/ijazah.jpg')
+            // cy.get('[id="namadokumen[0]"]').type("Ijazah")
+            cy.get('[id="select2-idjenisdokumen0-container"]').type("ijazah{enter}")
+
             cy.get('.btn-success').contains("Simpan").click()
         
             cy.get('.modal-footer > .btn-primary').click()
@@ -97,6 +109,21 @@ When("Admin mengisi data {string} dengan mengosongkan {string}", (menu,fieldName
             cy.addPublikasi(4)
         }else if(fieldName == "Corresponding"){
             cy.addPublikasi(5)
+        }else if(fieldName == "Dokumen Pendukung"){
+            cy.get("#select2-idjenispublikasi-container").type("Prosiding seminar nasional{enter}")
+
+            cy.get("#judul").type("Uji Efektivitas Berbagai Media Tanam untuk Pembibitan Padi Varietas Cisokan dan Batang Piaman")
+            cy.get('#namajurnal').type("MEMBANGUN EKOSISTEM PENGETAHUAN DAN INOVASI UNTUK MEWUJUDKAN KESEJAHTERAAN PETANI DAN KEMANDIRIAN PA")
+            cy.get("#tglterbit").type("21-07-2023")
+            cy.get("#select2-idrubrikkegiatan0-container").type("Hasil penelitian atau hasil pemikiran yang Dipresentasikan secara oral dan dimuat dalam prosiding yang dipublikasikan (ber ISSN/ISBN): Nasional{enter}")
+            cy.get('[id="peran[0]"]').select("Penulis")
+            cy.get('[id="corresponding[0]"]').check()
+
+            cy.get(':nth-child(100) > :nth-child(2) > .filedokumen > .form-control').selectFile('cypress/fixtures/File Upload/ijazah.jpg')
+            // cy.get('[id="namadokumen[0]"]').type("Ijazah")
+            cy.get('[id="select2-idjenisdokumen0-container"]').type("ijazah{enter}")
+
+            cy.get('.btn-success').contains("Simpan").click()
         }
     }else if(menu == ""){
 
