@@ -20,8 +20,8 @@ Given("User login sebagai {string}", (userRole) => {
     
 })
 
-When("Admin mengisi form dengan benar", () => {
-    cy.visit("hr/list_rjabatanstruktural/7")
+When("Dosen mengisi form dengan benar", () => {
+    cy.visit("hr/list_rjabatanstruktural")
     cy.get(".btn").contains('Tambah Baru').click()
     //Jabatan Tugas
     cy.get('#select2-idjabatantugas-container').click()
@@ -33,15 +33,15 @@ When("Admin mengisi form dengan benar", () => {
     cy.get('#iddokumen_label').click()
     cy.get('.odd > .text-center > .btn > .fa').click()
 
-    cy.get('#tglterhitungmulai').type("18-07-2023")
-    cy.get('#lokasipenugasan').type("Jakarta Pusat")
+    cy.get('#tglterhitungmulai').type("30-08-2023")
+    cy.get('#lokasipenugasan').type("Muara Enim")
 
     cy.get('.btn-success').contains("Simpan").click()
 
     cy.get('.modal-footer > .btn-primary').click()
 })
 
-When("Admin mengisi form dengan mengosongkan {string}", (fieldName) => {
+When("Dosen mengisi form dengan mengosongkan {string}", (fieldName) => {
     if(fieldName == "Jabatan Tugas"){
         cy.addJbtTugas(0)
     }else if(fieldName == "Kategori Kegiatan"){
@@ -51,7 +51,7 @@ When("Admin mengisi form dengan mengosongkan {string}", (fieldName) => {
     }else if(fieldName == "Lokasi Penugasan"){
         cy.addJbtTugas(3)
     }else if(fieldName == "SK Penugasan"){
-        cy.visit("hr/list_rjabatanstruktural/7")
+        cy.visit("hr/list_rjabatanstruktural")
         cy.get(".btn").contains('Tambah Baru').click()
         //Jabatan Tugas
         cy.get('#select2-idjabatantugas-container').click()
@@ -67,12 +67,4 @@ When("Admin mengisi form dengan mengosongkan {string}", (fieldName) => {
     
         cy.get('.modal-footer > .btn-primary').click()
     }
-})
-
-Then("User berhasil menambahkan data", () => {
-    cy.get('.alert').contains("Penambahan data jabatan tugas berhasil")
-})
-
-Then("Admin melihat modal informasi", () => {
-    cy.get('#modal-konfirmasi').contains("Mohon mengisi isian yang bergaris merah")
 })

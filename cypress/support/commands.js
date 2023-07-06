@@ -23,6 +23,7 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+// const image = 'images/ijazah.jpg'
 Cypress.Commands.add('login', (user) => {
     cy.contains('Masuk dengan akun Anda').should('be.visible')
     cy.fixture('user').then((userdata) => {
@@ -52,4 +53,24 @@ Cypress.Commands.add('addJbtTugas', (jabatanTugas) => {
         cy.get('.modal-footer > .btn-primary').click()
     })
     
+})
+
+Cypress.Commands.add('addPublikasi', (publikasi) => {
+    cy.fixture('publikasi').then((data) => {
+        cy.get("#select2-idjenispublikasi-container").type(data[publikasi].jnsPublikasi+'{enter}')
+
+        cy.get("#judul").type(data[publikasi].judul)
+        cy.get('#namajurnal').type(data[publikasi].namaJurnal)
+        cy.get("#tglterbit").type(data[publikasi].tglTerbit)
+        cy.get("#select2-idrubrikkegiatan0-container").type(data[publikasi].kategoriKegiatan)
+        cy.get('[id="peran[0]"]').select(data[publikasi].peran)
+        if(data[publikasi].check == 1){
+            cy.get('[id="corresponding[0]"]').check()
+        }else if(data[publikasi].check == 0){
+            
+        }
+
+        cy.get('.btn-success').contains("Simpan").click()
+        cy.get('.btn-primary').click()
+    })
 })

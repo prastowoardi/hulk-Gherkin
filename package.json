@@ -14,6 +14,6 @@
     "mochawesome-report-generator": "^6.2.0"
   },
   "cypress-cucumber-preprocessor": {
-    "stepDefinitions": "cypress/step_definition/*.{js,ts}"
+    "stepDefinitions": "cypress/step_definition/*/*.{js,ts}"
   }
 }

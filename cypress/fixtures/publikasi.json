@@ -1,0 +1,59 @@
+[
+    {
+        "id": "0",
+        "jnsPublikasi": "-- Pilih Jenis Publikasi --",
+        "judul": "Judul Terbaru oleh Dosen ini",
+        "namaJurnal": "Jurnal Terbaik Tahun Ini",
+        "tglTerbit": "20-07-2023",
+        "kategoriKegiatan": "Hasil penelitian atau hasil pemikiran yang Dipresentasikan secara oral dan dimuat dalam prosiding yang dipublikasikan (ber ISSN/ISBN): Nasional",
+        "peran": "Penulis",
+        "check": 1
+    },
+    {
+        "id": "1",
+        "jnsPublikasi": "Prosiding seminar nasional",
+        "namaJurnal": "Jurnal Terbaik Tahun Ini",
+        "tglTerbit": "20-07-2023",
+        "kategoriKegiatan": "Hasil penelitian atau hasil pemikiran yang Dipresentasikan secara oral dan dimuat dalam prosiding yang dipublikasikan (ber ISSN/ISBN): Nasional",
+        "peran": "Editor",
+        "check": 1
+    },
+    {
+        "id": "2",
+        "jnsPublikasi": "Prosiding seminar nasional",
+        "judul": "Judul Terbaru oleh Dosen ini",
+        "namaJurnal": "Jurnal Terbaik Tahun Ini",
+        "kategoriKegiatan": "Hasil penelitian atau hasil pemikiran yang Dipresentasikan secara oral dan dimuat dalam prosiding yang dipublikasikan (ber ISSN/ISBN): Nasional",
+        "peran": "Penulis",
+        "check": 1
+    },
+    {
+        "id": "3",
+        "jnsPublikasi": "Prosiding seminar nasional",
+        "judul": "Judul Terbaru oleh Dosen ini",
+        "namaJurnal": "Jurnal Terbaik Tahun Ini",
+        "tglTerbit": "20-07-2023",
+        "kategoriKegiatan": "-- Pilih Kategori Kegiatan --",
+        "peran": "Editor",
+        "check": 1
+    },
+    {
+        "id": "4",
+        "jnsPublikasi": "Prosiding seminar nasional",
+        "judul": "Judul Terbaru oleh Dosen ini",
+        "namaJurnal": "Jurnal Terbaik Tahun Ini",
+        "tglTerbit": "20-07-2023",
+        "kategoriKegiatan": "Hasil penelitian atau hasil pemikiran yang Dipresentasikan secara oral dan dimuat dalam prosiding yang dipublikasikan (ber ISSN/ISBN): Nasional",
+        "check": 1
+    },
+    {
+        "id": "5",
+        "jnsPublikasi": "Prosiding seminar nasional",
+        "judul": "Judul Terbaru oleh Dosen ini",
+        "namaJurnal": "Jurnal Terbaik Tahun Ini",
+        "tglTerbit": "20-07-2023",
+        "kategoriKegiatan": "Hasil penelitian atau hasil pemikiran yang Dipresentasikan secara oral dan dimuat dalam prosiding yang dipublikasikan (ber ISSN/ISBN): Nasional",
+        "peran": "Penulis",
+        "check": 0
+    }    
+]
