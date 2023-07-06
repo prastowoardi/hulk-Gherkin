@@ -27,29 +27,33 @@ npm i @bahmutov/cypress-esbuild-preprocessor
 Setelah menginstal paket-paket ini, Anda perlu mengonfigurasi Cypress untuk menggunakan plugin. Konfigurasi pada file cypress config akan terlihat seperti ini:
 
 ```bash
-import { defineConfig } from "cypress";
-import createBundler from "@bahmutov/cypress-esbuild-preprocessor";
-import { addCucumberPreprocessorPlugin } from "@badeball/cypress-cucumber-preprocessor";
-import createEsbuildPlugin from "@badeball/cypress-cucumber-preprocessor/esbuild";
+const { defineConfig } = require("cypress");
+const createBundler = require("@bahmutov/cypress-esbuild-preprocessor");
+const addCucumberPreprocessorPlugin = require("@badeball/cypress-cucumber-preprocessor").addCucumberPreprocessorPlugin;
+const createEsbuildPlugin = require("@badeball/cypress-cucumber-preprocessor/esbuild").createEsbuildPlugin;
 
-export default defineConfig({
+module.exports = defineConfig({
+  viewportHeight: 1024,
+  viewportWidth: 1280,
+  chromeWebSecurity: false,
+  experimentalStudio: true,
+  reporter: 'cypress-multi-reporters  ',
   e2e: {
-    specPattern: "**/*.feature",
-    async setupNodeEvents(
-      on: Cypress.PluginEvents,
-      config: Cypress.PluginConfigOptions
-    ): Promise<Cypress.PluginConfigOptions> {
-      await addCucumberPreprocessorPlugin(on, config);
-      on(
-        "file:preprocessor",
-        createBundler({
-          plugins: [createEsbuildPlugin(config)],
-        })
-      );
-      return config;
+    async setupNodeEvents(on, config) {
+      // implement node event listeners here
+      const bundler = createBundler({
+        plugins: [createEsbuildPlugin(config)]
+      })
+      on("file:preprocessor", bundler)
+      await addCucumberPreprocessorPlugin(on, config)
+
+      return config
     },
+    specPattern: "cypress/**/*.feature"
   },
+  
 });
+
 ```
 
 Dokumentasi terkait:
