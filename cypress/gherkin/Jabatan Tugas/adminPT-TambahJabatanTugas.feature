@@ -5,7 +5,7 @@ Feature: Admin Menambah data Jabatan Tugas
 
     Scenario: Positif : Admin menambahkan data jabatan tugas
         When Admin mengisi data "Jabatan Tugas" dengan benar
-        Then "User" berhasil menambahkan data "Jabatan Tugas"
+        Then "Admin" berhasil menambahkan data "Jabatan Tugas"
 
     Scenario: Negatif : Admin menambahkan data tetapi mengosongkan field Jabatan Tugas
         When Admin mengisi data "Jabatan Tugas" dengan mengosongkan "Jabatan Tugas"
