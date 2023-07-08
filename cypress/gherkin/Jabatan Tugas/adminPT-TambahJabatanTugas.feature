@@ -24,7 +24,6 @@ Feature: Admin Menambah data Jabatan Tugas
         Then "Admin" melihat modal informasi
 
     Scenario: Negatif : Admin menambahkan data tetapi mengosongkan field Lokasi Penugasan
-        # Given User login sebagai "Admin"
         When Admin mengisi data "Jabatan Tugas" dengan mengosongkan "Lokasi Penugasan"
         Then "Admin" melihat modal informasi
     

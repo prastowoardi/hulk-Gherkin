@@ -5,7 +5,7 @@ Feature: Admin Menambah data Anggota Profesi
 
     Scenario: Positif : Admin menambahkan data anggota profesi
         When Admin mengisi data "Anggota Profesi" dengan benar
-        Then "User" berhasil menambahkan data "Anggota Profesi"
+        Then "Admin" berhasil menambahkan data "Anggota Profesi"
 
     Scenario: Negatif : Admin menambahkan data tetapi mengosongkan field Kategori Kegiatan
         When Admin mengisi data "Anggota Profesi" dengan mengosongkan "Kategori Kegiatan"

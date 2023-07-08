@@ -1,36 +1,30 @@
 Feature: Dosen Menambah data Jabatan Tugas
 
-    # Background: 
-    #     Given User login sebagai "Admin" dan menambahkan data jabatan tugas
+    Background: 
+        Given Dosen menambahkan riwayat "Jabatan Tugas"
 
     Scenario: Positif : Dosen menambahkan data jabatan tugas
-        Given User login sebagai "Dosen"
-        When Dosen mengisi form dengan benar
+        When Dosen mengisi data "Jabatan Tugas" dengan benar
         Then "Dosen" berhasil menambahkan data
 
     Scenario: Negatif : Dosen menambahkan data tetapi mengosongkan field Jabatan Tugas
-        Given User login sebagai "Dosen"
-        When Dosen mengisi form dengan mengosongkan "Jabatan Tugas"
+        When Dosen mengisi data "Jabatan Tugas" dengan mengosongkan "Jabatan Tugas"
         Then "Dosen" melihat modal informasi
 
     Scenario: Negatif : Dosen menambahkan data tetapi mengosongkan field Kategori Kegiatan
-        Given User login sebagai "Dosen"
-        When Dosen mengisi form dengan mengosongkan "Kategori Kegiatan"
+        When Dosen mengisi data "Jabatan Tugas" dengan mengosongkan "Kategori Kegiatan"
         Then "Dosen" melihat modal informasi
 
     Scenario: Negatif : Dosen menambahkan data tetapi mengosongkan field SK Penugasan
-        Given User login sebagai "Dosen"
-        When Dosen mengisi form dengan mengosongkan "SK Penugasan"
+        When Dosen mengisi data "Jabatan Tugas" dengan mengosongkan "SK Penugasan"
         Then "Dosen" melihat modal informasi
 
     Scenario: Negatif : Dosen menambahkan data tetapi mengosongkan field TMT Mulai
-        Given User login sebagai "Dosen"
-        When Dosen mengisi form dengan mengosongkan "TMT Mulai"
+        When Dosen mengisi data "Jabatan Tugas" dengan mengosongkan "TMT Mulai"
         Then "Dosen" melihat modal informasi
 
     Scenario: Negatif : Dosen menambahkan data tetapi mengosongkan field Lokasi Penugasan
-        Given User login sebagai "Dosen"
-        When Dosen mengisi form dengan mengosongkan "Lokasi Penugasan"
+        When Dosen mengisi data "Jabatan Tugas" dengan mengosongkan "Lokasi Penugasan"
         Then "Dosen" melihat modal informasi
 
     Scenario: Negatif : Admin menambahkan data tetapi dokumen pendukung tidak lengkap 
