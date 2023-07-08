@@ -23,60 +23,19 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+//Simpan
+Cypress.Commands.add('simpan', () => {
+    cy.get('.btn-success').contains("Simpan").click()
+    cy.get('.modal-footer > .btn-primary').click()
+})
+
 Cypress.Commands.add('login', (user) => {
     cy.contains('Masuk dengan akun Anda').should('be.visible')
-    cy.fixture('user').then((userdata) => {
+    cy.fixture('../fixtures/General/user').then((userdata) => {
         cy.get('#userid').type(userdata[user].username)
         cy.get('#password').type(userdata[user].password)
     })
     cy.get('.btn').click()
 })
 
-Cypress.Commands.add('addJbtTugas', (jabatanTugas) => {
-    cy.fixture('jabatanTugas').then((data) => {
-        //Jabatan Tugas
-        cy.get('#select2-idjabatantugas-container').type(data[jabatanTugas].jbtTugas+'{enter}')
-
-        //Kategori Kegiatan
-        cy.get('#select2-idrubrikkegiatan-container').type(data[jabatanTugas].kategoriKegiatan+'{enter}')
-
-        // SK Kegiatan
-        cy.get('#iddokumen_label').click({force: true})
-        cy.get('.odd > .text-center > .btn > .fa').click()
-
-        cy.get('#tglterhitungmulai').type(data[jabatanTugas].tglMulai)
-        cy.get('#lokasipenugasan').type(data[jabatanTugas].lokasi)
-
-        cy.get(':nth-child(100) > :nth-child(2) > .filedokumen > .form-control').selectFile('cypress/fixtures/File Upload/ijazah.jpg')
-        cy.get('[id="namadokumen[0]"]').type("Ijazah")
-        cy.get('[id="select2-idjenisdokumen0-container"]').type("ijazah{enter}")
-
-        cy.get('.btn-success').contains("Simpan").click()
-
-        cy.get('.modal-footer > .btn-primary').click()
-    })
-    
-})
-
-Cypress.Commands.add('addPublikasi', (publikasi) => {
-    cy.fixture('publikasi').then((data) => {
-        cy.get("#select2-idjenispublikasi-container").type(data[publikasi].jnsPublikasi+'{enter}')
-
-        cy.get("#judul").type(data[publikasi].judul)
-        cy.get('#namajurnal').type(data[publikasi].namaJurnal)
-        cy.get("#tglterbit").type(data[publikasi].tglTerbit)
-        cy.get("#select2-idrubrikkegiatan0-container").type(data[publikasi].kategoriKegiatan)
-        cy.get('[id="peran[0]"]').select(data[publikasi].peran)
-        if(data[publikasi].check == 1){
-            cy.get('[id="corresponding[0]"]').check()
-        }else if(data[publikasi].check == 0){
-            
-        }
-
-        cy.get(':nth-child(100) > :nth-child(2) > .filedokumen > .form-control').selectFile('cypress/fixtures/File Upload/ijazah.jpg')
-        cy.get('[id="namadokumen[0]"]').type("Ijazah")
-        cy.get('[id="select2-idjenisdokumen0-container"]').type("ijazah{enter}")
-        cy.get('.btn-success').contains("Simpan").click()
-        cy.get('.btn-primary').click()
-    })
-})

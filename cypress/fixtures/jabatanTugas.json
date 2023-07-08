@@ -17,13 +17,15 @@
         "id": "2",
         "jbtTugas": "Lainnya",
         "kategoriKegiatan": "Menduduki jabatan pimpinan pada lembaga pemerintahan/pejabat negara yang harus dibebaskan dari jabatan organiknya atau bekerja pada industri/organisasi yang diakui Kemendikbud",
+        "tglMulai": "20-07-2023",
         "lokasi": "Jembatan Ancol"
     },
     {
         "id": "3",
         "jbtTugas": "Lainnya",
         "kategoriKegiatan": "Menduduki jabatan pimpinan pada lembaga pemerintahan/pejabat negara yang harus dibebaskan dari jabatan organiknya atau bekerja pada industri/organisasi yang diakui Kemendikbud",
-        "tglMulai": "20-07-2023"
+        "tglMulai": "20-07-2023",
+        "lokasi": "Jembatan Ancol"
     }
     
 ]

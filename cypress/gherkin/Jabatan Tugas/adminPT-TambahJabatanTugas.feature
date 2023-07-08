@@ -9,24 +9,24 @@ Feature: Admin Menambah data Jabatan Tugas
 
     Scenario: Negatif : Admin menambahkan data tetapi mengosongkan field Jabatan Tugas
         When Admin mengisi data "Jabatan Tugas" dengan mengosongkan "Jabatan Tugas"
-        Then "Admin" melihat modal informasi
+        Then "Admin" melihat modal informasi "Wajib isi"
 
     Scenario: Negatif : Admin menambahkan data tetapi mengosongkan field Kategori Kegiatan
         When Admin mengisi data "Jabatan Tugas" dengan mengosongkan "Kategori Kegiatan"
-        Then "Admin" melihat modal informasi
+        Then "Admin" melihat modal informasi "Wajib isi"
 
     Scenario: Negatif : Admin menambahkan data tetapi mengosongkan field SK Penugasan
         When Admin mengisi data "Jabatan Tugas" dengan mengosongkan "SK Penugasan"
-        Then "Admin" melihat modal informasi
+        Then "Admin" melihat modal informasi "Wajib isi"
 
     Scenario: Negatif : Admin menambahkan data tetapi mengosongkan field TMT Mulai
         When Admin mengisi data "Jabatan Tugas" dengan mengosongkan "TMT Mulai"
-        Then "Admin" melihat modal informasi
+        Then "Admin" melihat modal informasi "Wajib isi"
 
     Scenario: Negatif : Admin menambahkan data tetapi mengosongkan field Lokasi Penugasan
         When Admin mengisi data "Jabatan Tugas" dengan mengosongkan "Lokasi Penugasan"
-        Then "Admin" melihat modal informasi
+        Then "Admin" melihat modal informasi "Wajib isi"
     
     Scenario: Negatif : Admin menambahkan data tetapi dokumen pendukung tidak lengkap 
         When Admin mengisi data "Jabatan Tugas" dengan mengosongkan "Dokumen Pendukung"
-        Then "Admin" melihat modal informasi
+        Then "Admin" melihat modal informasi "Wajib isi"

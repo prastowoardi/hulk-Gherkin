@@ -15,6 +15,10 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands'
+import './General/addRiwayatBKD'
+
+// Import modal konfirmasi command
+import './General/modalKonfirmasi'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')

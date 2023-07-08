@@ -1,0 +1,21 @@
+[
+    {
+        "id": "0",
+        "kategoriKegiatan": "-- Pilih Kategori Kegiatan --",
+        "namaOrganisasi": "Sevima",
+        "peran": "Ketua Pelaksana"
+    },
+    {
+        "id": "1",
+        "kategoriKegiatan": "Tingkat nasional sebagai pengurus aktif",
+        "namaOrganisasi":"UGM",
+        "peran": "Ketua Pelaksana"
+    },
+    {
+        "id": "2",
+        "kategoriKegiatan": "Tingkat nasional sebagai pengurus aktif",
+        "namaOrganisasi": "UNY",
+        "peran": "Wakil Pelaksana"
+    }
+    
+]
