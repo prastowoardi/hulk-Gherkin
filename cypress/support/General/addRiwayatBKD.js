@@ -1,3 +1,4 @@
+import fixtureFile from ('../fixtures/RiwayatPegawai/')
 //RIWAYAT
 Cypress.Commands.add('addJbtTugas', (jabatanTugas) => {
     cy.fixture('jabatanTugas').then((data) => {

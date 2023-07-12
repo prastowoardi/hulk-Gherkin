@@ -27,7 +27,7 @@ Given("Dosen menambahkan riwayat {string}", (menu) => {
     
 })
 
-When("Admin mengisi data {string} dengan benar", (menu) => {
+When("Dosen mengisi data {string} dengan benar", (menu) => {
     if(menu == "Jabatan Tugas"){
         //Jabatan Tugas
         cy.get('#select2-idjabatantugas-container').click()
@@ -77,7 +77,7 @@ When("Admin mengisi data {string} dengan benar", (menu) => {
     
 })
 
-When("Admin mengisi data {string} dengan mengosongkan {string}", (menu,fieldName) => {
+When("Dosen mengisi data {string} dengan mengosongkan {string}", (menu,fieldName) => {
     if (menu == "Jabatan Tugas"){
         if(fieldName == "Jabatan Tugas"){
             cy.addJbtTugas(0)
