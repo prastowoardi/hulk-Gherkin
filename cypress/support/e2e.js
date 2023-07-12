@@ -18,8 +18,5 @@ import './commands'
 import './General/addRiwayatBKD'
 import './General/login'
 
-// Import modal konfirmasi command
-import './General/modalKonfirmasi'
-
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
