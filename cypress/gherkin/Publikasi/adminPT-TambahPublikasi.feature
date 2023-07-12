@@ -4,12 +4,12 @@ Feature: Admin menambah data Publikasi Karya
         Given Admin menambahkan riwayat "Publikasi Karya"
     
     Scenario: Positif : Admin menambahkan data publikasi
-        When User mengisi data "Publikasi Karya" dengan benar
+        When Admin mengisi data "Publikasi Karya" dengan benar
         Then "Admin" berhasil menambahkan data "Publikasi Karya"
 
     Scenario: Negatif : Admin menambahkan data tetapi mengosongkan field jenis publikasi 
         When Admin mengisi data "Publikasi" dengan mengosongkan "Jenis Publikasi"
-        Then "Admin" melihat modal informasi
+        Then "Admin" melihat modal informasi "Wajib isi"
 
     Scenario: Negatif : Admin menambahkan data tetapi mengosongkan field judul 
         When Admin mengisi data "Publikasi" dengan mengosongkan "Judul"

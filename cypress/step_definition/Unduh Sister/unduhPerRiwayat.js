@@ -15,13 +15,16 @@ When('Admin akses halaman {string}',(url) => {
 When('Admin klik tombol SISTER',() => {
     cy.get('.btn > .caret').click()
 })
+
 When('Admin klik tombol Unduh Data',() => {
     cy.get('.dropdown-menu > :nth-child(1) > .text-left')
         .should('include.text', 'Unduh').click()
 })
+
 When('Admin melihat modal konfirmasi',() => {
     cy.get('#modal-konfirmasi > .modal-header').contains('Proses mengunduh data akan berlangsung beberapa saat')
 })
+
 When('Admin klik tombol Ya, Yakin',() => {
     cy.get('.btn-primary').contains('Ya, Yakin').click()
 })
