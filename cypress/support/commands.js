@@ -29,6 +29,3 @@ Cypress.Commands.add('simpan', () => {
     cy.get('.btn-success').contains("Simpan").click()
     cy.get('.modal-footer > .btn-primary').click()
 })
-
-
-
