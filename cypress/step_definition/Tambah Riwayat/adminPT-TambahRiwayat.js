@@ -4,23 +4,17 @@ Given("Admin menambahkan riwayat {string}", (menu) => {
     cy.visit("gate/login")
     if(menu == "Jabatan Tugas"){
         cy.login(0)
-        cy
-            .get('.hr > .inner').click()
-            .get('#hr').contains('Administrator Perguruan Tinggi').should('be.visible').click()
+        cy.modulsdm()
         cy.visit("hr/list_rjabatanstruktural/7")
         cy.get(".btn").contains('Tambah Baru').click()
     }else if(menu == "Publikasi Karya"){
         cy.login(0)
-        cy
-            .get('.hr > .inner').click()
-            .get('#hr').contains('Administrator Perguruan Tinggi').should('be.visible').click()
+        cy.modulsdm()
         cy.visit('hr/list_rpublikasi/7')
         cy.get(".btn").contains('Tambah Baru').click()
     }else if(menu == "Anggota Profesi"){
         cy.login(0)
-        cy
-            .get('.hr > .inner').click()
-            .get('#hr').contains('Administrator Perguruan Tinggi').should('be.visible').click()
+        cy.modulsdm()
         cy.visit('hr/list_ranggotaprofesi/7')
         cy.get(".btn").contains('Tambah Baru').click()
     }

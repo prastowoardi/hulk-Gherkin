@@ -3,10 +3,7 @@ import {Given,  When, Then } from "@badeball/cypress-cucumber-preprocessor"
 Given('User Login Sebagai {string}',(userRole) => {
     cy.visit("gate/login")
     cy.login(0)
-    // cy.modulsdm()
-    cy
-        .get('.hr > .inner').click()
-        .get('#hr').contains('Administrator Perguruan Tinggi').should('be.visible').click()
+    cy.modulsdm()
 })
 When('Admin akses halaman {string}',(url) => {
     cy.visit(url)
