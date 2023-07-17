@@ -1,0 +1,21 @@
+[
+    {
+      "id" : "0",
+      "role" : "Administrator Perguruan Tinggi",
+      "username": "adminpt",
+      "password": "password"
+    },
+    {
+      "id" : "1",
+      "role" : "Super Admin",
+      "username": "adminpt",
+      "password": "password"
+    },
+    {
+      "id" : "2",
+      "role" : "Dosen",
+      "username": "0413077706",
+      "password": "password"
+    }
+  ]
+  
