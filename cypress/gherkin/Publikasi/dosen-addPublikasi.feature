@@ -14,9 +14,9 @@ Feature: Dosen menambah riwayat publikasi
         * "Dosen" mengisi field "Peran" dengan "Penulis"
         * "Dosen" mengisi field "Corresponding" dengan "1"
         * "Dosen" mengisi field "Status Pengajuan" dengan "Disetujui"
-        * "Dosen" klik tombol Simpan
-        * "Dosen" klik tombol Ya, Yakin
-        Then "Dosen" melihat alert berhasil
+        * "Dosen" klik tombol "Simpan"
+        * "Dosen" klik tombol "Ya, Yakin"
+        Then "Dosen" melihat alert "Berhasil"
 
     Scenario: Negatif - Menambahkan data dengan mengosongkan field jenis publikasi
         When "Dosen" menuju ke halaman "http://localhost/siacloud/hr/list_rpublikasi/1"
@@ -26,8 +26,7 @@ Feature: Dosen menambah riwayat publikasi
         * "Dosen" mengisi field "Kategori Kegiatan" dengan "Hasil penelitian atau hasil pemikiran yang Dipresentasikan secara oral dan dimuat dalam prosiding yang dipublikasikan (ber ISSN/ISBN): Nasional"
         * "Dosen" mengisi field "Peran" dengan "Penulis"
         * "Dosen" mengisi field "Corresponding" dengan "1"
-        * "Dosen" klik tombol Simpan
-        * "Dosen" klik tombol Ya, Yakin
+        * "Dosen" klik tombol "Simpan"
         Then "Dosen" melihat modal dengan pesan "Mohon mengisi isian yang bergaris merah"
 
     Scenario: Negatif - Menambahkan data dengan mengosongkan field judul
@@ -38,8 +37,7 @@ Feature: Dosen menambah riwayat publikasi
         * "Dosen" mengisi field "Kategori Kegiatan" dengan "Hasil penelitian atau hasil pemikiran yang Dipresentasikan secara oral dan dimuat dalam prosiding yang dipublikasikan (ber ISSN/ISBN): Nasional"
         * "Dosen" mengisi field "Peran" dengan "Penulis"
         * "Dosen" mengisi field "Corresponding" dengan "1"
-        * "Dosen" klik tombol Simpan
-        * "Dosen" klik tombol Ya, Yakin
+        * "Dosen" klik tombol "Simpan"
         Then "Dosen" melihat modal dengan pesan "Mohon mengisi isian yang bergaris merah"
     
     Scenario: Negatif - Menambahkan data dengan mengosongkan field tanggal terbit
@@ -50,8 +48,7 @@ Feature: Dosen menambah riwayat publikasi
         * "Dosen" mengisi field "Kategori Kegiatan" dengan "Hasil penelitian atau hasil pemikiran yang Dipresentasikan secara oral dan dimuat dalam prosiding yang dipublikasikan (ber ISSN/ISBN): Nasional"
         * "Dosen" mengisi field "Peran" dengan "Penulis"
         * "Dosen" mengisi field "Corresponding" dengan "1"
-        * "Dosen" klik tombol Simpan
-        * "Dosen" klik tombol Ya, Yakin
+        * "Dosen" klik tombol "Simpan"
         Then "Dosen" melihat modal dengan pesan "Mohon mengisi isian yang bergaris merah"
     
     Scenario: Negatif - Menambahkan data dengan mengosongkan field kategori kegiatan
@@ -62,8 +59,7 @@ Feature: Dosen menambah riwayat publikasi
         * "Dosen" mengisi field "Tanggal Terbit" dengan "18-07-2023"
         * "Dosen" mengisi field "Peran" dengan "Penulis"
         * "Dosen" mengisi field "Corresponding" dengan "1"
-        * "Dosen" klik tombol Simpan
-        * "Dosen" klik tombol Ya, Yakin
+        * "Dosen" klik tombol "Simpan"
         Then "Dosen" melihat modal dengan pesan "Mohon mengisi isian yang bergaris merah"
     
     Scenario: Negatif - Menambahkan data dengan mengosongkan field peran
@@ -74,8 +70,7 @@ Feature: Dosen menambah riwayat publikasi
         * "Dosen" mengisi field "Tanggal Terbit" dengan "18-07-2023"
         * "Dosen" mengisi field "Kategori Kegiatan" dengan "Hasil penelitian atau hasil pemikiran yang Dipresentasikan secara oral dan dimuat dalam prosiding yang dipublikasikan (ber ISSN/ISBN): Nasional"
         * "Dosen" mengisi field "Corresponding" dengan "1"
-        * "Dosen" klik tombol Simpan
-        * "Dosen" klik tombol Ya, Yakin
+        * "Dosen" klik tombol "Simpan"
         Then "Dosen" melihat modal dengan pesan "Mohon mengisi isian yang bergaris merah"
     
     Scenario: Negatif - Menambahkan data dengan mengosongkan field corresponding
@@ -87,6 +82,5 @@ Feature: Dosen menambah riwayat publikasi
         * "Dosen" mengisi field "Kategori Kegiatan" dengan "Hasil penelitian atau hasil pemikiran yang Dipresentasikan secara oral dan dimuat dalam prosiding yang dipublikasikan (ber ISSN/ISBN): Nasional"
         * "Dosen" mengisi field "Peran" dengan "Penulis"
         * "Dosen" mengisi field "Corresponding" dengan "0"
-        * "Dosen" klik tombol Simpan
-        * "Dosen" klik tombol Ya, Yakin
+        * "Dosen" klik tombol "Simpan"
         Then "Dosen" melihat modal dengan pesan "Mohon mengisi isian yang bergaris merah"

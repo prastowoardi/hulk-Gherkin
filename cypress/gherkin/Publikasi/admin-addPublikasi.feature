@@ -14,9 +14,9 @@ Feature: Admin menambah riwayat publikasi
         * "Admin" mengisi field "Peran" dengan "Penulis"
         * "Admin" mengisi field "Corresponding" dengan "1"
         * "Admin" mengisi field "Status Pengajuan" dengan "Disetujui"
-        * "Admin" klik tombol Simpan
-        * "Admin" klik tombol Ya, Yakin
-        Then "Admin" melihat alert berhasil
+        * "Admin" klik tombol "Simpan"
+        * "Admin" klik tombol "Ya, Yakin"
+        Then "Admin" melihat alert "Berhasil"
 
     Scenario: Negatif - Menambahkan data dengan mengosongkan field jenis publikasi
         When "Admin" menuju ke halaman "http://localhost/siacloud/hr/list_rpublikasi/1"
@@ -26,8 +26,7 @@ Feature: Admin menambah riwayat publikasi
         * "Admin" mengisi field "Kategori Kegiatan" dengan "Hasil penelitian atau hasil pemikiran yang Dipresentasikan secara oral dan dimuat dalam prosiding yang dipublikasikan (ber ISSN/ISBN): Nasional"
         * "Admin" mengisi field "Peran" dengan "Penulis"
         * "Admin" mengisi field "Corresponding" dengan "1"
-        * "Admin" klik tombol Simpan
-        * "Admin" klik tombol Ya, Yakin
+        * "Admin" klik tombol "Simpan"
         Then "Admin" melihat modal dengan pesan "Mohon mengisi isian yang bergaris merah"
 
     Scenario: Negatif - Menambahkan data dengan mengosongkan field judul
@@ -38,8 +37,7 @@ Feature: Admin menambah riwayat publikasi
         * "Admin" mengisi field "Kategori Kegiatan" dengan "Hasil penelitian atau hasil pemikiran yang Dipresentasikan secara oral dan dimuat dalam prosiding yang dipublikasikan (ber ISSN/ISBN): Nasional"
         * "Admin" mengisi field "Peran" dengan "Penulis"
         * "Admin" mengisi field "Corresponding" dengan "1"
-        * "Admin" klik tombol Simpan
-        * "Admin" klik tombol Ya, Yakin
+        * "Admin" klik tombol "Simpan"
         Then "Admin" melihat modal dengan pesan "Mohon mengisi isian yang bergaris merah"
     
     Scenario: Negatif - Menambahkan data dengan mengosongkan field tanggal terbit
@@ -50,8 +48,7 @@ Feature: Admin menambah riwayat publikasi
         * "Admin" mengisi field "Kategori Kegiatan" dengan "Hasil penelitian atau hasil pemikiran yang Dipresentasikan secara oral dan dimuat dalam prosiding yang dipublikasikan (ber ISSN/ISBN): Nasional"
         * "Admin" mengisi field "Peran" dengan "Penulis"
         * "Admin" mengisi field "Corresponding" dengan "1"
-        * "Admin" klik tombol Simpan
-        * "Admin" klik tombol Ya, Yakin
+        * "Admin" klik tombol "Simpan"
         Then "Admin" melihat modal dengan pesan "Mohon mengisi isian yang bergaris merah"
     
     Scenario: Negatif - Menambahkan data dengan mengosongkan field kategori kegiatan
@@ -62,8 +59,7 @@ Feature: Admin menambah riwayat publikasi
         * "Admin" mengisi field "Tanggal Terbit" dengan "18-07-2023"
         * "Admin" mengisi field "Peran" dengan "Penulis"
         * "Admin" mengisi field "Corresponding" dengan "1"
-        * "Admin" klik tombol Simpan
-        * "Admin" klik tombol Ya, Yakin
+        * "Admin" klik tombol "Simpan"
         Then "Admin" melihat modal dengan pesan "Mohon mengisi isian yang bergaris merah"
     
     Scenario: Negatif - Menambahkan data dengan mengosongkan field peran
@@ -74,8 +70,7 @@ Feature: Admin menambah riwayat publikasi
         * "Admin" mengisi field "Tanggal Terbit" dengan "18-07-2023"
         * "Admin" mengisi field "Kategori Kegiatan" dengan "Hasil penelitian atau hasil pemikiran yang Dipresentasikan secara oral dan dimuat dalam prosiding yang dipublikasikan (ber ISSN/ISBN): Nasional"
         * "Admin" mengisi field "Corresponding" dengan "1"
-        * "Admin" klik tombol Simpan
-        * "Admin" klik tombol Ya, Yakin
+        * "Admin" klik tombol "Simpan"
         Then "Admin" melihat modal dengan pesan "Mohon mengisi isian yang bergaris merah"
     
     Scenario: Negatif - Menambahkan data dengan mengosongkan field corresponding
@@ -87,6 +82,5 @@ Feature: Admin menambah riwayat publikasi
         * "Admin" mengisi field "Kategori Kegiatan" dengan "Hasil penelitian atau hasil pemikiran yang Dipresentasikan secara oral dan dimuat dalam prosiding yang dipublikasikan (ber ISSN/ISBN): Nasional"
         * "Admin" mengisi field "Peran" dengan "Penulis"
         * "Admin" mengisi field "Corresponding" dengan "0"
-        * "Admin" klik tombol Simpan
-        * "Admin" klik tombol Ya, Yakin
+        * "Admin" klik tombol "Simpan"
         Then "Admin" melihat modal dengan pesan "Mohon mengisi isian yang bergaris merah"
