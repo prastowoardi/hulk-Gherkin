@@ -8,6 +8,7 @@ module.exports = defineConfig({
   viewportWidth: 1280,
   chromeWebSecurity: false,
   experimentalStudio: true,
+  pageLoadTimeout: 500000,
   // reporter: 'cypress-multi-reporters  ',
   e2e: {
     async setupNodeEvents(on, config) {

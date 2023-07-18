@@ -16,6 +16,7 @@ When("{string} melihat modal {string}", (user,modal) => {
     if(modal == "Konfirmasi"){
         cy.get('#modal-konfirmasi')
     }else if(modal == "Progress"){
-        cy.get('#modal-overview').contains('Aktivitas Mengunduh Riwayat')
+        cy.get('#modal-overview > .modal-dialog > .modal-content')
+            .contains('Aktivitas Mengunduh Riwayat')
     }
 })
