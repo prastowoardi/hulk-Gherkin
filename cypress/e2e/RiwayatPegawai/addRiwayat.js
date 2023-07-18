@@ -36,6 +36,12 @@ When("{string} mengisi field {string} dengan {string}", (user,fieldName,fieldVal
         cy.get('.odd > .text-center > .btn > .fa').click()
     }else if(fieldName == "Lokasi Penugasan"){
         cy.get('#lokasipenugasan').type(fieldValue)
+    }else if(fieldName == "TMT Jabatan"){
+        cy.get('#tmtmulai').type(fieldValue)
+    }else if(fieldName == "Nama Jabatan"){
+        cy.get('#select2-idsubfungsional-container').type(fieldValue+'{enter}')
+    }else if(fieldName == "Dropdown SK"){
+        cy.get('').type(fieldValue)
     }else if(fieldName == ""){
         
     }
