@@ -27,3 +27,11 @@ Feature: Unduh Data SISTER per Riwayat
         * "Admin" melihat modal "Konfirmasi"
         * "Admin" klik tombol "Ya, Yakin"
         Then "Admin" melihat alert "Unduh"
+
+    Scenario: Admin mengunduh data riwayat Anggota Profesi
+        When "Admin" menuju ke halaman "/hr/list_rsubfungsional/7"
+        * "Admin" klik tombol "Sister"
+        * "Admin" klik tombol "Unduh Data"
+        * "Admin" melihat modal "Konfirmasi"
+        * "Admin" klik tombol "Ya, Yakin"
+        Then "Admin" melihat alert "Unduh"
