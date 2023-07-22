@@ -84,5 +84,9 @@ When("{string} mengisi field {string} dengan {string}", (user,fieldName,fieldVal
         cy.get('[name="value[2]"]').type(fieldValue)
     }else if(fieldName == "Dana LN"){
         cy.get('[name="value[3]"]').type(fieldValue)
+    }else if(fieldName == "Judul Kegiatan"){
+        cy.get('#namakegiatan').type(fieldValue)
+    }else if(fieldName == "Tanggal Awal"){
+        cy.get('#tglawal').type(fieldValue)
     }
 })
