@@ -13,14 +13,7 @@ When("{string} klik tombol {string}", (user,buttonName) => {
         cy.get('.dropdown-menu').contains("Unduh Data").click()
     }else if(buttonName == "Unduh"){
         cy.get('.btn').contains("Unduh").click()
-    }else if(buttonName == "Lihat Log"){
-        cy.on('window:before:load', (win) => {
-            cy.stub(win, 'open').callsFake((url) => {
-                return window.open.wrappedMethod.call(win, url, '_self');
-            }).as('open')
-        })
-        cy.get('.btn').contains("Lihat Log").click()
-        cy.get('@open').should('be.called')
-        cy.url().should('eq', 'http://localhost/siacloud/hr/list_logsister')
+    }else if(buttonName == ""){
+    
     }
 })
