@@ -49,7 +49,8 @@ module.exports = defineConfig({
 
       return config
     },
-    specPattern: "cypress/**/*.feature"
+    specPattern: "cypress/**/*.feature",
+    baseUrl: "your url"
   },
   
 });
