@@ -6,7 +6,7 @@ Feature: Dosen menambah riwayat publikasi
     
     Scenario: Positif - Menambahkan data dengan benar
         When "Dosen" menuju ke halaman "http://localhost/siacloud/hr/list_rpublikasi/1"
-        * "Dosen" klik tombol Tambah
+        * "Dosen" klik tombol "Tambah"
         * "Dosen" mengisi field "Jenis Publikasi" dengan "Artikel Ilmiah"
         * "Dosen" mengisi field "Judul" dengan "Judul Baru"
         * "Dosen" mengisi field "Tanggal Terbit" dengan "18-07-2023"
@@ -20,7 +20,7 @@ Feature: Dosen menambah riwayat publikasi
 
     Scenario: Negatif - Menambahkan data dengan mengosongkan field jenis publikasi
         When "Dosen" menuju ke halaman "http://localhost/siacloud/hr/list_rpublikasi/1"
-        * "Dosen" klik tombol Tambah
+        * "Dosen" klik tombol "Tambah"
         * "Dosen" mengisi field "Judul" dengan "Judul Baru"
         * "Dosen" mengisi field "Tanggal Terbit" dengan "18-07-2023"
         * "Dosen" mengisi field "Kategori Kegiatan" dengan "Hasil penelitian atau hasil pemikiran yang Dipresentasikan secara oral dan dimuat dalam prosiding yang dipublikasikan (ber ISSN/ISBN): Nasional"
@@ -31,7 +31,7 @@ Feature: Dosen menambah riwayat publikasi
 
     Scenario: Negatif - Menambahkan data dengan mengosongkan field judul
         When "Dosen" menuju ke halaman "http://localhost/siacloud/hr/list_rpublikasi/1"
-        * "Dosen" klik tombol Tambah
+        * "Dosen" klik tombol "Tambah"
         * "Dosen" mengisi field "Jenis Publikasi" dengan "Artikel Ilmiah"
         * "Dosen" mengisi field "Tanggal Terbit" dengan "18-07-2023"
         * "Dosen" mengisi field "Kategori Kegiatan" dengan "Hasil penelitian atau hasil pemikiran yang Dipresentasikan secara oral dan dimuat dalam prosiding yang dipublikasikan (ber ISSN/ISBN): Nasional"
@@ -42,7 +42,7 @@ Feature: Dosen menambah riwayat publikasi
     
     Scenario: Negatif - Menambahkan data dengan mengosongkan field tanggal terbit
         When "Dosen" menuju ke halaman "http://localhost/siacloud/hr/list_rpublikasi/1"
-        * "Dosen" klik tombol Tambah
+        * "Dosen" klik tombol "Tambah"
         * "Dosen" mengisi field "Jenis Publikasi" dengan "Artikel Ilmiah"
         * "Dosen" mengisi field "Judul" dengan "Judul Baru"
         * "Dosen" mengisi field "Kategori Kegiatan" dengan "Hasil penelitian atau hasil pemikiran yang Dipresentasikan secara oral dan dimuat dalam prosiding yang dipublikasikan (ber ISSN/ISBN): Nasional"
@@ -53,7 +53,7 @@ Feature: Dosen menambah riwayat publikasi
     
     Scenario: Negatif - Menambahkan data dengan mengosongkan field kategori kegiatan
         When "Dosen" menuju ke halaman "http://localhost/siacloud/hr/list_rpublikasi/1"
-        * "Dosen" klik tombol Tambah
+        * "Dosen" klik tombol "Tambah"
         * "Dosen" mengisi field "Jenis Publikasi" dengan "Artikel Ilmiah"
         * "Dosen" mengisi field "Judul" dengan "Judul Baru"
         * "Dosen" mengisi field "Tanggal Terbit" dengan "18-07-2023"
@@ -64,7 +64,7 @@ Feature: Dosen menambah riwayat publikasi
     
     Scenario: Negatif - Menambahkan data dengan mengosongkan field peran
         When "Dosen" menuju ke halaman "http://localhost/siacloud/hr/list_rpublikasi/1"
-        * "Dosen" klik tombol Tambah
+        * "Dosen" klik tombol "Tambah"
         * "Dosen" mengisi field "Jenis Publikasi" dengan "Artikel Ilmiah"
         * "Dosen" mengisi field "Judul" dengan "Judul Baru"
         * "Dosen" mengisi field "Tanggal Terbit" dengan "18-07-2023"
@@ -75,7 +75,7 @@ Feature: Dosen menambah riwayat publikasi
     
     Scenario: Negatif - Menambahkan data dengan mengosongkan field corresponding
         When "Dosen" menuju ke halaman "http://localhost/siacloud/hr/list_rpublikasi/1"
-        * "Dosen" klik tombol Tambah
+        * "Dosen" klik tombol "Tambah"
         * "Dosen" mengisi field "Jenis Publikasi" dengan "Artikel Ilmiah"
         * "Dosen" mengisi field "Judul" dengan "Judul Baru"
         * "Dosen" mengisi field "Tanggal Terbit" dengan "18-07-2023"

@@ -6,7 +6,7 @@ Feature: Dosen menambah riwayat anggota profesi
     
     Scenario: Positif - Menambahkan data dengan benar
         When "Dosen" menuju ke halaman "http://localhost/siacloud/hr/list_ranggotaprofesi/"
-        * "Dosen" klik tombol Tambah
+        * "Dosen" klik tombol "Tambah"
         * "Dosen" mengisi field "Kategori Kegiatan Atas" dengan "Tingkat nasional sebagai pengurus"
         * "Dosen" mengisi field "Nama Organisasi" dengan "PMI"
         * "Dosen" mengisi field "Peran Atas" dengan "Ketua Aktif"
@@ -17,7 +17,7 @@ Feature: Dosen menambah riwayat anggota profesi
 
     Scenario: Negatif - Menambahkan data dengan mengosongkan field kategori kegiatan
         When "Dosen" menuju ke halaman "http://localhost/siacloud/hr/list_ranggotaprofesi/"
-        * "Dosen" klik tombol Tambah
+        * "Dosen" klik tombol "Tambah"
         * "Dosen" mengisi field "Nama Organisasi" dengan "PMI"
         * "Dosen" mengisi field "Peran Atas" dengan "Ketua Aktif"
         * "Dosen" mengisi field "Mulai Keanggotaan" dengan "30-07-2023"
@@ -26,7 +26,7 @@ Feature: Dosen menambah riwayat anggota profesi
 
     Scenario: Negatif - Menambahkan data dengan mengosongkan field nama organisasi
         When "Dosen" menuju ke halaman "http://localhost/siacloud/hr/list_ranggotaprofesi/"
-        * "Dosen" klik tombol Tambah
+        * "Dosen" klik tombol "Tambah"
         * "Dosen" mengisi field "Kategori Kegiatan Atas" dengan "Tingkat nasional sebagai pengurus"
         * "Dosen" mengisi field "Peran Atas" dengan "Ketua Aktif"
         * "Dosen" mengisi field "Mulai Keanggotaan" dengan "30-07-2023"
@@ -35,7 +35,7 @@ Feature: Dosen menambah riwayat anggota profesi
 
     Scenario: Negatif - Menambahkan data dengan mengosongkan field peran
         When "Dosen" menuju ke halaman "http://localhost/siacloud/hr/list_ranggotaprofesi/"
-        * "Dosen" klik tombol Tambah
+        * "Dosen" klik tombol "Tambah"
         * "Dosen" mengisi field "Kategori Kegiatan Atas" dengan "Tingkat nasional sebagai pengurus"
         * "Dosen" mengisi field "Nama Organisasi" dengan "PMI"
         * "Dosen" mengisi field "Mulai Keanggotaan" dengan "30-07-2023"
@@ -44,7 +44,7 @@ Feature: Dosen menambah riwayat anggota profesi
 
     Scenario: Negatif - Menambahkan data dengan mengosongkan field mulai keanggotaan
         When "Dosen" menuju ke halaman "http://localhost/siacloud/hr/list_ranggotaprofesi/"
-        * "Dosen" klik tombol Tambah
+        * "Dosen" klik tombol "Tambah"
         * "Dosen" mengisi field "Kategori Kegiatan Atas" dengan "Tingkat nasional sebagai pengurus"
         * "Dosen" mengisi field "Nama Organisasi" dengan "PMI"
         * "Dosen" mengisi field "Peran Atas" dengan "Ketua Aktif"

@@ -40,9 +40,49 @@ When("{string} mengisi field {string} dengan {string}", (user,fieldName,fieldVal
         cy.get('#tmtmulai').type(fieldValue)
     }else if(fieldName == "Nama Jabatan"){
         cy.get('#select2-idsubfungsional-container').type(fieldValue+'{enter}')
-    }else if(fieldName == "Dropdown SK"){
-        cy.get('').type(fieldValue)
-    }else if(fieldName == ""){
-        
+    }else if(fieldName == "Judul Penelitian"){
+        cy.get('#judulpenelitian').type(fieldValue)
+    }else if(fieldName == "Afiliasi"){
+        //    Auto Complete Handle
+        cy.get('#iduniversitas_label').type(fieldValue)
+        cy.get('.tt-suggestions').each(($el, index, $list) => {
+			// $el is a wrapped jQuery element
+			if ($el.text() === '005009 - Politeknik Negeri Padang') {
+				cy.wrap($el).click()
+			}
+        })
+    }else if(fieldName == "Kelompok Bidang"){
+        //    Auto Complete Handle
+        cy.get('#idkelompokbidang_label').type(fieldValue)
+        cy.get('.tt-suggestion').each(($el, index, $list) => {
+			// $el is a wrapped jQuery element
+			if ($el.text() === 'Teknik Mesin') {
+				cy.wrap($el).click()
+			}
+        })
+    }else if(fieldName == "Jenis SKIM"){
+        cy.get('#select2-idskimkegiatan-container').type(fieldValue+'{enter}')
+    }else if(fieldName == "Tahun Usulan"){
+        cy.get('#select2-tahunusulan-container').type(fieldValue+'{enter}')
+    }else if(fieldName == "Tahun Kegiatan"){
+        cy.get('#select2-tahunkegiatan-container').type(fieldValue+'{enter}')
+    }else if(fieldName == "Tahun Pelaksanaan Ke"){
+        cy.get('#tahunke').type(fieldValue)
+    }else if(fieldName == "Tanggal Mulai"){
+        cy.get('#tglmulai').type(fieldValue)
+    }else if(fieldName == "Roadmap"){
+        if(fieldValue == "Sesuai"){
+            cy.get('#select2-kesesuaianroadmap-container').type(fieldValue+'{downarrow}{enter}')
+        }else {
+            cy.get('#select2-kesesuaianroadmap-container').type(fieldValue+'{enter}')
+        }
+    }else if(fieldName == "Dana PT"){
+        cy.get('[name="value[0]"]').type(fieldValue)
+    }else if(fieldName == "Dana Pemerintah"){
+        cy.get('[name="value[1]"]').type(fieldValue)
+    }else if(fieldName == "Dana DN"){
+        cy.get('[name="value[2]"]').type(fieldValue)
+    }else if(fieldName == "Dana LN"){
+        cy.get('[name="value[3]"]').type(fieldValue)
     }
 })
