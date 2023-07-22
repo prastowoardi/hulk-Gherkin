@@ -16,7 +16,6 @@ Feature: Unduh Data SISTER per Riwayat
         * "Admin" klik tombol "Sister"
         * "Admin" klik tombol "Unduh Data"
         * "Admin" melihat modal "Konfirmasi"
-        * "Admin" klik tombol "Ya, Yakin"
         Then "Admin" klik yakin lalu melihat modal dan alert
 
     Scenario: Admin mengunduh data riwayat Anggota Profesi
@@ -24,7 +23,6 @@ Feature: Unduh Data SISTER per Riwayat
         * "Admin" klik tombol "Sister"
         * "Admin" klik tombol "Unduh Data"
         * "Admin" melihat modal "Konfirmasi"
-        * "Admin" klik tombol "Ya, Yakin"
         Then "Admin" klik yakin lalu melihat modal dan alert
 
     Scenario: Admin mengunduh data riwayat Jabatan Fungsional
@@ -32,5 +30,4 @@ Feature: Unduh Data SISTER per Riwayat
         * "Admin" klik tombol "Sister"
         * "Admin" klik tombol "Unduh Data"
         * "Admin" melihat modal "Konfirmasi"
-        * "Admin" klik tombol "Ya, Yakin"
         Then "Admin" klik yakin lalu melihat modal dan alert
