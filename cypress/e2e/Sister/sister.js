@@ -1,7 +1,8 @@
 import { When, Then } from "@badeball/cypress-cucumber-preprocessor"
+let splitText
 
 When("{string} menunggu proses {string}", (user,action) => {
-    // cy.get('.modal-footer > .btn-primary').click()
+    
     if(action == "Unduh"){
       cy.get('.callout > .row > .col-md-3').contains('Data Riwayat').next()
       .invoke('text').then((riwayat) => {
@@ -23,7 +24,7 @@ When("{string} menunggu proses {string}", (user,action) => {
                 } 
           })
       })
-    }else {
+    }else if (action == 'Kirim') {
       cy.get('.callout > .row > .col-md-3').contains('Data Baru').next()
       .invoke('text').then((baru) => {
         cy.log(baru);
@@ -36,13 +37,33 @@ When("{string} menunggu proses {string}", (user,action) => {
                 .invoke('text').then((hapus) => {
                   cy.log(hapus);
                     // You can now use riwayat inside the if-else statement
-                    if (baru != '0' && ubah != '0' && hapus != '0') {
-                      cy.get('.alert-v1').should('include.text', 'Yeay! Selamat Anda telah berhasil')
+                    if (baru != '0' || ubah != '0' || hapus != '0') {
+                      cy.get('.alert-v1').should('include.text', 'Yeay! Selamat Anda telah berhasil sinkronisasi')
+                        .invoke('text').then((data) => {
+                          splitText = data.replace(/(.[(/)])/g," ").trim().split(' ')[6];
+                          cy.log(splitText)
+                      }).as('jumlah')
                     } else {
                       cy.get('.alert-v1').should('include.text', 'Ups! Tidak ada data yang disinkronisasi')
+                        .invoke('text').then((data) => {
+                            cy.log(data)
+                      }).as('kosong')
                     }
               })
           })
+      })
+    }
+})
+
+// MASIH KURANG UNTUK MEMBANDINGKAN DENGAN DI LOG
+When("{string} melihat jumlah data yang di {string}", (user,action) => {
+    if(action == "Kirim Data"){
+      cy.get('@jumlah').then(() => {
+        cy.log(splitText)
+      })
+    }else if(action == "Kirim"){
+      cy.get('@kosong').then(() => {
+        cy.log('Tidak ada data yang di kirim ke sister')
       })
     }
 })
