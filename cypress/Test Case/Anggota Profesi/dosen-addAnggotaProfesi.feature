@@ -5,7 +5,7 @@ Feature: Dosen menambah riwayat anggota profesi
         * "Dosen" masuk ke modul "SDM" 
     
     Scenario: Positif - Menambahkan data dengan benar
-        When "Dosen" menuju ke halaman "http://localhost/siacloud/hr/list_ranggotaprofesi/"
+        When "Dosen" menuju ke halaman "hr/list_ranggotaprofesi/"
         * "Dosen" klik tombol "Tambah"
         * "Dosen" mengisi field "Kategori Kegiatan Atas" dengan "Tingkat nasional sebagai pengurus"
         * "Dosen" mengisi field "Nama Organisasi" dengan "PMI"
@@ -16,7 +16,7 @@ Feature: Dosen menambah riwayat anggota profesi
         Then "Dosen" melihat alert "Berhasil"
 
     Scenario: Negatif - Menambahkan data dengan mengosongkan field kategori kegiatan
-        When "Dosen" menuju ke halaman "http://localhost/siacloud/hr/list_ranggotaprofesi/"
+        When "Dosen" menuju ke halaman "hr/list_ranggotaprofesi/"
         * "Dosen" klik tombol "Tambah"
         * "Dosen" mengisi field "Nama Organisasi" dengan "PMI"
         * "Dosen" mengisi field "Peran Atas" dengan "Ketua Aktif"
@@ -25,7 +25,7 @@ Feature: Dosen menambah riwayat anggota profesi
         Then "Dosen" melihat modal dengan pesan "Mohon mengisi isian yang bergaris merah"
 
     Scenario: Negatif - Menambahkan data dengan mengosongkan field nama organisasi
-        When "Dosen" menuju ke halaman "http://localhost/siacloud/hr/list_ranggotaprofesi/"
+        When "Dosen" menuju ke halaman "hr/list_ranggotaprofesi/"
         * "Dosen" klik tombol "Tambah"
         * "Dosen" mengisi field "Kategori Kegiatan Atas" dengan "Tingkat nasional sebagai pengurus"
         * "Dosen" mengisi field "Peran Atas" dengan "Ketua Aktif"
@@ -34,7 +34,7 @@ Feature: Dosen menambah riwayat anggota profesi
         Then "Dosen" melihat modal dengan pesan "Mohon mengisi isian yang bergaris merah"
 
     Scenario: Negatif - Menambahkan data dengan mengosongkan field peran
-        When "Dosen" menuju ke halaman "http://localhost/siacloud/hr/list_ranggotaprofesi/"
+        When "Dosen" menuju ke halaman "hr/list_ranggotaprofesi/"
         * "Dosen" klik tombol "Tambah"
         * "Dosen" mengisi field "Kategori Kegiatan Atas" dengan "Tingkat nasional sebagai pengurus"
         * "Dosen" mengisi field "Nama Organisasi" dengan "PMI"
@@ -43,7 +43,7 @@ Feature: Dosen menambah riwayat anggota profesi
         Then "Dosen" melihat modal dengan pesan "Mohon mengisi isian yang bergaris merah"
 
     Scenario: Negatif - Menambahkan data dengan mengosongkan field mulai keanggotaan
-        When "Dosen" menuju ke halaman "http://localhost/siacloud/hr/list_ranggotaprofesi/"
+        When "Dosen" menuju ke halaman "hr/list_ranggotaprofesi/"
         * "Dosen" klik tombol "Tambah"
         * "Dosen" mengisi field "Kategori Kegiatan Atas" dengan "Tingkat nasional sebagai pengurus"
         * "Dosen" mengisi field "Nama Organisasi" dengan "PMI"

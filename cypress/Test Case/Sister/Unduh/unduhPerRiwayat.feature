@@ -19,28 +19,28 @@ Feature: Unduh Data SISTER per Riwayat
         Then "Admin" menunggu proses "Unduh"
 
     Scenario: Admin mengunduh data riwayat Anggota Profesi
-        When "Admin" menuju ke halaman "/hr/list_ranggotaprofesi/7"
+        When "Admin" menuju ke halaman "hr/list_ranggotaprofesi/7"
         * "Admin" klik tombol "Sister"
         * "Admin" klik tombol "Unduh Data"
         * "Admin" melihat modal "Konfirmasi"
         Then "Admin" menunggu proses "Unduh"
 
     Scenario: Admin mengunduh data riwayat Jabatan Fungsional
-        When "Admin" menuju ke halaman "/hr/list_rsubfungsional/7"
+        When "Admin" menuju ke halaman "hr/list_rsubfungsional/7"
         * "Admin" klik tombol "Sister"
         * "Admin" klik tombol "Unduh Data"
         * "Admin" melihat modal "Konfirmasi"
         Then "Admin" menunggu proses "Unduh"
 
     Scenario: Admin mengunduh data riwayat Jabatan Fungsional
-        When "Admin" menuju ke halaman "/hr/list_rpenelitian/7"
+        When "Admin" menuju ke halaman "hr/list_rpenelitian/7"
         * "Admin" klik tombol "Sister"
         * "Admin" klik tombol "Unduh Data"
         * "Admin" melihat modal "Konfirmasi"
         Then "Admin" menunggu proses "Unduh"
 
     Scenario: Admin mengunduh data riwayat Jabatan Fungsional
-        When "Admin" menuju ke halaman "/hr/list_rpkm/7"
+        When "Admin" menuju ke halaman "hr/list_rpkm/7"
         * "Admin" klik tombol "Sister"
         * "Admin" klik tombol "Unduh Data"
         * "Admin" melihat modal "Konfirmasi"

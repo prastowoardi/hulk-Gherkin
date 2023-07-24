@@ -5,7 +5,7 @@ Background:
         * "Admin" masuk ke modul "SDM" 
     
     Scenario: Positif - Menambahkan data dengan benar
-        When "Admin" menuju ke halaman "http://localhost/siacloud/hr/list_rjabatanstruktural/1"
+        When "Admin" menuju ke halaman "hr/list_rjabatanstruktural/1"
         * "Admin" klik tombol "Tambah"
         * "Admin" mengisi field "Kategori Kegiatan Atas" dengan "Menduduki jabatan pimpinan pada lembaga pemerintahan/pejabat negara yang harus dibebaskan dari jabatan organiknya atau bekerja pada industri/organisasi yang diakui Kemendikbud"
         * "Admin" mengisi field "Jabatan Tugas" dengan "Duta Besar"
@@ -18,7 +18,7 @@ Background:
         Then "Admin" melihat alert "Berhasil"
 
     Scenario: Negatif - Menambahkan data dengan mengosongkan field kategori kegiatan
-        When "Admin" menuju ke halaman "http://localhost/siacloud/hr/list_rjabatanstruktural/1"
+        When "Admin" menuju ke halaman "hr/list_rjabatanstruktural/1"
         * "Admin" klik tombol "Tambah"
         * "Admin" mengisi field "Jabatan Tugas" dengan "Duta Besar"
         * "Admin" mengisi field "Modal SK" dengan "Surat Keputusan"
@@ -29,7 +29,7 @@ Background:
         Then "Admin" melihat modal dengan pesan "Mohon mengisi isian yang bergaris merah"
     
     Scenario: Negatif - Menambahkan data dengan mengosongkan field jabatan tugas
-        When "Admin" menuju ke halaman "http://localhost/siacloud/hr/list_rjabatanstruktural/1"
+        When "Admin" menuju ke halaman "hr/list_rjabatanstruktural/1"
         * "Admin" klik tombol "Tambah"
         * "Admin" mengisi field "Kategori Kegiatan Atas" dengan "Menduduki jabatan pimpinan pada lembaga pemerintahan/pejabat negara yang harus dibebaskan dari jabatan organiknya atau bekerja pada industri/organisasi yang diakui Kemendikbud"
         * "Admin" mengisi field "Modal SK" dengan "Surat Keputusan"
@@ -40,7 +40,7 @@ Background:
         Then "Admin" melihat modal dengan pesan "Mohon mengisi isian yang bergaris merah"
     
     Scenario: Negatif - Menambahkan data dengan mengosongkan field sk
-        When "Admin" menuju ke halaman "http://localhost/siacloud/hr/list_rjabatanstruktural/1"
+        When "Admin" menuju ke halaman "hr/list_rjabatanstruktural/1"
         * "Admin" klik tombol "Tambah"
         * "Admin" mengisi field "Kategori Kegiatan Atas" dengan "Menduduki jabatan pimpinan pada lembaga pemerintahan/pejabat negara yang harus dibebaskan dari jabatan organiknya atau bekerja pada industri/organisasi yang diakui Kemendikbud"
         * "Admin" mengisi field "Jabatan Tugas" dengan "Duta Besar"
@@ -51,7 +51,7 @@ Background:
         Then "Admin" melihat modal dengan pesan "Mohon mengisi isian yang bergaris merah"
     
     Scenario: Negatif - Menambahkan data dengan mengosongkan field tmt mulai
-        When "Admin" menuju ke halaman "http://localhost/siacloud/hr/list_rjabatanstruktural/1"
+        When "Admin" menuju ke halaman "hr/list_rjabatanstruktural/1"
         * "Admin" klik tombol "Tambah"
         * "Admin" mengisi field "Kategori Kegiatan Atas" dengan "Menduduki jabatan pimpinan pada lembaga pemerintahan/pejabat negara yang harus dibebaskan dari jabatan organiknya atau bekerja pada industri/organisasi yang diakui Kemendikbud"
         * "Admin" mengisi field "Jabatan Tugas" dengan "Duta Besar"
@@ -62,7 +62,7 @@ Background:
         Then "Admin" melihat modal dengan pesan "Mohon mengisi isian yang bergaris merah"
     
     Scenario: Negatif - Menambahkan data dengan mengosongkan field lokasi kegiatan
-        When "Admin" menuju ke halaman "http://localhost/siacloud/hr/list_rjabatanstruktural/1"
+        When "Admin" menuju ke halaman "hr/list_rjabatanstruktural/1"
         * "Admin" klik tombol "Tambah"
         * "Admin" mengisi field "Kategori Kegiatan Atas" dengan "Menduduki jabatan pimpinan pada lembaga pemerintahan/pejabat negara yang harus dibebaskan dari jabatan organiknya atau bekerja pada industri/organisasi yang diakui Kemendikbud"
         * "Admin" mengisi field "Jabatan Tugas" dengan "Duta Besar"

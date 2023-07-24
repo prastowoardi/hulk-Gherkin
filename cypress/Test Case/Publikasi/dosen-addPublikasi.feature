@@ -5,7 +5,7 @@ Feature: Dosen menambah riwayat publikasi
         * "Dosen" masuk ke modul "SDM" 
     
     Scenario: Positif - Menambahkan data dengan benar
-        When "Dosen" menuju ke halaman "http://localhost/siacloud/hr/list_rpublikasi/1"
+        When "Dosen" menuju ke halaman "hr/list_rpublikasi/1"
         * "Dosen" klik tombol "Tambah"
         * "Dosen" mengisi field "Jenis Publikasi" dengan "Artikel Ilmiah"
         * "Dosen" mengisi field "Judul" dengan "Judul Baru"
@@ -19,7 +19,7 @@ Feature: Dosen menambah riwayat publikasi
         Then "Dosen" melihat alert "Berhasil"
 
     Scenario: Negatif - Menambahkan data dengan mengosongkan field jenis publikasi
-        When "Dosen" menuju ke halaman "http://localhost/siacloud/hr/list_rpublikasi/1"
+        When "Dosen" menuju ke halaman "hr/list_rpublikasi/1"
         * "Dosen" klik tombol "Tambah"
         * "Dosen" mengisi field "Judul" dengan "Judul Baru"
         * "Dosen" mengisi field "Tanggal Terbit" dengan "18-07-2023"
@@ -30,7 +30,7 @@ Feature: Dosen menambah riwayat publikasi
         Then "Dosen" melihat modal dengan pesan "Mohon mengisi isian yang bergaris merah"
 
     Scenario: Negatif - Menambahkan data dengan mengosongkan field judul
-        When "Dosen" menuju ke halaman "http://localhost/siacloud/hr/list_rpublikasi/1"
+        When "Dosen" menuju ke halaman "hr/list_rpublikasi/1"
         * "Dosen" klik tombol "Tambah"
         * "Dosen" mengisi field "Jenis Publikasi" dengan "Artikel Ilmiah"
         * "Dosen" mengisi field "Tanggal Terbit" dengan "18-07-2023"
@@ -41,7 +41,7 @@ Feature: Dosen menambah riwayat publikasi
         Then "Dosen" melihat modal dengan pesan "Mohon mengisi isian yang bergaris merah"
     
     Scenario: Negatif - Menambahkan data dengan mengosongkan field tanggal terbit
-        When "Dosen" menuju ke halaman "http://localhost/siacloud/hr/list_rpublikasi/1"
+        When "Dosen" menuju ke halaman "hr/list_rpublikasi/1"
         * "Dosen" klik tombol "Tambah"
         * "Dosen" mengisi field "Jenis Publikasi" dengan "Artikel Ilmiah"
         * "Dosen" mengisi field "Judul" dengan "Judul Baru"
@@ -52,7 +52,7 @@ Feature: Dosen menambah riwayat publikasi
         Then "Dosen" melihat modal dengan pesan "Mohon mengisi isian yang bergaris merah"
     
     Scenario: Negatif - Menambahkan data dengan mengosongkan field kategori kegiatan
-        When "Dosen" menuju ke halaman "http://localhost/siacloud/hr/list_rpublikasi/1"
+        When "Dosen" menuju ke halaman "hr/list_rpublikasi/1"
         * "Dosen" klik tombol "Tambah"
         * "Dosen" mengisi field "Jenis Publikasi" dengan "Artikel Ilmiah"
         * "Dosen" mengisi field "Judul" dengan "Judul Baru"
@@ -63,7 +63,7 @@ Feature: Dosen menambah riwayat publikasi
         Then "Dosen" melihat modal dengan pesan "Mohon mengisi isian yang bergaris merah"
     
     Scenario: Negatif - Menambahkan data dengan mengosongkan field peran
-        When "Dosen" menuju ke halaman "http://localhost/siacloud/hr/list_rpublikasi/1"
+        When "Dosen" menuju ke halaman "hr/list_rpublikasi/1"
         * "Dosen" klik tombol "Tambah"
         * "Dosen" mengisi field "Jenis Publikasi" dengan "Artikel Ilmiah"
         * "Dosen" mengisi field "Judul" dengan "Judul Baru"
@@ -74,7 +74,7 @@ Feature: Dosen menambah riwayat publikasi
         Then "Dosen" melihat modal dengan pesan "Mohon mengisi isian yang bergaris merah"
     
     Scenario: Negatif - Menambahkan data dengan mengosongkan field corresponding
-        When "Dosen" menuju ke halaman "http://localhost/siacloud/hr/list_rpublikasi/1"
+        When "Dosen" menuju ke halaman "hr/list_rpublikasi/1"
         * "Dosen" klik tombol "Tambah"
         * "Dosen" mengisi field "Jenis Publikasi" dengan "Artikel Ilmiah"
         * "Dosen" mengisi field "Judul" dengan "Judul Baru"

@@ -5,7 +5,7 @@ Background:
         * "Dosen" masuk ke modul "SDM" 
     
     Scenario: Positif - Menambahkan data dengan benar
-        When "Dosen" menuju ke halaman "http://localhost/siacloud/hr/list_rpkm/1"
+        When "Dosen" menuju ke halaman "hr/list_rpkm/1"
         * "Dosen" klik tombol "Tambah"        
         * "Dosen" mengisi field "Afiliasi" dengan "005009"
         * "Dosen" mengisi field "Kelompok Bidang" dengan "mesin"
@@ -25,7 +25,7 @@ Background:
         Then "Dosen" melihat alert "Berhasil"
 
     Scenario: Negatif - Menambahkan data dengan mengosongkan perguruan tinggi afiliasi
-        When "Dosen" menuju ke halaman "http://localhost/siacloud/hr/list_rpkm/1"
+        When "Dosen" menuju ke halaman "hr/list_rpkm/1"
         * "Dosen" klik tombol "Tambah"
         * "Dosen" mengisi field "Kelompok Bidang" dengan "mesin"
         * "Dosen" mengisi field "Jenis SKIM" dengan "Penelitian Fundamental"
@@ -42,7 +42,7 @@ Background:
         Then "Dosen" melihat modal dengan pesan "Mohon mengisi isian yang bergaris merah"
 
     Scenario: Negatif - Menambahkan data dengan mengosongkan kelompok bidang
-        When "Dosen" menuju ke halaman "http://localhost/siacloud/hr/list_rpkm/1"
+        When "Dosen" menuju ke halaman "hr/list_rpkm/1"
         * "Dosen" klik tombol "Tambah"        
         * "Dosen" mengisi field "Afiliasi" dengan "005009"
         * "Dosen" mengisi field "Jenis SKIM" dengan "Penelitian Fundamental"
@@ -59,7 +59,7 @@ Background:
         Then "Dosen" melihat modal dengan pesan "Mohon mengisi isian yang bergaris merah"
 
     Scenario: Negatif - Menambahkan data dengan mengosongkan jenis skim
-        When "Dosen" menuju ke halaman "http://localhost/siacloud/hr/list_rpkm/1"
+        When "Dosen" menuju ke halaman "hr/list_rpkm/1"
         * "Dosen" klik tombol "Tambah"        
         * "Dosen" mengisi field "Afiliasi" dengan "005009"
         * "Dosen" mengisi field "Kelompok Bidang" dengan "mesin"
@@ -76,7 +76,7 @@ Background:
         Then "Dosen" melihat modal dengan pesan "Mohon mengisi isian yang bergaris merah"
 
     Scenario: Negatif - Menambahkan data dengan mengosongkan judul penelitian
-        When "Dosen" menuju ke halaman "http://localhost/siacloud/hr/list_rpkm/1"
+        When "Dosen" menuju ke halaman "hr/list_rpkm/1"
         * "Dosen" klik tombol "Tambah"        
         * "Dosen" mengisi field "Afiliasi" dengan "005009"
         * "Dosen" mengisi field "Kelompok Bidang" dengan "mesin"
@@ -93,7 +93,7 @@ Background:
         Then "Dosen" melihat modal dengan pesan "Mohon mengisi isian yang bergaris merah"
 
     Scenario: Negatif - Menambahkan data dengan mengosongkan tahun usulan
-        When "Dosen" menuju ke halaman "http://localhost/siacloud/hr/list_rpkm/1"
+        When "Dosen" menuju ke halaman "hr/list_rpkm/1"
         * "Dosen" klik tombol "Tambah"        
         * "Dosen" mengisi field "Afiliasi" dengan "005009"
         * "Dosen" mengisi field "Kelompok Bidang" dengan "mesin"
@@ -110,7 +110,7 @@ Background:
         Then "Dosen" melihat modal dengan pesan "Mohon mengisi isian yang bergaris merah"
 
     Scenario: Negatif - Menambahkan data dengan mengosongkan tahun kegiatan
-        When "Dosen" menuju ke halaman "http://localhost/siacloud/hr/list_rpkm/1"
+        When "Dosen" menuju ke halaman "hr/list_rpkm/1"
         * "Dosen" klik tombol "Tambah"        
         * "Dosen" mengisi field "Afiliasi" dengan "005009"
         * "Dosen" mengisi field "Kelompok Bidang" dengan "mesin"
@@ -127,7 +127,7 @@ Background:
         Then "Dosen" melihat modal dengan pesan "Mohon mengisi isian yang bergaris merah"
 
     Scenario: Negatif - Menambahkan data dengan mengosongkan tahun pelaksanaan ke
-        When "Dosen" menuju ke halaman "http://localhost/siacloud/hr/list_rpkm/1"
+        When "Dosen" menuju ke halaman "hr/list_rpkm/1"
         * "Dosen" klik tombol "Tambah"        
         * "Dosen" mengisi field "Afiliasi" dengan "005009"
         * "Dosen" mengisi field "Kelompok Bidang" dengan "mesin"
@@ -144,7 +144,7 @@ Background:
         Then "Dosen" melihat modal dengan pesan "Mohon mengisi isian yang bergaris merah"
 
     Scenario: Negatif - Menambahkan data dengan mengosongkan tanggal Awal
-        When "Dosen" menuju ke halaman "http://localhost/siacloud/hr/list_rpkm/1"
+        When "Dosen" menuju ke halaman "hr/list_rpkm/1"
         * "Dosen" klik tombol "Tambah"        
         * "Dosen" mengisi field "Afiliasi" dengan "005009"
         * "Dosen" mengisi field "Kelompok Bidang" dengan "mesin"
@@ -161,7 +161,7 @@ Background:
         Then "Dosen" melihat modal dengan pesan "Mohon mengisi isian yang bergaris merah"
 
     Scenario: Negatif - Menambahkan data dengan mengosongkan roadmap
-        When "Dosen" menuju ke halaman "http://localhost/siacloud/hr/list_rpkm/1"
+        When "Dosen" menuju ke halaman "hr/list_rpkm/1"
         * "Dosen" klik tombol "Tambah"        
         * "Dosen" mengisi field "Afiliasi" dengan "005009"
         * "Dosen" mengisi field "Kelompok Bidang" dengan "mesin"

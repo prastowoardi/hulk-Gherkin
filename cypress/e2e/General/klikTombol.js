@@ -13,7 +13,7 @@ When("{string} klik tombol {string}", (user,buttonName) => {
         cy.get('.dropdown-menu').contains("Unduh Data").click()
     }else if(buttonName == "Unduh"){
         cy.get('.btn').contains("Unduh").click()
-    }else if(buttonName == ""){
-    
+    }else if(buttonName == "Sinkronisasi"){
+        cy.get('.dropdown-menu').contains("Sinkronisasi").click()
     }
 })
