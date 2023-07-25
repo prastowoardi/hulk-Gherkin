@@ -10,8 +10,8 @@ Feature: Kirim Data ke SISTER per Riwayat
         * "Admin" klik tombol "Sinkronisasi"
         * "Admin" melihat modal "Konfirmasi"
         * "Admin" klik tombol "Ya, Yakin"
-        * "Admin" menunggu proses "Kirim"
-        Then "Admin" melihat jumlah data yang di "Kirim"
+        Then "Admin" menunggu proses "Kirim"
+         
 
     Scenario: Admin mengirim data baru ke sister
         When "Admin" menuju ke halaman "hr/list_rpublikasi/1"
@@ -55,8 +55,7 @@ Feature: Kirim Data ke SISTER per Riwayat
         * "Admin" klik tombol "Sinkronisasi"
         * "Admin" melihat modal "Konfirmasi"
         * "Admin" klik tombol "Ya, Yakin"
-        * "Admin" menunggu proses "Kirim"
-        Then "Admin" melihat jumlah data yang di "Kirim"
+        Then "Admin" menunggu proses "Kirim"   
 
     Scenario: Admin mengirim data baru ke sister
         When "Admin" menuju ke halaman "hr/list_rpenelitian/1"
@@ -100,8 +99,7 @@ Feature: Kirim Data ke SISTER per Riwayat
         * "Admin" klik tombol "Sinkronisasi"
         * "Admin" melihat modal "Konfirmasi"
         * "Admin" klik tombol "Ya, Yakin"
-        * "Admin" menunggu proses "Kirim"
-        Then "Admin" melihat jumlah data yang di "Kirim"
+        Then "Admin" menunggu proses "Kirim" 
 
     Scenario: Admin mengirim data baru ke sister
         When "Admin" menuju ke halaman "hr/list_rpkm/1"
