@@ -13,6 +13,6 @@ When("Sudah ada data riwayat {string} yang dihapus", (menu) => {
 
     cy.get('.callout > .row > .col-md-3').contains('Data Akan Dihapus').next()
         .invoke('text').then((hapus) => {
-            cy.log("Data Dihapus : "+hapus);
+            cy.log("Data Dihapus : "+hapus)
         })
 })

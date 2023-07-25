@@ -87,6 +87,6 @@ When("Sudah ada data riwayat {string} yang diubah", (menu) => {
 
     cy.get('.callout > .row > .col-md-3').contains('Data Akan Diubah').next()
         .invoke('text').then((ubah) => {
-            cy.log("Data Diubah : "+ubah);
+            cy.log("Data Diubah : "+ubah)
         })
 })
