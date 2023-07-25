@@ -1,6 +1,9 @@
 import { When, Then } from "@badeball/cypress-cucumber-preprocessor"
 let splitText
+import moment from 'moment';
+const currentDate = new Date();
 
+//Menentukan alert
 When("{string} menunggu proses {string}", (user,action) => {
     
     if(action == "Unduh"){
@@ -55,7 +58,7 @@ When("{string} menunggu proses {string}", (user,action) => {
     }
 })
 
-// MASIH KURANG UNTUK MEMBANDINGKAN DENGAN DI LOG
+// Ambil jumlah data berhasil
 When("{string} melihat jumlah data yang di {string}", (user,action) => {
     if(action == "Kirim Data"){
       cy.get('@jumlah').then(() => {
@@ -66,4 +69,21 @@ When("{string} melihat jumlah data yang di {string}", (user,action) => {
         cy.log('Tidak ada data yang di kirim ke sister')
       })
     }
+})
+
+//Membandingkan dengan log
+When("{string} melihat jumlah data berhasil",(user) => {
+  const currentDate = moment().format('DD MMM YYYY')
+  cy.log(currentDate)
+  cy.get('.table > tbody').children().contains(currentDate)
+    .next().next().invoke('text').then((value) => {
+      cy.get('@jumlah').then(() => {
+          cy.log(splitText)
+          if(splitText == value){
+            cy.log('Jumlah yang berhasil dikirim : '+splitText)
+          }else{
+            cy.log('JUMLAH DATA BERHASIL TIDAK SAMA. SILAHKAN CEK DETAIL LOG')
+          }
+      })
+    })
 })

@@ -1,6 +1,7 @@
 {
   "devDependencies": {
-    "cypress": "^12.17.1"
+    "cypress": "^12.17.1",
+    "moment": "^2.29.4"
   },
   "dependencies": {
     "@badeball/cypress-cucumber-preprocessor": "^18.0.1",

@@ -23,6 +23,10 @@ Untuk menginstall esbuild bundler by Gleb Bahmutov
 ```bash
 npm i @bahmutov/cypress-esbuild-preprocessor
 ```
+Untuk menginstall moment.js
+```bash
+npm install moment --save-dev
+```
 
 Setelah menginstal paket-paket ini, Anda perlu mengonfigurasi Cypress untuk menggunakan plugin. Konfigurasi pada file cypress config akan terlihat seperti ini:
 
