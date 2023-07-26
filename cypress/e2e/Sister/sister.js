@@ -100,7 +100,7 @@ When("{string} melihat jumlah data berhasil {string}",(user,action) => {
       cy.get('@jumlah').then(() => {
           cy.log(splitText)
           if (splitText == value){
-            if (menu == "Kirim"){
+            if (action == "Kirim"){
               cy.log('Jumlah yang berhasil dikirim : '+splitText)
             } else{
               cy.log('Jumlah yang berhasil diunduh : '+splitText)
