@@ -24,7 +24,7 @@ Background:
         * "Admin" klik tombol "Simpan"
         * "Admin" klik tombol "Ya, Yakin"
         Then "Admin" melihat alert "Berhasil"
-        * "Admin" melihat field yang diubah di data "Penelitian"
+        * "Admin" melihat field yang diubah di data "Pengabdian"
 
     Scenario: Negatif - Mengosongkan field perguruan tinggi afiliasi
         When "Admin" menuju ke halaman "hr/list_rpkm/1"

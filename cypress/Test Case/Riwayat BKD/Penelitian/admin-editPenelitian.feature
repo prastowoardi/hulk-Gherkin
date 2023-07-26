@@ -8,7 +8,7 @@ Background:
         When "Admin" menuju ke halaman "hr/list_rpenelitian/1"
         * "Admin" pilih detail data      
         * "Admin" mengubah field "Afiliasi" dengan "005009"
-        * "Admin" mengubah field "Kelompok Bidang" dengan "mesin"
+        * "Admin" mengubah field "Kelompok Bidang" dengan "731"
         * "Admin" mengubah field "Jenis SKIM" dengan "Penelitian Fundamental"
         * "Admin" mengubah field "Judul Penelitian" dengan "Metode pengajaran sekolah Montessori."
         * "Admin" mengubah field "Tahun Usulan" dengan "2018"

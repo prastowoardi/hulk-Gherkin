@@ -18,9 +18,31 @@ When("{string} melihat field yang diubah di data {string}", (user,menu) => {
         cy.get('#table-pegawai > tbody').children().children().contains('Menghasilkan karya ilmiah yang diterbitkan dalam jurnal internasional bereputasi')
         cy.get('#table-pegawai > tbody').children().children().contains('Editor')
     }else if(menu == "Penelitian"){
+        cy.get('#block-judulpenelitian > .col-md-7').contains('Metode pengajaran sekolah Montessori.')
+        cy.get('#iduniversitas_label').contains('005009 - Politeknik Negeri Padang')
+        cy.get('#idkelompokbidang_label').contains('Teknik Mesin')
+        cy.get('#block-idskimkegiatan > .col-md-7').contains('Penelitian Fundamental')
+        cy.get('#block-tahunusulan >.col-md-7').contains('2018')
+        cy.get('#block-tahunkegiatan >.col-md-7').contains('2019')
+        cy.get('#block-tahunke >.col-md-7').contains('3')
+        cy.get('#block-tglmulai > .col-md-7').contains('30 Juni 2023')
+        cy.get('#block-kesesuaianroadmap > .col-md-7').contains('Kurang Sesuai')
 
+        cy.get('#table-pegawai > tbody').children().children().contains('Sebagai anggota')
+        cy.get('#table-pegawai > tbody').children().children().contains('Ketua')
     }else if(menu == "Pengabdian"){
-        
+        cy.get('#block-namakegiatan > .col-md-7').contains('Perancangan Aset Konten Digital untuk Kegiatan Promosi Agrowisata PT Perkebunan Nusantara VIII')
+        cy.get('#iduniversitas_label').contains('005009 - Politeknik Negeri Padang')
+        cy.get('#idkelompokbidang_label').contains('Teknik Mesin')
+        cy.get('#block-idskimkegiatan > .col-md-7').contains('Ipteks')
+        cy.get('#block-tahunusulan >.col-md-7').contains('2020')
+        cy.get('#block-tahunkegiatan >.col-md-7').contains('2021')
+        cy.get('#block-tahunke >.col-md-7').contains('1')
+        cy.get('#block-tglawal > .col-md-7').contains('30 Oktober 2023')
+        cy.get('#block-kesesuaianroadmap > .col-md-7').contains('Sesuai')
+
+        cy.get('#table-pegawai > tbody').children().children().contains('Berdasarkan bidang keahlian')
+        cy.get('#table-pegawai > tbody').children().children().contains('Anggota')
     }
 })
 

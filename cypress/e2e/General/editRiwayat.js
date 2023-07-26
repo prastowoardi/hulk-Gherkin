@@ -44,7 +44,7 @@ When("{string} mengubah field {string} dengan {string}", (user,fieldName,fieldVa
         cy.get('#judulpenelitian').clear().type(fieldValue)
     }else if(fieldName == "Afiliasi"){
         //    Auto Complete Handle
-        cy.get('#iduniversitas_label').type(fieldValue)
+        cy.get('#iduniversitas_label').clear().type(fieldValue)
         cy.get('.tt-suggestions').each(($el, index, $list) => {
 			// $el is a wrapped jQuery element
 			if ($el.text() === '005009 - Politeknik Negeri Padang') {
@@ -53,7 +53,7 @@ When("{string} mengubah field {string} dengan {string}", (user,fieldName,fieldVa
         })
     }else if(fieldName == "Kelompok Bidang"){
         //    Auto Complete Handle
-        cy.get('#idkelompokbidang_label').type(fieldValue)
+        cy.get('#idkelompokbidang_label').clear().type(fieldValue)
         cy.get('.tt-suggestion').each(($el, index, $list) => {
 			// $el is a wrapped jQuery element
 			if ($el.text() === 'Teknik Mesin') {
@@ -70,6 +70,7 @@ When("{string} mengubah field {string} dengan {string}", (user,fieldName,fieldVa
         cy.get('#tahunke').clear().type(fieldValue)
     }else if(fieldName == "Tanggal Mulai"){
         cy.get('#tglmulai').clear().type(fieldValue)
+        cy.get('#sc-footer').click()
     }else if(fieldName == "Roadmap"){
         if(fieldValue == "Sesuai"){
             cy.get('#select2-kesesuaianroadmap-container').type(fieldValue+'{downarrow}{enter}')
@@ -88,6 +89,7 @@ When("{string} mengubah field {string} dengan {string}", (user,fieldName,fieldVa
         cy.get('#namakegiatan').clear().type(fieldValue)
     }else if(fieldName == "Tanggal Awal"){
         cy.get('#tglawal').clear().type(fieldValue)
+        cy.get('#sc-footer').click()
     }
 })
 
