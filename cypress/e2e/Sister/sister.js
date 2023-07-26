@@ -3,7 +3,7 @@ let splitText
 import moment from 'moment'
 const currentDate = new Date()
 
-//Menentukan alert
+//Menentukan alert dan membuat alias untuk ambil jumlah data berhasil
 When("{string} menunggu proses {string}", (user,action) => {
     
     if(action == "Unduh"){
@@ -74,13 +74,17 @@ When("{string} menunggu proses {string}", (user,action) => {
 
 // Ambil jumlah data berhasil
 When("{string} melihat jumlah data yang di {string}", (user,action) => {
-    if(action == "Kirim Data" || action == "Unduh"){
+    if (action == "Kirim Data" || action == "Unduh"){
       cy.get('@jumlah').then(() => {
         cy.log(splitText)
       })
-    }else if(action == "Kirim" || action == "Unduh"){
+    } else if(action == "Kirim" || action == "Unduh"){
       cy.get('@kosong').then(() => {
-        cy.log('Tidak ada data yang di kirim ke sister')
+        if (action == "Unduh"){
+          cy.log('Tidak ada data yang di unduh')
+        } else {
+          cy.log('Tidak ada data yang di kirim ke sister')
+        }
       })
     }
 })
@@ -93,9 +97,9 @@ When("{string} melihat jumlah data berhasil",(user) => {
     .next().next().invoke('text').then((value) => {
       cy.get('@jumlah').then(() => {
           cy.log(splitText)
-          if(splitText == value){
+          if (splitText == value){
             cy.log('Jumlah yang berhasil dikirim : '+splitText)
-          }else{
+          } else {
             cy.log('JUMLAH DATA BERHASIL TIDAK SAMA. SILAHKAN CEK DETAIL LOG')
           }
       })

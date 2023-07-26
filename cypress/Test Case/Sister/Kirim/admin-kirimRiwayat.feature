@@ -12,7 +12,6 @@ Feature: Kirim Data ke SISTER per Riwayat
         * "Admin" klik tombol "Ya, Yakin"
         Then "Admin" menunggu proses "Kirim"
          
-
     Scenario: Admin mengirim data baru ke sister
         When "Admin" menuju ke halaman "hr/list_rpublikasi/1"
         * Sudah ada data riwayat "Publikasi" baru dengan status disetujui
