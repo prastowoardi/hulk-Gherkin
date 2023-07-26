@@ -17,6 +17,10 @@ When("{string} melihat field yang diubah di data {string}", (user,menu) => {
         cy.get('.label').contains('Disetujui')
         cy.get('#table-pegawai > tbody').children().children().contains('Menghasilkan karya ilmiah yang diterbitkan dalam jurnal internasional bereputasi')
         cy.get('#table-pegawai > tbody').children().children().contains('Editor')
+    }else if(menu == "Penelitian"){
+
+    }else if(menu == "Pengabdian"){
+        
     }
 })
 

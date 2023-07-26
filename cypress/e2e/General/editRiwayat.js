@@ -92,61 +92,37 @@ When("{string} mengubah field {string} dengan {string}", (user,fieldName,fieldVa
 })
 
 When("{string} mengosongkan field {string}",(user,fieldName) => {
-    if(fieldName == "Jenis Publikasi"){
-        cy.get("#select2-idjenispublikasi-container").clear()
-    }else if(fieldName == "Judul"){
+    if(fieldName == "Judul"){
         cy.get("#judul").clear()
     }else if(fieldName == "Tanggal Terbit"){
         cy.get("#tglterbit").clear()
-    }else if(fieldName == "Kategori Kegiatan"){
-        cy.get("#select2-idrubrikkegiatan0-container").clear()
     }else if(fieldName == "Peran"){
         cy.get('[id="peran[0]"]').clear()
-    }else if(fieldName == "Status Pengajuan"){
-        cy.get('#select2-status-container').clear()
     }else if(fieldName == "Nama Organisasi"){
         cy.get('#namaorganisasi').clear()
     }else if(fieldName == "Mulai Keanggotaan"){
         cy.get('#tglmulai').clear()
     }else if(fieldName == "Peran Atas"){
         cy.get('#peran').clear()
-    }else if(fieldName == "Kategori Kegiatan Atas"){
-        cy.get('#select2-idrubrikkegiatan-container').clear()
-    }else if(fieldName == "Jabatan Tugas"){
-        cy.get('#select2-idjabatantugas-container').clear()
     }else if(fieldName == "TMT Mulai"){
         cy.get('#tglterhitungmulai').clear()
     }else if(fieldName == "Modal SK"){
         cy.get('#iddokumen_label').click()
-        cy.get('.odd > .text-center > .btn > .fa').click()
+        cy.get('.btn-wawrning').contains("Hapus").click()
     }else if(fieldName == "Lokasi Penugasan"){
         cy.get('#lokasipenugasan').clear()
     }else if(fieldName == "TMT Jabatan"){
         cy.get('#tmtmulai').clear()
-    }else if(fieldName == "Nama Jabatan"){
-        cy.get('#select2-idsubfungsional-container').clear()
     }else if(fieldName == "Judul Penelitian"){
         cy.get('#judulpenelitian').clear()
     }else if(fieldName == "Afiliasi"){
         cy.get('#iduniversitas_label').clear()
     }else if(fieldName == "Kelompok Bidang"){
         cy.get('#idkelompokbidang_label').clear()
-    }else if(fieldName == "Jenis SKIM"){
-        cy.get('#select2-idskimkegiatan-container').clear()
-    }else if(fieldName == "Tahun Usulan"){
-        cy.get('#select2-tahunusulan-container').clear()
-    }else if(fieldName == "Tahun Kegiatan"){
-        cy.get('#select2-tahunkegiatan-container').clear()
     }else if(fieldName == "Tahun Pelaksanaan Ke"){
         cy.get('#tahunke').clear()
     }else if(fieldName == "Tanggal Mulai"){
         cy.get('#tglmulai').clear()
-    }else if(fieldName == "Roadmap"){
-        if(fieldValue == "Sesuai"){
-            cy.get('#select2-kesesuaianroadmap-container').clear()
-        }else {
-            cy.get('#select2-kesesuaianroadmap-container').clear()
-        }
     }else if(fieldName == "Dana PT"){
         cy.get('[name="value[0]"]').clear()
     }else if(fieldName == "Dana Pemerintah"){

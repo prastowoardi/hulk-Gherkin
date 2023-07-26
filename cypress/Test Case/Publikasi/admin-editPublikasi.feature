@@ -22,7 +22,7 @@ Feature: Admin mengubah riwayat publikasi
     Scenario: Negatif - Mengosongkan field jenis publikasi
         When "Admin" menuju ke halaman "hr/list_rpublikasi/1"
         * "Admin" pilih detail data
-        * "Admin" mengosongkan field "Jenis Publikasi"
+        * "Admin" mengubah field "Jenis Publikasi" dengan "-- Pilih Jenis Publikasi --"
         * "Admin" klik tombol "Simpan"
         * "Admin" klik tombol "Ya, Yakin"
         Then "Admin" melihat modal dengan pesan "Mohon mengisi isian yang bergaris merah"
@@ -46,7 +46,7 @@ Feature: Admin mengubah riwayat publikasi
     Scenario: Negatif - Mengosongkan field kategori kegiatan
         When "Admin" menuju ke halaman "hr/list_rpublikasi/1"
         * "Admin" pilih detail data
-        * "Admin" mengosongkan field "Kategori Kegiatan"
+        * "Admin" mengubah field "Kategori Kegiatan" dengan "-- Pilih Kategori Kegiatan --"
         * "Admin" klik tombol "Simpan"
         * "Admin" klik tombol "Ya, Yakin"
         Then "Admin" melihat modal dengan pesan "Mohon mengisi isian yang bergaris merah"
@@ -54,7 +54,7 @@ Feature: Admin mengubah riwayat publikasi
     Scenario: Negatif - Mengosongkan field peran
         When "Admin" menuju ke halaman "hr/list_rpublikasi/1"
         * "Admin" pilih detail data
-        * "Admin" mengosongkan field "Peran"
+        * "Admin" mengubah field "Peran" dengan "-- Pilih Peran --"
         * "Admin" klik tombol "Simpan"
         * "Admin" klik tombol "Ya, Yakin"
         Then "Admin" melihat modal dengan pesan "Mohon mengisi isian yang bergaris merah"

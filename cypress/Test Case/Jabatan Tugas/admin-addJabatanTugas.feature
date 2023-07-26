@@ -61,7 +61,7 @@ Background:
         * "Admin" klik tombol "Simpan"
         Then "Admin" melihat modal dengan pesan "Mohon mengisi isian yang bergaris merah"
     
-    Scenario: Negatif - Menambahkan data dengan mengosongkan field lokasi kegiatan
+    Scenario: Negatif - Menambahkan data dengan mengosongkan field lokasi penugasan
         When "Admin" menuju ke halaman "hr/list_rjabatanstruktural/1"
         * "Admin" klik tombol "Tambah"
         * "Admin" mengisi field "Kategori Kegiatan Atas" dengan "Menduduki jabatan pimpinan pada lembaga pemerintahan/pejabat negara yang harus dibebaskan dari jabatan organiknya atau bekerja pada industri/organisasi yang diakui Kemendikbud"
