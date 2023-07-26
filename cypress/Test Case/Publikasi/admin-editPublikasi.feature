@@ -19,69 +19,50 @@ Feature: Admin mengubah riwayat publikasi
         Then "Admin" melihat alert "Berhasil"
         * "Admin" melihat field yang diubah di data "Publikasi" 
 
-    Scenario: Negatif - Mengubah data dengan mengosongkan field jenis publikasi
+    Scenario: Negatif - Mengosongkan field jenis publikasi
         When "Admin" menuju ke halaman "hr/list_rpublikasi/1"
         * "Admin" pilih detail data
-        * "Admin" mengubah field "Judul" dengan "Judul Yang Sudah Diubah"
-        * "Admin" mengubah field "Tanggal Terbit" dengan "30-07-2023"
-        * "Admin" mengubah field "Kategori Kegiatan" dengan "Menghasilkan karya ilmiah yang diterbitkan dalam jurnal internasional bereputasi"
-        * "Admin" mengubah field "Peran" dengan "Editor"
-        * "Admin" mengubah field "Corresponding" dengan "1"
+        * "Admin" mengosongkan field "Jenis Publikasi"
         * "Admin" klik tombol "Simpan"
+        * "Admin" klik tombol "Ya, Yakin"
         Then "Admin" melihat modal dengan pesan "Mohon mengisi isian yang bergaris merah"
 
-    Scenario: Negatif - Mengubah data dengan mengosongkan field judul
+    Scenario: Negatif - Mengosongkan field judul
         When "Admin" menuju ke halaman "hr/list_rpublikasi/1"
         * "Admin" pilih detail data
-        * "Admin" mengubah field "Jenis Publikasi" dengan "Buku Lainnya"
-        * "Admin" mengubah field "Tanggal Terbit" dengan "30-07-2023"
-        * "Admin" mengubah field "Kategori Kegiatan" dengan "Menghasilkan karya ilmiah yang diterbitkan dalam jurnal internasional bereputasi"
-        * "Admin" mengubah field "Peran" dengan "Editor"
-        * "Admin" mengubah field "Corresponding" dengan "1"
+        * "Admin" mengosongkan field "Judul"
         * "Admin" klik tombol "Simpan"
+        * "Admin" klik tombol "Ya, Yakin"
         Then "Admin" melihat modal dengan pesan "Mohon mengisi isian yang bergaris merah"
     
-    Scenario: Negatif - Mengubah data dengan mengosongkan field tanggal terbit
+    Scenario: Negatif - Mengosongkan field tanggal terbit
         When "Admin" menuju ke halaman "hr/list_rpublikasi/1"
         * "Admin" pilih detail data
-        * "Admin" mengubah field "Jenis Publikasi" dengan "Buku Lainnya"
-        * "Admin" mengubah field "Judul" dengan "Judul Yang Sudah Diubah"
-        * "Admin" mengubah field "Kategori Kegiatan" dengan "Menghasilkan karya ilmiah yang diterbitkan dalam jurnal internasional bereputasi"
-        * "Admin" mengubah field "Peran" dengan "Editor"
-        * "Admin" mengubah field "Corresponding" dengan "1"
+        * "Admin" mengosongkan field "Tanggal Terbit"
         * "Admin" klik tombol "Simpan"
+        * "Admin" klik tombol "Ya, Yakin"
         Then "Admin" melihat modal dengan pesan "Mohon mengisi isian yang bergaris merah"
     
-    Scenario: Negatif - Mengubah data dengan mengosongkan field kategori kegiatan
+    Scenario: Negatif - Mengosongkan field kategori kegiatan
         When "Admin" menuju ke halaman "hr/list_rpublikasi/1"
         * "Admin" pilih detail data
-        * "Admin" mengubah field "Jenis Publikasi" dengan "Buku Lainnya"
-        * "Admin" mengubah field "Judul" dengan "Judul Yang Sudah Diubah"
-        * "Admin" mengubah field "Tanggal Terbit" dengan "30-07-2023"
-        * "Admin" mengubah field "Peran" dengan "Editor"
-        * "Admin" mengubah field "Corresponding" dengan "1"
+        * "Admin" mengosongkan field "Kategori Kegiatan"
         * "Admin" klik tombol "Simpan"
+        * "Admin" klik tombol "Ya, Yakin"
         Then "Admin" melihat modal dengan pesan "Mohon mengisi isian yang bergaris merah"
     
-    Scenario: Negatif - Mengubah data dengan mengosongkan field peran
+    Scenario: Negatif - Mengosongkan field peran
         When "Admin" menuju ke halaman "hr/list_rpublikasi/1"
         * "Admin" pilih detail data
-        * "Admin" mengubah field "Jenis Publikasi" dengan "Buku Lainnya"
-        * "Admin" mengubah field "Judul" dengan "Judul Yang Sudah Diubah"
-        * "Admin" mengubah field "Tanggal Terbit" dengan "30-07-2023"
-        * "Admin" mengubah field "Kategori Kegiatan" dengan "Menghasilkan karya ilmiah yang diterbitkan dalam jurnal internasional bereputasi"
-        * "Admin" mengubah field "Corresponding" dengan "1"
+        * "Admin" mengosongkan field "Peran"
         * "Admin" klik tombol "Simpan"
+        * "Admin" klik tombol "Ya, Yakin"
         Then "Admin" melihat modal dengan pesan "Mohon mengisi isian yang bergaris merah"
     
-    Scenario: Negatif - Mengubah data dengan mengosongkan field corresponding
+    Scenario: Negatif - Mengosongkan field corresponding
         When "Admin" menuju ke halaman "hr/list_rpublikasi/1"
         * "Admin" pilih detail data
-        * "Admin" mengubah field "Jenis Publikasi" dengan "Buku Lainnya"
-        * "Admin" mengubah field "Judul" dengan "Judul Yang Sudah Diubah"
-        * "Admin" mengubah field "Tanggal Terbit" dengan "30-07-2023"
-        * "Admin" mengubah field "Kategori Kegiatan" dengan "Menghasilkan karya ilmiah yang diterbitkan dalam jurnal internasional bereputasi"
-        * "Admin" mengubah field "Peran" dengan "Editor"
         * "Admin" mengubah field "Corresponding" dengan "0"
         * "Admin" klik tombol "Simpan"
+        * "Admin" klik tombol "Ya, Yakin"
         Then "Admin" melihat modal dengan pesan "Mohon mengisi isian Corresponding Author"

@@ -15,12 +15,12 @@ When("{string} mengubah field {string} dengan {string}", (user,fieldName,fieldVa
         if(fieldValue == '1'){
             cy.get('[id="corresponding[0]"]').check()
         }else if(fieldValue == '0'){
-    
+            cy.get('[id="corresponding[0]"]').uncheck()
         }
     }else if(fieldName == "Status Pengajuan"){
         cy.get('#select2-status-container').type(fieldValue+'{enter}')
     }else if(fieldName == "Nama Organisasi"){
-        cy.get('#namaorganisasi').type(fieldValue)
+        cy.get('#namaorganisasi').clear().type(fieldValue)
     }else if(fieldName == "Mulai Keanggotaan"){
         cy.get('#tglmulai').clear().type(fieldValue)
     }else if(fieldName == "Peran Atas"){
@@ -77,16 +77,87 @@ When("{string} mengubah field {string} dengan {string}", (user,fieldName,fieldVa
             cy.get('#select2-kesesuaianroadmap-container').type(fieldValue+'{enter}')
         }
     }else if(fieldName == "Dana PT"){
-        cy.get('[name="value[0]"]').type(fieldValue)
+        cy.get('[name="value[0]"]').clear().type(fieldValue)
     }else if(fieldName == "Dana Pemerintah"){
-        cy.get('[name="value[1]"]').type(fieldValue)
+        cy.get('[name="value[1]"]').clear().type(fieldValue)
     }else if(fieldName == "Dana DN"){
-        cy.get('[name="value[2]"]').type(fieldValue)
+        cy.get('[name="value[2]"]').clear().type(fieldValue)
     }else if(fieldName == "Dana LN"){
-        cy.get('[name="value[3]"]').type(fieldValue)
+        cy.get('[name="value[3]"]').clear().type(fieldValue)
     }else if(fieldName == "Judul Kegiatan"){
-        cy.get('#namakegiatan').type(fieldValue)
+        cy.get('#namakegiatan').clear().type(fieldValue)
     }else if(fieldName == "Tanggal Awal"){
         cy.get('#tglawal').clear().type(fieldValue)
+    }
+})
+
+When("{string} mengosongkan field {string}",(user,fieldName) => {
+    if(fieldName == "Jenis Publikasi"){
+        cy.get("#select2-idjenispublikasi-container").clear()
+    }else if(fieldName == "Judul"){
+        cy.get("#judul").clear()
+    }else if(fieldName == "Tanggal Terbit"){
+        cy.get("#tglterbit").clear()
+    }else if(fieldName == "Kategori Kegiatan"){
+        cy.get("#select2-idrubrikkegiatan0-container").clear()
+    }else if(fieldName == "Peran"){
+        cy.get('[id="peran[0]"]').clear()
+    }else if(fieldName == "Status Pengajuan"){
+        cy.get('#select2-status-container').clear()
+    }else if(fieldName == "Nama Organisasi"){
+        cy.get('#namaorganisasi').clear()
+    }else if(fieldName == "Mulai Keanggotaan"){
+        cy.get('#tglmulai').clear()
+    }else if(fieldName == "Peran Atas"){
+        cy.get('#peran').clear()
+    }else if(fieldName == "Kategori Kegiatan Atas"){
+        cy.get('#select2-idrubrikkegiatan-container').clear()
+    }else if(fieldName == "Jabatan Tugas"){
+        cy.get('#select2-idjabatantugas-container').clear()
+    }else if(fieldName == "TMT Mulai"){
+        cy.get('#tglterhitungmulai').clear()
+    }else if(fieldName == "Modal SK"){
+        cy.get('#iddokumen_label').click()
+        cy.get('.odd > .text-center > .btn > .fa').click()
+    }else if(fieldName == "Lokasi Penugasan"){
+        cy.get('#lokasipenugasan').clear()
+    }else if(fieldName == "TMT Jabatan"){
+        cy.get('#tmtmulai').clear()
+    }else if(fieldName == "Nama Jabatan"){
+        cy.get('#select2-idsubfungsional-container').clear()
+    }else if(fieldName == "Judul Penelitian"){
+        cy.get('#judulpenelitian').clear()
+    }else if(fieldName == "Afiliasi"){
+        cy.get('#iduniversitas_label').clear()
+    }else if(fieldName == "Kelompok Bidang"){
+        cy.get('#idkelompokbidang_label').clear()
+    }else if(fieldName == "Jenis SKIM"){
+        cy.get('#select2-idskimkegiatan-container').clear()
+    }else if(fieldName == "Tahun Usulan"){
+        cy.get('#select2-tahunusulan-container').clear()
+    }else if(fieldName == "Tahun Kegiatan"){
+        cy.get('#select2-tahunkegiatan-container').clear()
+    }else if(fieldName == "Tahun Pelaksanaan Ke"){
+        cy.get('#tahunke').clear()
+    }else if(fieldName == "Tanggal Mulai"){
+        cy.get('#tglmulai').clear()
+    }else if(fieldName == "Roadmap"){
+        if(fieldValue == "Sesuai"){
+            cy.get('#select2-kesesuaianroadmap-container').clear()
+        }else {
+            cy.get('#select2-kesesuaianroadmap-container').clear()
+        }
+    }else if(fieldName == "Dana PT"){
+        cy.get('[name="value[0]"]').clear()
+    }else if(fieldName == "Dana Pemerintah"){
+        cy.get('[name="value[1]"]').clear()
+    }else if(fieldName == "Dana DN"){
+        cy.get('[name="value[2]"]').clear()
+    }else if(fieldName == "Dana LN"){
+        cy.get('[name="value[3]"]').clear()
+    }else if(fieldName == "Judul Kegiatan"){
+        cy.get('#namakegiatan').clear()
+    }else if(fieldName == "Tanggal Awal"){
+        cy.get('#tglawal').clear()
     }
 })
