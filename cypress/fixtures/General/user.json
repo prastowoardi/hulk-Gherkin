@@ -16,6 +16,12 @@
       "role" : "Dosen",
       "username": "0413077706",
       "password": "password"
+    },
+    {
+      "id" : "3",
+      "role" : "Dosen",
+      "username": "0016076902",
+      "password": "password"
     }
   ]
   
