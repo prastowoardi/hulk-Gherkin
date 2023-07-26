@@ -1,5 +1,22 @@
 import { When, Then } from "@badeball/cypress-cucumber-preprocessor"
 
+When("{string} pilih detail data",(user) => {
+    cy.get(".table").find(".btn").first().click()
+    cy.get(".btn").contains("Edit").click()
+})
+
+When("{string} melihat field yang diubah di data {string}", (user,menu) => {
+    cy.get('#block-idjenispublikasi > .col-md-7').invoke('text').then((data) => {
+        cy.log(data)
+        expect(data.trim()).to.eq("Buku lainnya")
+    })
+    cy.get('#block-judul > .col-md-7').contains('Judul Yang Sudah Diubah')
+    cy.get('#block-tglterbit > .col-md-7').contains('30 Juli 2023')
+    cy.get('.label').contains('Disetujui')
+    cy.get('#table-pegawai > tbody').children().children().contains('Menghasilkan karya ilmiah yang diterbitkan dalam jurnal internasional bereputasi')
+    cy.get('#table-pegawai > tbody').children().children().contains('Editor')
+})
+
 When("Sudah ada data riwayat {string} yang diubah", (menu) => {
     cy.get(".table").find(".btn").click()
     cy.get(".btn").contains("Edit").click()
