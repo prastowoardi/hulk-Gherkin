@@ -92,7 +92,7 @@ When("{string} melihat jumlah data yang di {string}", (user,action) => {
 })
 
 //Membandingkan jumlah data berhasil dengan log
-When("{string} melihat jumlah data berhasil",(user) => {
+When("{string} melihat jumlah data berhasil {string}",(user,action) => {
   const currentDate = moment().format('DD MMM YYYY')
   cy.log(currentDate)
   cy.get('.table > tbody').children().contains(currentDate)
@@ -100,7 +100,11 @@ When("{string} melihat jumlah data berhasil",(user) => {
       cy.get('@jumlah').then(() => {
           cy.log(splitText)
           if (splitText == value){
-            cy.log('Jumlah yang berhasil dikirim : '+splitText)
+            if (menu == "Kirim"){
+              cy.log('Jumlah yang berhasil dikirim : '+splitText)
+            } else{
+              cy.log('Jumlah yang berhasil diunduh : '+splitText)
+            }
           } else {
             cy.log('JUMLAH DATA BERHASIL TIDAK SAMA. SILAHKAN CEK DETAIL LOG')
           }

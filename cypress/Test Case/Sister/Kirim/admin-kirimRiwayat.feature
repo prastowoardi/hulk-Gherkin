@@ -22,7 +22,7 @@ Feature: Kirim Data ke SISTER per Riwayat
         * "Admin" menunggu proses "Kirim"
         * "Admin" melihat jumlah data yang di "Kirim Data"
         * "Admin" menuju ke halaman "hr/list_logsister"
-        Then "Admin" melihat jumlah data berhasil
+        Then "Admin" melihat jumlah data berhasil "Kirim"
         
     Scenario: Admin mengirim data yang diubah ke sister
         When "Admin" menuju ke halaman "hr/list_rpublikasi/1"
@@ -34,7 +34,7 @@ Feature: Kirim Data ke SISTER per Riwayat
         * "Admin" menunggu proses "Kirim"
         * "Admin" melihat jumlah data yang di "Kirim Data"
         * "Admin" menuju ke halaman "hr/list_logsister"
-        Then "Admin" melihat jumlah data berhasil
+        Then "Admin" melihat jumlah data berhasil "Kirim"
 
     Scenario: Admin mengirim data yang dihapus ke sister
         When "Admin" menuju ke halaman "hr/list_rpublikasi/1"
@@ -46,7 +46,7 @@ Feature: Kirim Data ke SISTER per Riwayat
         * "Admin" menunggu proses "Kirim"
         * "Admin" melihat jumlah data yang di "Kirim Data"
         * "Admin" menuju ke halaman "hr/list_logsister"
-        Then "Admin" melihat jumlah data berhasil
+        Then "Admin" melihat jumlah data berhasil "Kirim"
 
     Scenario: Admin mengirim data riwayat Penelitian dengan tidak ada perubahan
         When "Admin" menuju ke halaman "hr/list_rpenelitian/1"
@@ -66,7 +66,7 @@ Feature: Kirim Data ke SISTER per Riwayat
         * "Admin" menunggu proses "Kirim"
         * "Admin" melihat jumlah data yang di "Kirim Data"
         * "Admin" menuju ke halaman "hr/list_logsister"
-        Then "Admin" melihat jumlah data berhasil
+        Then "Admin" melihat jumlah data berhasil "Kirim"
         
     Scenario: Admin mengirim data yang diubah ke sister
         When "Admin" menuju ke halaman "hr/list_rpenelitian/1"
@@ -78,7 +78,7 @@ Feature: Kirim Data ke SISTER per Riwayat
         * "Admin" menunggu proses "Kirim"
         * "Admin" melihat jumlah data yang di "Kirim Data"
         * "Admin" menuju ke halaman "hr/list_logsister"
-        Then "Admin" melihat jumlah data berhasil
+        Then "Admin" melihat jumlah data berhasil "Kirim"
 
     Scenario: Admin mengirim data yang dihapus ke sister
         When "Admin" menuju ke halaman "hr/list_rpenelitian/1"
@@ -90,7 +90,7 @@ Feature: Kirim Data ke SISTER per Riwayat
         * "Admin" menunggu proses "Kirim"
         * "Admin" melihat jumlah data yang di "Kirim Data"
         * "Admin" menuju ke halaman "hr/list_logsister"
-        Then "Admin" melihat jumlah data berhasil
+        Then "Admin" melihat jumlah data berhasil "Kirim"
 
     Scenario: Admin mengirim data riwayat Pengabdian dengan tidak ada perubahan
         When "Admin" menuju ke halaman "hr/list_rpkm/1"
@@ -110,7 +110,7 @@ Feature: Kirim Data ke SISTER per Riwayat
         * "Admin" menunggu proses "Kirim"
         * "Admin" melihat jumlah data yang di "Kirim Data"
         * "Admin" menuju ke halaman "hr/list_logsister"
-        Then "Admin" melihat jumlah data berhasil
+        Then "Admin" melihat jumlah data berhasil "Kirim"
         
     Scenario: Admin mengirim data yang diubah ke sister
         When "Admin" menuju ke halaman "hr/list_rpkm/1"
@@ -122,7 +122,7 @@ Feature: Kirim Data ke SISTER per Riwayat
         * "Admin" menunggu proses "Kirim"
         * "Admin" melihat jumlah data yang di "Kirim Data"
         * "Admin" menuju ke halaman "hr/list_logsister"
-        Then "Admin" melihat jumlah data berhasil
+        Then "Admin" melihat jumlah data berhasil "Kirim"
 
     Scenario: Admin mengirim data yang dihapus ke sister
         When "Admin" menuju ke halaman "hr/list_rpkm/1"
@@ -134,4 +134,4 @@ Feature: Kirim Data ke SISTER per Riwayat
         * "Admin" menunggu proses "Kirim"
         * "Admin" melihat jumlah data yang di "Kirim Data"
         * "Admin" menuju ke halaman "hr/list_logsister"
-        Then "Admin" melihat jumlah data berhasil
+        Then "Admin" melihat jumlah data berhasil "Kirim"
