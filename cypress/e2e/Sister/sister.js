@@ -18,12 +18,26 @@ When("{string} menunggu proses {string}", (user,action) => {
                 // You can now use riwayat inside the if-else statement
                 if (riwayat == '0' && sister == '0') {
                   cy.get('.alert-v1').should('include.text', 'Yeay! Selamat Anda telah berhasil mengunduh')
+                    .invoke('text').then((data) => {
+                      splitText = data.replace(/(.[(/)])/g," ").trim().split(' ')[6]
+                      cy.log(splitText)
+                  }).as('jumlah')
                 } else if (riwayat > sister) {
                   cy.get('.alert-v1').should('include.text', 'Ups! Tidak ada data yang diunduh')
+                    .invoke('text').then((data) => {
+                        cy.log(data)
+                  }).as('kosong')
                 } else if (riwayat < sister){
                   cy.get('.alert-v1').should('include.text', 'Yeay! Selamat Anda telah berhasil mengunduh')
+                    .invoke('text').then((data) => {
+                      splitText = data.replace(/(.[(/)])/g," ").trim().split(' ')[6]
+                      cy.log(splitText)
+                  }).as('jumlah')
                 } else if (riwayat == sister){
                   cy.get('.alert-v1').should('include.text', 'Ups! Tidak ada data yang diunduh')
+                    .invoke('text').then((data) => {
+                        cy.log(data)
+                  }).as('kosong')
                 } 
           })
       })
@@ -60,11 +74,11 @@ When("{string} menunggu proses {string}", (user,action) => {
 
 // Ambil jumlah data berhasil
 When("{string} melihat jumlah data yang di {string}", (user,action) => {
-    if(action == "Kirim Data"){
+    if(action == "Kirim Data" || action == "Unduh"){
       cy.get('@jumlah').then(() => {
         cy.log(splitText)
       })
-    }else if(action == "Kirim"){
+    }else if(action == "Kirim" || action == "Unduh"){
       cy.get('@kosong').then(() => {
         cy.log('Tidak ada data yang di kirim ke sister')
       })
