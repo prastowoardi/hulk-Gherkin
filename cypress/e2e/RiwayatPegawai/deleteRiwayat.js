@@ -11,6 +11,7 @@ When("Sudah ada data riwayat {string} yang dihapus", (menu) => {
     cy.get('.btn-danger > span').should('include.text','Hapus').click()
     cy.get('.modal-footer > .btn-primary').click()
 
+    // Menampilkan jumlah data akan dihapus
     cy.get('.callout > .row > .col-md-3').contains('Data Akan Dihapus').next()
         .invoke('text').then((hapus) => {
             cy.log("Data Dihapus : "+hapus)

@@ -7,6 +7,7 @@ When("{string} pilih detail data",(user) => {
 
 When("{string} melihat field yang diubah di data {string}", (user,menu) => {
     if(menu == "Publikasi"){
+        // Ambil value dari field lalu di trim
         cy.get('#block-idjenispublikasi > .col-md-7')
             .invoke('text').then((data) => {
             cy.log(data)
@@ -68,6 +69,7 @@ When("Sudah ada data riwayat {string} yang diubah", (menu) => {
     // PENELITIAN
     else if(menu == "Penelitian"){
         cy.get('#iduniversitas_label').type('005009')
+        // Handle autocomplete
         cy.get('.tt-suggestions').each(($el, index, $list) => {
 			// $el is a wrapped jQuery element
 			if ($el.text() === '005009 - Politeknik Negeri Padang') {
@@ -75,6 +77,7 @@ When("Sudah ada data riwayat {string} yang diubah", (menu) => {
 			}
         })
         cy.get('#idkelompokbidang_label').type('mesin')
+        // Handle autocomplete
         cy.get('.tt-suggestion').each(($el, index, $list) => {
 			// $el is a wrapped jQuery element
 			if ($el.text() === 'Teknik Mesin') {
@@ -101,6 +104,7 @@ When("Sudah ada data riwayat {string} yang diubah", (menu) => {
     // Pengabdian
     else if(menu == "Pengabdian"){
         cy.get('#iduniversitas_label').type('005009')
+        // Handle autocomplete
         cy.get('.tt-suggestions').each(($el, index, $list) => {
 			// $el is a wrapped jQuery element
 			if ($el.text() === '005009 - Politeknik Negeri Padang') {
@@ -108,6 +112,7 @@ When("Sudah ada data riwayat {string} yang diubah", (menu) => {
 			}
         })
         cy.get('#idkelompokbidang_label').type('mesin')
+        // Handle autocomplete
         cy.get('.tt-suggestion').each(($el, index, $list) => {
 			// $el is a wrapped jQuery element
 			if ($el.text() === 'Teknik Mesin') {
@@ -130,7 +135,7 @@ When("Sudah ada data riwayat {string} yang diubah", (menu) => {
 
         cy.get('.btn-info').should('include.text','Kembali ke Daftar').click()
     }
-
+    // Menampilkan jumlah data akan diubah
     cy.get('.callout > .row > .col-md-3').contains('Data Akan Diubah').next()
         .invoke('text').then((ubah) => {
             cy.log("Data Diubah : "+ubah)

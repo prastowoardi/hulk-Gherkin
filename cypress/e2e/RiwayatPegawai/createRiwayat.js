@@ -21,6 +21,7 @@ When("Sudah ada data riwayat {string} baru dengan status disetujui", (menu) => {
     // PENELITIAN
     else if(menu == "Penelitian"){
         cy.get('#iduniversitas_label').type('005009')
+        // Handle autocompplete
         cy.get('.tt-suggestions').each(($el, index, $list) => {
 			// $el is a wrapped jQuery element
 			if ($el.text() === '005009 - Politeknik Negeri Padang') {
@@ -28,6 +29,7 @@ When("Sudah ada data riwayat {string} baru dengan status disetujui", (menu) => {
 			}
         })
         cy.get('#idkelompokbidang_label').type('mesin')
+        // Handle autocompplete
         cy.get('.tt-suggestion').each(($el, index, $list) => {
 			// $el is a wrapped jQuery element
 			if ($el.text() === 'Teknik Mesin') {
@@ -54,6 +56,7 @@ When("Sudah ada data riwayat {string} baru dengan status disetujui", (menu) => {
     // Pengabdian
     else if(menu == "Pengabdian"){
         cy.get('#iduniversitas_label').type('005009')
+       // Handle autocompplete
         cy.get('.tt-suggestions').each(($el, index, $list) => {
 			// $el is a wrapped jQuery element
 			if ($el.text() === '005009 - Politeknik Negeri Padang') {
@@ -61,6 +64,7 @@ When("Sudah ada data riwayat {string} baru dengan status disetujui", (menu) => {
 			}
         })
         cy.get('#idkelompokbidang_label').type('mesin')
+        // Handle autocompplete
         cy.get('.tt-suggestion').each(($el, index, $list) => {
 			// $el is a wrapped jQuery element
 			if ($el.text() === 'Teknik Mesin') {

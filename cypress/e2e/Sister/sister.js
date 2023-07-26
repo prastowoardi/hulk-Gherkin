@@ -16,7 +16,9 @@ When("{string} menunggu proses {string}", (user,action) => {
               cy.log(sister)
               cy.get('.modal-footer > .btn-primary').click()
                 // You can now use riwayat inside the if-else statement
+                // Membuat Alias
                 if (riwayat == '0' && sister == '0') {
+                  // Split text dengan trim
                   cy.get('.alert-v1').should('include.text', 'Yeay! Selamat Anda telah berhasil mengunduh')
                     .invoke('text').then((data) => {
                       splitText = data.replace(/(.[(/)])/g," ").trim().split(' ')[6]
@@ -72,7 +74,7 @@ When("{string} menunggu proses {string}", (user,action) => {
     }
 })
 
-// Ambil jumlah data berhasil
+// Ambil jumlah data berhasil dengan alias yang sudah dibuat
 When("{string} melihat jumlah data yang di {string}", (user,action) => {
     if (action == "Kirim Data" || action == "Unduh"){
       cy.get('@jumlah').then(() => {
@@ -89,7 +91,7 @@ When("{string} melihat jumlah data yang di {string}", (user,action) => {
     }
 })
 
-//Membandingkan dengan log
+//Membandingkan jumlah data berhasil dengan log
 When("{string} melihat jumlah data berhasil",(user) => {
   const currentDate = moment().format('DD MMM YYYY')
   cy.log(currentDate)
