@@ -3,7 +3,7 @@ Feature: Kirim Data ke SISTER per Riwayat
     Background: 
         Given "Admin" masuk ke siakad
         * "Admin" masuk ke modul "SDM"
-
+    # PUBLIKASI
     Scenario: Admin mengirim data riwayat Publikasi Karya dengan tidak ada perubahan
         When "Admin" menuju ke halaman "hr/list_rpublikasi/1"
         * "Admin" klik tombol "Sister"
@@ -48,6 +48,7 @@ Feature: Kirim Data ke SISTER per Riwayat
         * "Admin" menuju ke halaman "hr/list_logsister"
         Then "Admin" melihat jumlah data berhasil "Kirim"
 
+    # PENELITIAN
     Scenario: Admin mengirim data riwayat Penelitian dengan tidak ada perubahan
         When "Admin" menuju ke halaman "hr/list_rpenelitian/1"
         * "Admin" klik tombol "Sister"
@@ -92,6 +93,7 @@ Feature: Kirim Data ke SISTER per Riwayat
         * "Admin" menuju ke halaman "hr/list_logsister"
         Then "Admin" melihat jumlah data berhasil "Kirim"
 
+    #PENGABDIAN
     Scenario: Admin mengirim data riwayat Pengabdian dengan tidak ada perubahan
         When "Admin" menuju ke halaman "hr/list_rpkm/1"
         * "Admin" klik tombol "Sister"

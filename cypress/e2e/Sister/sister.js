@@ -80,9 +80,9 @@ When("{string} melihat jumlah data yang di {string}", (user,action) => {
       cy.get('@jumlah').then(() => {
         cy.log(splitText)
       })
-    } else if(action == "Kirim" || action == "Unduh"){
+    } else if(action == "Kirim" || action == "Unduh Data"){
       cy.get('@kosong').then(() => {
-        if (action == "Unduh"){
+        if (action == "Unduh Data"){
           cy.log('Tidak ada data yang di unduh')
         } else {
           cy.log('Tidak ada data yang di kirim ke sister')
