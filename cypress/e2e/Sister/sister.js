@@ -3,9 +3,9 @@ let splitText
 import moment from 'moment'
 const currentDate = new Date()
 
-//Menentukan alert dan membuat alias untuk ambil jumlah data berhasil
+// Menentukan alert dan membuat alias untuk ambil jumlah data berhasil
 When("{string} menunggu proses {string}", (user,action) => {
-    
+    // Chainable & alias 
     if(action == "Unduh"){
       cy.get('.callout > .row > .col-md-3').contains('Data Riwayat').next()
       .invoke('text').then((riwayat) => {
@@ -106,7 +106,7 @@ When("{string} melihat jumlah data berhasil {string}",(user,action) => {
               cy.log('Jumlah yang berhasil diunduh : '+splitText)
             }
           } else {
-            cy.log('JUMLAH DATA BERHASIL TIDAK SAMA. SILAHKAN CEK DETAIL LOG')
+            cy.log('-- JUMLAH DATA BERHASIL TIDAK SAMA. SILAHKAN CEK DETAIL LOG --')
           }
       })
     })
