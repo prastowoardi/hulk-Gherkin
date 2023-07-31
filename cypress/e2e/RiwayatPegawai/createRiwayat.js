@@ -10,7 +10,7 @@ When("{string} melihat jumlah anggota adalah {string}", (user,jumlah) => {
 })
 
 When("{string} melihat data {string} ada di list", (user,menu) => {
-    // cy.get('.btn-info').click()
+    cy.get('.btn-info').click()
     function searchDataInTable(text) {
         cy.get('.table > tbody').find('tr').then((rows) => {
             const isDataFound = Array.from(rows).some((row) => row.innerText.includes(text))
