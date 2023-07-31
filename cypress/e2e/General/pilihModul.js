@@ -11,6 +11,21 @@ const moduleUserActions = {
       cy.get('#hr').contains("Dosen")
         .should('be.visible', { timeout: 1000 }).click()
     },
+    "PMB_Admin": () => {
+      cy.get(".spmb").click(); //pilih modul pmb
+      cy.get('#spmb').contains('Administrator Perguruan Tinggi')
+        .should('be.visible', { timeout: 1000 }).click()
+    },
+    "Siakad_Admin": () => {
+      cy.get(".siakad > .inner").click();
+      cy.get("#siakad").contains("Administrator Perguruan Tinggi")
+      .should('be.visible', { timeout: 1000 }).click()
+    },
+    "Siakad_Dosen": () => {
+      cy.get(".siakad > .inner").click();
+      cy.get("#siakad").contains("Dosen")
+      .should('be.visible', { timeout: 1000 }).click()
+    },
     // Tambah modul lain dan kombinasi user disini
   }
   
