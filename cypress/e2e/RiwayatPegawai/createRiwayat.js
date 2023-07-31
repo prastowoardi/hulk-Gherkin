@@ -13,14 +13,15 @@ When("{string} melihat data {string} ada di list", (user,menu) => {
     cy.get('.btn-info').click()
     function searchDataInTable(text) {
         cy.get('.table > tbody').find('tr').then((rows) => {
-            const isDataFound = Array.from(rows).some((row) => row.innerText.includes(text))
-            if (isDataFound) {
-                cy.log('DATA DITEMUKAN')
-            } else {
-                cy.log('DATA TIDAK DITEMUKAN')
-            }
+          const rowIndex = Array.from(rows).findIndex((row) => row.innerText.includes(text))
+          if (rowIndex !== -1) {
+            const rowNumber = rowIndex + 1 // Menambahkan 1 untuk mendapatkan nomor baris yang sebenarnya (1-based index)
+            cy.log(`Data ditemukan pada baris ke-${rowNumber}`)
+          } else {
+            cy.log('Data tidak ditemukan !')
+          }
         })
-    }
+      }      
     
     if (menu === 'penelitian') {
         searchDataInTable('Metode pengajaran sekolah Montessori.')
