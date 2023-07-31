@@ -43,7 +43,7 @@ Background:
         * "Admin" mengisi field "Peran" dengan "Ketua"
         * "Admin" klik tombol "Tambah Anggota"
         * "Admin" mengisi field "Nama Pegawai 2" dengan "suhadi"
-        * "Admin" mengisi field "Kategori Kegiatan Pegawai 2" dengan "Sebagai anggota"
+        * "Admin" mengisi field "Kategori Kegiatan Pegawai 2" dengan "Berdasarkan fungsi/jabatan"
         * "Admin" mengisi field "Peran Pegawai 2" dengan "Anggota"
         * "Admin" klik tombol "Simpan"
         * "Admin" klik tombol "Ya, Yakin"
