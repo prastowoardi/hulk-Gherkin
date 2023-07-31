@@ -88,5 +88,19 @@ When("{string} mengisi field {string} dengan {string}", (user,fieldName,fieldVal
         cy.get('#namakegiatan').type(fieldValue)
     }else if(fieldName == "Tanggal Awal"){
         cy.get('#tglawal').type(fieldValue)
+    }else if(fieldName == "Nama Pegawai 2"){
+        // Handle array dan auto complete
+        cy.get('[name="idpegawai[1]_label"]').type(fieldValue)
+        cy.get('.tt-suggestions').each(($el, index, $list) => {
+			// $el is a wrapped jQuery element
+			if ($el.text() === '0017056602 - SUHADI, S.TP. , M.Si..') {
+				cy.wrap($el).click()
+			}
+        })
+    }else if(fieldName == "Kategori Kegiatan Pegawai 2"){
+        cy.get(':nth-child(2) > :nth-child(2) > .select2-container > .selection > .select2-selection > #select2-idrubrikkegiatan0-container')
+        .type(fieldValue+'{enter}')
+    }else if(fieldName == "Peran Pegawai 2"){
+        cy.get('[name="peran[1]"]').select(fieldValue)
     }
 })

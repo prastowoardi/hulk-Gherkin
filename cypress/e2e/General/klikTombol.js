@@ -15,5 +15,7 @@ When("{string} klik tombol {string}", (user,buttonName) => {
         cy.get('.btn').contains("Unduh").click()
     }else if(buttonName == "Sinkronisasi"){
         cy.get('.dropdown-menu').contains("Sinkronisasi").click()
+    }else if(buttonName == "Tambah Anggota"){
+        cy.get('#table-pegawai > thead > tr > [style="width: 30px"] > .btn').click()
     }
 })

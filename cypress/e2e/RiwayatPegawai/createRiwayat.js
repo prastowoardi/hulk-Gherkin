@@ -1,5 +1,14 @@
 import { When, Then } from "@badeball/cypress-cucumber-preprocessor"
 
+
+When("{string} melihat jumlah anggota adalah {string}", (user,jumlah) => {
+    // Hitung baris
+    cy.get('#table-pegawai > tbody').find('tr').then((row)=>{
+        const rowCount = row.length
+        cy.log("Jumlah anggota pada riwayat ini : "+ rowCount)
+    })
+})
+
 When("Sudah ada data riwayat {string} baru dengan status disetujui", (menu) => {
     cy.get(".btn").contains("Tambah Baru").click()
     //PUBLIKASI
