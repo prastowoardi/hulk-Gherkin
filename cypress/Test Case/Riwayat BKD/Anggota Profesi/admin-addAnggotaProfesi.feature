@@ -15,6 +15,7 @@ Feature: Admin menambah riwayat anggota profesi
         * "Admin" klik tombol "Simpan"
         * "Admin" klik tombol "Ya, Yakin"
         Then "Admin" melihat alert "Berhasil"
+        * "Admin" melihat data "anggota profesi" ada di list
 
     Scenario: Negatif - Menambahkan data dengan mengosongkan field kategori kegiatan
         When "Admin" menuju ke halaman "hr/list_ranggotaprofesi/1"

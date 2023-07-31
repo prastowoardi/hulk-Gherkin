@@ -15,6 +15,7 @@ Background:
         * "Dosen" klik tombol "Simpan"
         * "Dosen" klik tombol "Ya, Yakin"
         Then "Dosen" melihat alert "Berhasil"
+        * "Dosen" melihat data "jabatan tugas" ada di list
 
     Scenario: Negatif - Menambahkan data dengan mengosongkan field kategori kegiatan
         When "Dosen" menuju ke halaman "hr/list_rjabatanstruktural/1"

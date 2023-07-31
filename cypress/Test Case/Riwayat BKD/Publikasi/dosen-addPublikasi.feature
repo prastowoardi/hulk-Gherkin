@@ -17,6 +17,7 @@ Feature: Dosen menambah riwayat publikasi
         * "Dosen" klik tombol "Simpan"
         * "Dosen" klik tombol "Ya, Yakin"
         Then "Dosen" melihat alert "Berhasil"
+        * "Dosen" melihat data "publikasi" ada di list
 
     Scenario: Negatif - Menambahkan data dengan mengosongkan field jenis publikasi
         When "Dosen" menuju ke halaman "hr/list_rpublikasi/1"

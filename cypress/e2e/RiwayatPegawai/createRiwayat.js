@@ -9,6 +9,32 @@ When("{string} melihat jumlah anggota adalah {string}", (user,jumlah) => {
     })
 })
 
+When("{string} melihat data {string} ada di list", (user,menu) => {
+    // cy.get('.btn-info').click()
+    function searchDataInTable(text) {
+        cy.get('.table > tbody').find('tr').then((rows) => {
+            const isDataFound = Array.from(rows).some((row) => row.innerText.includes(text))
+            if (isDataFound) {
+                cy.log('DATA DITEMUKAN')
+            } else {
+                cy.log('DATA TIDAK DITEMUKAN')
+            }
+        })
+    }
+    
+    if (menu === 'penelitian') {
+        searchDataInTable('Metode pengajaran sekolah Montessori.')
+    } else if (menu === 'pengabdian') {
+        searchDataInTable('Perancangan Aset Konten Digital untuk Kegiatan Promosi Agrowisata PT Perkebunan Nusantara VIII')
+    } else if (menu === 'publikasi') {
+        searchDataInTable('Judul Baru')
+    } else if (menu === 'jabatan tugas') {
+        searchDataInTable('Duta Besar')
+    } else if (menu === 'anggota profesi'){
+        searchDataInTable('PMI')
+    }
+})
+
 When("Sudah ada data riwayat {string} baru dengan status disetujui", (menu) => {
     cy.get(".btn").contains("Tambah Baru").click()
     //PUBLIKASI

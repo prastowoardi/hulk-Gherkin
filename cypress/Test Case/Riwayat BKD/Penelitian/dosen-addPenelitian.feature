@@ -23,6 +23,7 @@ Background:
         * "Dosen" klik tombol "Simpan"
         * "Dosen" klik tombol "Ya, Yakin"
         Then "Dosen" melihat alert "Berhasil"
+        * "Dosen" melihat data "penelitian" ada di list
 
     Scenario: Negatif - Menambahkan data dengan mengosongkan perguruan tinggi afiliasi
         When "Dosen" menuju ke halaman "hr/list_rpenelitian/1"

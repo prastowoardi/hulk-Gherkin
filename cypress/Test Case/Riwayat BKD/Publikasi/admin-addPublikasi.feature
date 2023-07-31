@@ -17,6 +17,7 @@ Feature: Admin menambah riwayat publikasi
         * "Admin" klik tombol "Simpan"
         * "Admin" klik tombol "Ya, Yakin"
         Then "Admin" melihat alert "Berhasil"
+        * "Admin" melihat data "publikasi" ada di list
 
     Scenario: Negatif - Menambahkan data dengan mengosongkan field jenis publikasi
         When "Admin" menuju ke halaman "hr/list_rpublikasi/1"

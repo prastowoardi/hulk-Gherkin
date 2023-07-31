@@ -24,6 +24,7 @@ Background:
         * "Admin" klik tombol "Simpan"
         * "Admin" klik tombol "Ya, Yakin"
         Then "Admin" melihat alert "Berhasil"
+        * "Admin" melihat data "penelitian" ada di list
 
     Scenario: Positif - Menambahkan data dengan anggota lebih dari 1
         When "Admin" menuju ke halaman "hr/list_rpenelitian/1"

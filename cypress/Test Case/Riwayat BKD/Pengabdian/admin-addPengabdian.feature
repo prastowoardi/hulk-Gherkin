@@ -24,6 +24,31 @@ Background:
         * "Admin" klik tombol "Simpan"
         * "Admin" klik tombol "Ya, Yakin"
         Then "Admin" melihat alert "Berhasil"
+        * "Admin" melihat data "pengabdian" ada di list
+
+    Scenario: Positif - Menambahkan data dengan anggota lebih dari 1
+        When "Admin" menuju ke halaman "hr/list_rpkm/1"
+        * "Admin" klik tombol "Tambah"        
+        * "Admin" mengisi field "Afiliasi" dengan "005009"
+        * "Admin" mengisi field "Kelompok Bidang" dengan "mesin"
+        * "Admin" mengisi field "Jenis SKIM" dengan "Penelitian Fundamental"
+        * "Admin" mengisi field "Judul Kegiatan" dengan "Perancangan Aset Konten Digital Kantor"
+        * "Admin" mengisi field "Tahun Usulan" dengan "2017"
+        * "Admin" mengisi field "Tahun Kegiatan" dengan "2019"
+        * "Admin" mengisi field "Tahun Pelaksanaan Ke" dengan "3"
+        * "Admin" mengisi field "Tanggal Awal" dengan "30-06-2023"
+        * "Admin" mengisi field "Roadmap" dengan "Sesuai"
+        * "Admin" mengisi field "Status Pengajuan" dengan "Disetujui"
+        * "Admin" mengisi field "Kategori Kegiatan" dengan "Berdasarkan bidang keahlian"
+        * "Admin" mengisi field "Peran" dengan "Ketua"
+        * "Admin" klik tombol "Tambah Anggota"
+        * "Admin" mengisi field "Nama Pegawai 2" dengan "suhadi"
+        * "Admin" mengisi field "Kategori Kegiatan Pegawai 2" dengan "Sebagai anggota"
+        * "Admin" mengisi field "Peran Pegawai 2" dengan "Anggota"
+        * "Admin" klik tombol "Simpan"
+        * "Admin" klik tombol "Ya, Yakin"
+        Then "Admin" melihat alert "Berhasil"
+        Then "Admin" melihat jumlah anggota adalah "2"
 
     Scenario: Negatif - Menambahkan data dengan mengosongkan perguruan tinggi afiliasi
         When "Admin" menuju ke halaman "hr/list_rpkm/1"
