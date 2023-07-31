@@ -12,7 +12,7 @@ When("{string} melihat jumlah anggota adalah {string}", (user,jumlah) => {
 When("{string} melihat data {string} ada di list", (user, menu) => {
     cy.get('.btn-info').click()
 
-    // Define a mapping of menus to search texts
+    // Mapping untuk cari text
     const searchText = {
         'penelitian': 'Metode pengajaran sekolah Montessori.',
         'pengabdian': 'Perancangan Aset Konten Digital untuk Kegiatan Promosi Agrowisata PT Perkebunan Nusantara VIII',
@@ -21,12 +21,12 @@ When("{string} melihat data {string} ada di list", (user, menu) => {
         'anggota profesi': 'PMI',
     }
 
-    // Function to search data in the table and return a Cypress command
+    // Function untuk mencari data di dalam tabel dan memberikan nilai balikan
     function searchDataInTable(text) {
         return cy.get('.table > tbody').find('tr').then((rows) => {
             const rowIndex = Array.from(rows).findIndex((row) => row.innerText.includes(text))
             if (rowIndex !== -1) {
-                const rowNumber = rowIndex + 1 // Menambahkan 1 untuk mendapatkan nomor baris yang sebenarnya (1-based index)
+                const rowNumber = rowIndex + 1 // + 1 untuk mendapatkan nomor baris yang sebenarnya (1-based index)
                 return cy.log(`Data ditemukan pada baris ke-${rowNumber}`)
             } else {
                 return cy.log('Data tidak ditemukan !')
