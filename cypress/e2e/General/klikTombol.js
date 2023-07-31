@@ -19,6 +19,5 @@ When("{string} klik tombol {string}", (user,buttonName) => {
       } else {
         // Handle the case when the buttonName doesn't match any entry in the buttonSelectors object
         cy.log("Tombol " + buttonName + " tidak ditemukan / ID tombol multiple !")
-
       }
 })

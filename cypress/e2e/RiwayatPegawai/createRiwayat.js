@@ -9,31 +9,34 @@ When("{string} melihat jumlah anggota adalah {string}", (user,jumlah) => {
     })
 })
 
-When("{string} melihat data {string} ada di list", (user,menu) => {
+When("{string} melihat data {string} ada di list", (user, menu) => {
     cy.get('.btn-info').click()
-    function searchDataInTable(text) {
-        cy.get('.table > tbody').find('tr').then((rows) => {
-          const rowIndex = Array.from(rows).findIndex((row) => row.innerText.includes(text))
-          if (rowIndex !== -1) {
-            const rowNumber = rowIndex + 1 // Menambahkan 1 untuk mendapatkan nomor baris yang sebenarnya (1-based index)
-            cy.log(`Data ditemukan pada baris ke-${rowNumber}`)
-          } else {
-            cy.log('Data tidak ditemukan !')
-          }
-        })
-      }      
-    
-    if (menu === 'penelitian') {
-        searchDataInTable('Metode pengajaran sekolah Montessori.')
-    } else if (menu === 'pengabdian') {
-        searchDataInTable('Perancangan Aset Konten Digital untuk Kegiatan Promosi Agrowisata PT Perkebunan Nusantara VIII')
-    } else if (menu === 'publikasi') {
-        searchDataInTable('Judul Baru')
-    } else if (menu === 'jabatan tugas') {
-        searchDataInTable('Duta Besar')
-    } else if (menu === 'anggota profesi'){
-        searchDataInTable('PMI')
+
+    // Define a mapping of menus to search texts
+    const searchText = {
+        'penelitian': 'Metode pengajaran sekolah Montessori.',
+        'pengabdian': 'Perancangan Aset Konten Digital untuk Kegiatan Promosi Agrowisata PT Perkebunan Nusantara VIII',
+        'publikasi': 'Judul Baru',
+        'jabatan tugas': 'Duta Besar',
+        'anggota profesi': 'PMI',
     }
+
+    // Function to search data in the table and return a Cypress command
+    function searchDataInTable(text) {
+        return cy.get('.table > tbody').find('tr').then((rows) => {
+            const rowIndex = Array.from(rows).findIndex((row) => row.innerText.includes(text))
+            if (rowIndex !== -1) {
+                const rowNumber = rowIndex + 1 // Menambahkan 1 untuk mendapatkan nomor baris yang sebenarnya (1-based index)
+                return cy.log(`Data ditemukan pada baris ke-${rowNumber}`)
+            } else {
+                return cy.log('Data tidak ditemukan !')
+            }
+        });
+    }
+
+    // Use the searchText object to determine the search text based on the 'menu'
+    const searchData = searchText[menu] ?? 'Data tidak ditemukan !' // Use nullish coalescing operator
+    searchDataInTable(searchData)
 })
 
 When("Sudah ada data riwayat {string} baru dengan status disetujui", (menu) => {

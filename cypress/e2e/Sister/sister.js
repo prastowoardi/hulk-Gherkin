@@ -1,7 +1,7 @@
 import { When, Then } from "@badeball/cypress-cucumber-preprocessor"
 let splitText
 import moment from 'moment'
-const currentDate = new Date()
+const currentDate = moment().format('DD MMM YYYY')
 
 // Menentukan alert dan membuat alias untuk ambil jumlah data berhasil
 When("{string} menunggu proses {string}", (user,action) => {
@@ -21,7 +21,7 @@ When("{string} menunggu proses {string}", (user,action) => {
                   // Split text dengan trim
                   cy.get('.alert-v1').should('include.text', 'Yeay! Selamat Anda telah berhasil mengunduh')
                     .invoke('text').then((data) => {
-                      splitText = data.replace(/(.[(/)])/g," ").trim().split(' ')[6]
+                      splitText = data.replace(/(.[(/)])/g," ").trim().split(' ')[6] // Split text dengan ambil aray ke-x dari hasil split 
                       cy.log(splitText)
                   }).as('jumlah')
                 } else if (riwayat > sister) {
@@ -32,7 +32,7 @@ When("{string} menunggu proses {string}", (user,action) => {
                 } else if (riwayat < sister){
                   cy.get('.alert-v1').should('include.text', 'Yeay! Selamat Anda telah berhasil mengunduh')
                     .invoke('text').then((data) => {
-                      splitText = data.replace(/(.[(/)])/g," ").trim().split(' ')[6]
+                      splitText = data.replace(/(.[(/)])/g," ").trim().split(' ')[6] // Split text dengan ambil aray ke-x dari hasil split 
                       cy.log(splitText)
                   }).as('jumlah')
                 } else if (riwayat == sister){
@@ -59,7 +59,7 @@ When("{string} menunggu proses {string}", (user,action) => {
                     if (baru != '0' || ubah != '0' || hapus != '0') {
                       cy.get('.alert-v1').should('include.text', 'Yeay! Selamat Anda telah berhasil sinkronisasi')
                         .invoke('text').then((data) => {
-                          splitText = data.replace(/(.[(/)])/g," ").trim().split(' ')[6]
+                          splitText = data.replace(/(.[(/)])/g," ").trim().split(' ')[6] // Split text dengan ambil aray ke-x dari hasil split 
                           cy.log(splitText)
                       }).as('jumlah')
                     } else {
@@ -93,7 +93,6 @@ When("{string} melihat jumlah data yang di {string}", (user,action) => {
 
 //Membandingkan jumlah data berhasil dengan log
 When("{string} melihat jumlah data berhasil {string}",(user,action) => {
-  const currentDate = moment().format('DD MMM YYYY')
   cy.log(currentDate)
   cy.get('.table > tbody').children().contains(currentDate)
     .next().next().invoke('text').then((value) => {
