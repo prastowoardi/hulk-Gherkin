@@ -7,7 +7,7 @@ When("{string} klik tombol {string}", (user,buttonName) => {
         "Simpan": ".btn-success:contains('Simpan')",
         "Ya, Yakin": ".modal-footer > .btn-primary",
         "Sister": ".btn:contains('Sister')",
-        "Unduh Data": ".dropdown-menu:contains('Unduh Data')",
+        "Unduh Data": ":nth-child(1) > .text-left:contains('Unduh Data')",
         "Unduh": ".btn:contains('Unduh')",
         "Sinkronisasi": ".dropdown-menu:contains('Sinkronisasi')",
         "Tambah Anggota": "#table-pegawai > thead > tr > [style='width: 30px'] > .btn"

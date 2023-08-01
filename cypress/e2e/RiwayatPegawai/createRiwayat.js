@@ -34,7 +34,7 @@ When("{string} melihat data {string} ada di list", (user, menu) => {
         });
     }
 
-    // Use the searchText object to determine the search text based on the 'menu'
+    // Objek searchText digunakan untuk menentukan teks yang dicari berdasarkan 'menu'
     const searchData = searchText[menu] ?? 'Data tidak ditemukan !' // Use nullish coalescing operator
     searchDataInTable(searchData)
 })

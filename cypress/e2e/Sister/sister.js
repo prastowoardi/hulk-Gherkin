@@ -1,7 +1,8 @@
 import { When, Then } from "@badeball/cypress-cucumber-preprocessor"
 let splitText
 import moment from 'moment'
-const currentDate = moment().format('DD MMM YYYY')
+import 'moment/locale/id'
+const currentDate = moment().locale('id').format('D MMM YYYY')
 
 // Menentukan alert dan membuat alias untuk ambil jumlah data berhasil
 When("{string} menunggu proses {string}", (user,action) => {
