@@ -1,8 +1,31 @@
 import { When, Then } from "@badeball/cypress-cucumber-preprocessor"
 let splitText
 import moment from 'moment'
-import 'moment/locale/id'
-const currentDate = moment().locale('id').format('D MMM YYYY')
+const englishDate = moment().format('D MMMM YYYY')
+
+// Menampung nama bulan yang akan di convert
+const englishToIndonesianMonth = {
+  'January': 'Januari',
+  'February': 'Februari',
+  'March': 'Maret',
+  'April': 'April',
+  'May': 'Mei',
+  'June': 'Juni',
+  'July': 'Juli',
+  'August': 'Agustus',
+  'September': 'September',
+  'October': 'Oktober',
+  'November': 'November',
+  'December': 'Desember',
+}
+// Ubah nama bulan dari english ke indonesia
+const convertToIndonesianDate = (englishDate) => {
+  const [day, month, year] = englishDate.split(' ') // split menjadi array dengan pemisah spasi
+  const indonesianMonth = englishToIndonesianMonth[month].substring(0,3) // Ambil 3 karakter awal (bisa pake slice(0,3) juga)
+  return `${day} ${indonesianMonth} ${year}`
+}
+
+const indonesianDate = convertToIndonesianDate(englishDate)
 
 // Menentukan alert dan membuat alias untuk ambil jumlah data berhasil
 When("{string} menunggu proses {string}", (user,action) => {
@@ -94,8 +117,8 @@ When("{string} melihat jumlah data yang di {string}", (user,action) => {
 
 //Membandingkan jumlah data berhasil dengan log
 When("{string} melihat jumlah data berhasil {string}",(user,action) => {
-  cy.log(currentDate)
-  cy.get('.table > tbody').children().contains(currentDate)
+  cy.log(indonesianDate)
+  cy.get('.table > tbody').children().contains(indonesianDate)
     .next().next().invoke('text').then((value) => {
       cy.get('@jumlah').then(() => {
           cy.log(splitText)
