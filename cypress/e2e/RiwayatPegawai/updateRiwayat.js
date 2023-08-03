@@ -48,7 +48,7 @@ When("{string} melihat field yang diubah di data {string}", (user,menu) => {
 })
 
 When("Sudah ada data riwayat {string} yang diubah", (menu) => {
-    cy.get(".table").find(".btn").click()
+    cy.get(".table").find(".btn").first().click()
     cy.get(".btn").contains("Edit").click()
     //Publikasi
     if(menu == "Publikasi"){
