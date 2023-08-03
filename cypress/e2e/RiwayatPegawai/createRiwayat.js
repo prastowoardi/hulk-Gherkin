@@ -1,11 +1,18 @@
 import { When, Then } from "@badeball/cypress-cucumber-preprocessor"
-
+const chalk = require('chalk')
 
 When("{string} melihat jumlah anggota adalah {string}", (user,jumlah) => {
     // Hitung baris
     cy.get('#table-pegawai > tbody').find('tr').then((row)=>{
         const rowCount = row.length
-        cy.log("Jumlah anggota pada riwayat ini : "+ rowCount)
+        if (jumlah == rowCount){
+            cy.log("Jumlah anggota pada riwayat ini : "+ rowCount)
+            cy.log("Jumlah anggota yang ditambahkan sesuai")
+        } else {
+            cy.log("JUMLAH ANGGOTA TIDAK SESUAI, SILAHKAN CEK SECARA MANUAL")
+            cy.log("Jumlah anggota yang diharapkan : "+ jumlah)
+            cy.log("Jumlah anggota pada riwayat ini : "+ rowCount)
+        }
     })
 })
 
