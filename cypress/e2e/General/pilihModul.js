@@ -1,6 +1,7 @@
 import { When, Then } from "@badeball/cypress-cucumber-preprocessor"
 
 const moduleUserActions = {
+  // Tambah modul lain dan kombinasi user disini
     "SDM_Admin": () => {
       cy.get('.hr > .inner').click()
       cy.get('#hr').contains("Administrator Perguruan Tinggi")
@@ -26,7 +27,6 @@ const moduleUserActions = {
       cy.get("#siakad").contains("Dosen")
       .should('be.visible', { timeout: 1000 }).click()
     },
-    // Tambah modul lain dan kombinasi user disini
   }
   
   When('{string} masuk ke modul {string}', (user, modul) => {

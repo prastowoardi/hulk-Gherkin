@@ -1,7 +1,6 @@
 import { When, Then } from "@badeball/cypress-cucumber-preprocessor"
 let splitText
 import moment from 'moment'
-const englishDate = moment().format('D MMMM YYYY')
 
 // Menampung nama bulan yang akan di convert
 const englishToIndonesianMonth = {
@@ -18,6 +17,7 @@ const englishToIndonesianMonth = {
   'November': 'November',
   'December': 'Desember',
 }
+
 // Ubah nama bulan dari english ke indonesia
 const convertToIndonesianDate = (englishDate) => {
   const [day, month, year] = englishDate.split(' ') // split menjadi array dengan pemisah spasi
@@ -25,7 +25,8 @@ const convertToIndonesianDate = (englishDate) => {
   return `${day} ${indonesianMonth} ${year}`
 }
 
-const indonesianDate = convertToIndonesianDate(englishDate)
+// Mengatur tanggal saat ini dalam format bahasa Indonesia sebagai konstanta
+const indonesianDate = convertToIndonesianDate(moment().format('D MMMM YYYY'))
 
 // Menentukan alert dan membuat alias untuk ambil jumlah data berhasil
 When("{string} menunggu proses {string}", (user,action) => {
