@@ -1,5 +1,4 @@
 import { When, Then } from "@badeball/cypress-cucumber-preprocessor"
-const chalk = require('chalk')
 
 When("{string} melihat jumlah anggota adalah {string}", (user,jumlah) => {
     // Hitung baris
