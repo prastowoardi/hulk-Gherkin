@@ -27,6 +27,11 @@ const moduleUserActions = {
       cy.get("#siakad").contains("Dosen")
       .should('be.visible', { timeout: 1000 }).click()
     },
+    "Keuangan_Admin": () => {
+      cy.get(".keuangan > .inner").click();
+      cy.get("#keuangan").contains("Administrator Perguruan Tinggi")
+      .should('be.visible', { timeout: 1000 }).click()
+    }
   }
   
   When('{string} masuk ke modul {string}', (user, modul) => {

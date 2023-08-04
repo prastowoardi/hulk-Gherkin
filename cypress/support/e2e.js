@@ -16,7 +16,6 @@
 // Import commands.js using ES2015 syntax:
 import './commands'
 import './General/login'
-import './General/pilihModul'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
