@@ -1,4 +1,4 @@
-import { When, Then } from "@badeball/cypress-cucumber-preprocessor"
+import { When } from "@badeball/cypress-cucumber-preprocessor"
 
 When("Admin klik tombol {string}", (buttonName) => {
     const buttonSelectors = {
@@ -50,7 +50,7 @@ When("Admin mengisi field {string} dengan {string}", (fieldName,fieldValue) => {
     } else if (fieldName == "KIP Kuliah"){
         if (fieldValue == "1"){
             cy.get('.iCheck-helper').click()
-        }else {
+        } else {
             cy.get('.iCheck-helper')
         }
     } else if (fieldName == 'periode masuk'){
@@ -58,7 +58,7 @@ When("Admin mengisi field {string} dengan {string}", (fieldName,fieldValue) => {
     } else if (fieldName == 'gelombang'){
         cy.get('#idgelombang').select(fieldValue)
     } else if (fieldName == 'sistem kuliah'){
-        cy.get('#idsistemkuliah').select(fieldValue)
+        cy.get('#idsistemkuliThenah').select(fieldValue)
     } else if (fieldName == 'jalur pendaftaran'){
         cy.get('#idjalurpendaftaran').select(fieldValue)
     } else if (fieldName == 'kelompok ukt'){

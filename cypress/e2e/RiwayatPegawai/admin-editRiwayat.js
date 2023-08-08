@@ -1,6 +1,6 @@
-import { When, Then } from "@badeball/cypress-cucumber-preprocessor"
+import { When } from "@badeball/cypress-cucumber-preprocessor"
 
-When("{string} mengubah field {string} dengan {string}", (user,fieldName,fieldValue) => {
+When("Admin mengubah field {string} dengan {string}", (fieldName,fieldValue) => {
     if(fieldName == "Jenis Publikasi"){
         cy.get("#select2-idjenispublikasi-container").type(fieldValue+'{enter}')
     }else if(fieldName == "Judul"){
@@ -93,7 +93,7 @@ When("{string} mengubah field {string} dengan {string}", (user,fieldName,fieldVa
     }
 })
 
-When("{string} mengosongkan field {string}",(user,fieldName) => {
+When("Admin mengosongkan field {string}",(fieldName) => {
     if(fieldName == "Judul"){
         cy.get("#judul").clear()
     }else if(fieldName == "Tanggal Terbit"){
