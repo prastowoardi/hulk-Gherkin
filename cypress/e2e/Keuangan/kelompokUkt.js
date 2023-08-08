@@ -53,5 +53,37 @@ When("Admin mengisi field {string} dengan {string}", (fieldName,fieldValue) => {
         }else {
             cy.get('.iCheck-helper')
         }
+    } else if (fieldName == 'periode masuk'){
+        cy.get('#idperiode').type(fieldValue,+'{enter}')
+    } else if (fieldName == 'gelombang'){
+        cy.get('#idgelombang').select(fieldValue)
+    } else if (fieldName == 'sistem kuliah'){
+        cy.get('#idsistemkuliah').select(fieldValue)
+    } else if (fieldName == 'jalur pendaftaran'){
+        cy.get('#idjalurpendaftaran').select(fieldValue)
+    } else if (fieldName == 'kelompok ukt'){
+        cy.get('#idkelompokukt').select(fieldValue)
+    } else if (fieldName == 'nominal tarif'){
+        cy.get('#nominaltarif').type(fieldValue)
+    } else if (fieldName == 'kuota'){
+        cy.get('#kuotaukt').type(fieldValue)
+    } else if (fieldName == 'jumlah cicilan'){
+        cy.get('#jmlcicilan').select(fieldValue)
+    } else if (fieldName == 'cicilan 1'){
+        cy.get('#cicilan_1').type(fieldValue)
+    } else if (fieldName == 'cicilan 2'){
+        cy.get('#cicilan_2').type(fieldValue)
+    } else if (fieldName == 'cicilan 3'){
+        cy.get('#cicilan_3').type(fieldValue)
+    } else if (fieldName == ''){
+
+    } else if (fieldName == ''){
+
+    } else if (fieldName == ''){
+
+    } else if (fieldName == ''){
+
+    } else if (fieldName == ''){
+
     }
 })
