@@ -1,6 +1,6 @@
 import { When } from "@badeball/cypress-cucumber-preprocessor"
 
-When("Admin mengubah field {string} dengan {string}", (fieldName,fieldValue) => {
+When("{string} mengubah field {string} dengan {string}", (user,fieldName,fieldValue) => {
     if(fieldName == "Jenis Publikasi"){
         cy.get("#select2-idjenispublikasi-container").type(fieldValue+'{enter}')
     }else if(fieldName == "Judul"){
