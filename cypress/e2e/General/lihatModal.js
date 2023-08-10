@@ -5,6 +5,8 @@ When("{string} melihat alert {string}", (user,alert) => {
         cy.get(".alert").should('include.text', 'berhasil')
     }else if(alert == "Unduh"){
         cy.get('.alert-v1').should('include.text', 'unduh')
+    }else if(alert == "sk baru"){
+        cy.get(".alert").contains('Penambahan data Dokumen Internal berhasil')
     }
     
 })

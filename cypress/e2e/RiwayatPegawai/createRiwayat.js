@@ -25,6 +25,7 @@ When("{string} melihat data {string} ada di list", (user, menu) => {
         'publikasi': 'Judul Baru',
         'jabatan tugas': 'Duta Besar',
         'anggota profesi': 'PMI',
+        'penunjang lain': 'Perancangan Aset Konten Digital untuk Kegiatan Promosi Agrowisata PT Perkebunan Nusantara VIII',
     }
 
     // Function untuk mencari data di dalam tabel dan memberikan nilai balikan
@@ -131,5 +132,10 @@ When("Sudah ada data riwayat {string} baru dengan status disetujui", (menu) => {
         cy.get('.btn-primary').click()
 
         cy.get('.btn-info').should('include.text','Kembali ke Daftar').click()
+    }
+
+    // PENUNJANG LAIN
+    else if (menu == "Penunjang Lain"){
+        
     }
 })

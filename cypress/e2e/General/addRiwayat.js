@@ -102,5 +102,21 @@ When("{string} mengisi field {string} dengan {string}", (user,fieldName,fieldVal
         .type(fieldValue+'{enter}')
     }else if(fieldName == "Peran Pegawai 2"){
         cy.get('[name="peran[1]"]').select(fieldValue)
+    }else if(fieldName == "Jenis Kegiatan"){
+        cy.get('#select2-idjeniskegiatan-container').type(fieldValue+'{enter}')
+    }else if(fieldName == "Tingkat"){
+        cy.get('#select2-tingkat-container').type(fieldValue+'{enter}')
+    }else if(fieldName == "Nama Kegiatan"){
+        cy.get('#namakegiatan').type(fieldValue)
+    }else if(fieldName == "Instansi"){
+        cy.get('#instansi').type(fieldValue)
+    }else if(fieldName == "SK Dropdown"){
+        cy.get('#select2-iddokumen-container').type(fieldValue+'{enter}')
+    }else if(fieldName == "iPeran"){
+        cy.get('[name="peran[0]"]').type(fieldValue)
+    }else if(fieldName == "iPeran 2"){
+        cy.get('[name="peran[1]"]').type(fieldValue)
+    }else if(fieldName == ""){
+        
     }
 })

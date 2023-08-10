@@ -137,3 +137,48 @@ Feature: Kirim Data ke SISTER per Riwayat
         * "Admin" melihat jumlah data yang di "Kirim Data"
         * "Admin" menuju ke halaman "hr/list_logsister"
         Then "Admin" melihat jumlah data berhasil "Kirim"
+
+    #PENUNJANG LAIN
+    Scenario: Admin mengirim data riwayat Penunjang Lain dengan tidak ada perubahan
+        When "Admin" menuju ke halaman "hr/list_rpenunjanglain/1"
+        * "Admin" klik tombol "Sister"
+        * "Admin" klik tombol "Sinkronisasi"
+        * "Admin" melihat modal "Konfirmasi"
+        * "Admin" klik tombol "Ya, Yakin"
+        Then "Admin" menunggu proses "Kirim" 
+
+    Scenario: Admin mengirim data baru ke sister
+        When "Admin" menuju ke halaman "hr/list_rpenunjanglain/1"
+        * Sudah ada data riwayat "Penunjang Lain" baru dengan status disetujui
+        * "Admin" klik tombol "Sister"
+        * "Admin" klik tombol "Sinkronisasi"
+        * "Admin" melihat modal "Konfirmasi"
+        * "Admin" klik tombol "Ya, Yakin"
+        * "Admin" menunggu proses "Kirim"
+        * "Admin" melihat jumlah data yang di "Kirim Data"
+        * "Admin" menuju ke halaman "hr/list_logsister"
+        Then "Admin" melihat jumlah data berhasil "Kirim"
+        
+    Scenario: Admin mengirim data yang diubah ke sister
+        When "Admin" menuju ke halaman "hr/list_rpenunjanglain/1"
+        * Sudah ada data riwayat "Penunjang Lain" yang diubah
+        * "Admin" klik tombol "Sister"
+        * "Admin" klik tombol "Sinkronisasi"
+        * "Admin" melihat modal "Konfirmasi"
+        * "Admin" klik tombol "Ya, Yakin"
+        * "Admin" menunggu proses "Kirim"
+        * "Admin" melihat jumlah data yang di "Kirim Data"
+        * "Admin" menuju ke halaman "hr/list_logsister"
+        Then "Admin" melihat jumlah data berhasil "Kirim"
+
+    Scenario: Admin mengirim data yang dihapus ke sister
+        When "Admin" menuju ke halaman "hr/list_rpenunjanglain/1"
+        * Sudah ada data riwayat "Penunjang Lain" yang dihapus
+        * "Admin" klik tombol "Sister"
+        * "Admin" klik tombol "Sinkronisasi"
+        * "Admin" melihat modal "Konfirmasi"
+        * "Admin" klik tombol "Ya, Yakin"
+        * "Admin" menunggu proses "Kirim"
+        * "Admin" melihat jumlah data yang di "Kirim Data"
+        * "Admin" menuju ke halaman "hr/list_logsister"
+        Then "Admin" melihat jumlah data berhasil "Kirim"
