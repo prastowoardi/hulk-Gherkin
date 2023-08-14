@@ -84,6 +84,16 @@ Feature: Unduh Data SISTER per Riwayat
         * "Admin" menuju ke halaman "hr/list_logsister"
         Then "Admin" melihat jumlah data berhasil "Unduh"
 
+    Scenario: Admin mengunduh data riwayat penghargaan
+        When "Admin" menuju ke halaman "hr/list_rpenghargaan/152"
+        * "Admin" klik tombol "Sister"
+        * "Admin" klik tombol "Unduh Data"
+        * "Admin" melihat modal "Konfirmasi"
+        * "Admin" menunggu proses "Unduh"
+        * "Admin" melihat jumlah data yang di "Unduh"
+        * "Admin" menuju ke halaman "hr/list_logsister"
+        Then "Admin" melihat jumlah data berhasil "Unduh"
+
     ###################### NEGATIF CASE #######################
 
     Scenario: Admin mengunduh ulang data riwayat Penelitian yang sudah diunduh
@@ -144,6 +154,14 @@ Feature: Unduh Data SISTER per Riwayat
 
     Scenario: Admin mengunduh data riwayat penunjang lain
         When "Admin" menuju ke halaman "hr/list_rpenunjanglain/152"
+        * "Admin" klik tombol "Sister"
+        * "Admin" klik tombol "Unduh Data"
+        * "Admin" melihat modal "Konfirmasi"
+        * "Admin" menunggu proses "Unduh"
+        Then "Admin" melihat jumlah data yang di "Unduh Data"
+    
+    Scenario: Admin mengunduh data riwayat penghargaan
+        When "Admin" menuju ke halaman "hr/list_rpenghargaan/152"
         * "Admin" klik tombol "Sister"
         * "Admin" klik tombol "Unduh Data"
         * "Admin" melihat modal "Konfirmasi"
