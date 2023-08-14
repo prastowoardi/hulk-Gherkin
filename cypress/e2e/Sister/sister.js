@@ -116,7 +116,7 @@ When("{string} melihat jumlah data yang di {string}", (user,action) => {
     }
 })
 
-//Membandingkan jumlah data berhasil dengan log
+// Membandingkan jumlah data berhasil dengan log
 When("{string} melihat jumlah data berhasil {string}",(user,action) => {
   cy.log(indonesianDate)
   cy.get('.table > tbody').children().contains(indonesianDate)

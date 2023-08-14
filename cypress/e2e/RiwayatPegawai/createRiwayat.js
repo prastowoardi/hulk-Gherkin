@@ -16,7 +16,7 @@ When("{string} melihat jumlah anggota adalah {string}", (user,jumlah) => {
 })
 
 When("{string} melihat data {string} ada di list", (user, menu) => {
-    cy.get('.btn-info').click()
+    cy.get('.col-md-12 > .btn-info').click()
 
     // Mapping untuk cari text
     const searchText = {

@@ -15,10 +15,13 @@ When("{string} melihat modal dengan pesan {string}", (user,alert) => {
 })
 
 When("{string} melihat modal {string}", (user,modal) => {
-    if(modal == "Konfirmasi"){
-        cy.get('#modal-konfirmasi')
-    }else if(modal == "Progress"){
-        cy.get('#modal-overview > .modal-dialog > .modal-content')
-            .contains('Aktivitas Mengunduh Riwayat')
+    switch (modal) {
+        case "Konfirmasi":
+            cy.get('#modal-konfirmasi')
+            break
+        case "Progress":
+            cy.get('#modal-overview > .modal-dialog > .modal-content')
+                .contains('Aktivitas Mengunduh Riwayat')
+            break
     }
 })

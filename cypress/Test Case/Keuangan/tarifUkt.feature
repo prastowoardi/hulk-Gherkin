@@ -17,7 +17,7 @@ Feature: Buat tarif UKT
         * Admin mengubah filter "sistem kuliah"
         * Admin klik tombol "Tambah"
         * Admin mengisi field "periode masuk" dengan "2023/2024 Gasal"
-        * Admin mengisi field "gelombang" dengan "Gelombang 1"
+        * Admin mengisi field "gelombang" dengan "Gelombang 3"
         * Admin mengisi field "sistem kuliah" dengan "Reguler"
         * Admin mengisi field "jalur pendaftaran" dengan "Jalur Test"
         * Admin mengisi field "kelompok ukt" dengan "UKT 2"

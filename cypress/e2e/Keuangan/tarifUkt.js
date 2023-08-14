@@ -1,7 +1,7 @@
 import { When, Then } from '@badeball/cypress-cucumber-preprocessor'
 
 When('Cek referensi UKT', () => {
-    cy.get('.col-xs-8 > .input-group > .form-control').type('ukt{enter}');
+    cy.get('.col-xs-8 > .input-group > .form-control').type('ukt{enter}')
     cy.get('.table').invoke('text').then((text) => {
         // cy.log(text)
         if (text.includes('Data kosong')) {
@@ -24,21 +24,38 @@ When('Cek referensi UKT', () => {
 Then('Admin melihat referensi UKT di tabel', () => {
     cy.get('.btn-primary').click()
     // Cek apakah data sudah tersimpan
-    cy.get('.col-xs-8 > .input-group > .form-control').type('ukt{enter}');
+    cy.get('.col-xs-8 > .input-group > .form-control').type('ukt{enter}')
     cy.get('.table').contains('UKT')
 })
 
+const filterData = {
+    'periode': {
+        selector: '#select2-periode-container',
+        value: '2023/2024 Gasal'
+    },
+    'jalur pendaftaran': {
+        selector: '#select2-jalur-container',
+        value: 'Jalur Test'
+    },
+    'gelombang': {
+        selector: '#select2-gelombang-container',
+        value: 'Gelombang 3'
+    },
+    'sistem kuliah': {
+        selector: '#select2-sistem-container',
+        value: 'Reguler'
+    }
+}
+
 When('Admin mengubah filter {string}', (filterName) => {
-    if (filterName == 'periode'){
-        cy.get('#select2-periode-container').type('2023/2024 Gasal{enter}')
-    } else if (filterName == 'jalur pendaftaran'){
-        cy.get('#select2-jalur-container').type('Jalur Test{enter}')
-    } else if (filterName == 'gelombang'){
-        cy.get('#select2-gelombang-container').type('Gelombang 1{enter}')
-    } else if (filterName == 'sistem kuliah'){
-        cy.get('#select2-sistem-container').type('Reguler{enter}')
+    const filter = filterData[filterName]
+    
+    if (filter) {
+        const { selector, value } = filter;
+        cy.get(selector).type(value + '{enter}')
     }
 })
+
 
 When('Admin melihat pemberitahuan {string}', (action) => {
     if (action == 'duplikat'){

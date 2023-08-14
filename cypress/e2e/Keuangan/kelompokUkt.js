@@ -58,7 +58,7 @@ When("Admin mengisi field {string} dengan {string}", (fieldName,fieldValue) => {
     } else if (fieldName == 'gelombang'){
         cy.get('#idgelombang').select(fieldValue)
     } else if (fieldName == 'sistem kuliah'){
-        cy.get('#idsistemkuliThenah').select(fieldValue)
+        cy.get('#idsistemkuliah').select(fieldValue)
     } else if (fieldName == 'jalur pendaftaran'){
         cy.get('#idjalurpendaftaran').select(fieldValue)
     } else if (fieldName == 'kelompok ukt'){
