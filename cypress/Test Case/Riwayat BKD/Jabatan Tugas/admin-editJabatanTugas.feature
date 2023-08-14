@@ -9,7 +9,7 @@ Background:
         * "Admin" pilih detail data   
         * "Admin" Mengubah field "Kategori Kegiatan Atas" dengan "Menduduki jabatan pimpinan pada lembaga pemerintahan/pejabat negara yang harus dibebaskan dari jabatan organiknya atau bekerja pada industri/organisasi yang diakui Kemendikbud"
         * "Admin" Mengubah field "Jabatan Tugas" dengan "Hakim MA"
-        * "Admin" Mengubah field "Modal SK" dengan "Surat Keputusan"
+        * "Admin" Mengubah field "Modal SK" dengan "DED/2023/12/1111"
         * "Admin" Mengubah field "TMT Mulai" dengan "22-03-2023"
         * "Admin" Mengubah field "Lokasi Penugasan" dengan "Ballroom Baru"
         * "Admin" Mengubah field "Status Pengajuan" dengan "Disetujui"
