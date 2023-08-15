@@ -33,6 +33,12 @@ const moduleActions = {
       cy.get(".keuangan > .inner").click()
       cy.get("#keuangan").contains("Administrator Perguruan Tinggi").should('be.visible', { timeout: 1000 }).click()
     }
+  },
+  Aplikasi: {
+    SuperAdmin: () => {
+      cy.get(".admin > .inner").click()
+      cy.get("#admin").contains("Super Administrator").should('be.visible', { timeout: 1000 }).click()
+    }
   }
 }
 
