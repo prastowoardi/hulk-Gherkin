@@ -6,6 +6,36 @@ Feature: Menambahkan dokumen internal
         * "Admin" menuju ke halaman "hr/list_dokumeninternal"
         * Admin klik tombol "Tambah"
     
+    Scenario: Membuat dokumen internal dengan 2 penerima
+        When Admin mengisi "No Dokumen" dengan "DED/2023/11/1212"
+        * Admin mengisi "Nama Dokumen" dengan "SK 2 Penerima"
+        * Admin mengisi "Tanggal" dengan "13-03-2023"
+        * Admin mengisi "Referensi" dengan "Pengabdian"
+        * Admin mengisi "Tingkat" dengan "Universitas"
+        * Admin mengisi "Status Dokumen" dengan "Lama"
+        * Admin mengisi "Pegawai" dengan "Dede Cahyadi"
+        * "Admin" klik tombol "Tambah Penerima"
+        * Admin mengisi "Pegawai 2" dengan "Andi Eviza"
+        * "Admin" klik tombol "Simpan"
+        * "Admin" klik tombol "Ya, Yakin"
+        Then "Admin" melihat alert "sk baru"
+
+    Scenario: Membuat dokumen internal dengan 3 penerima
+        When Admin mengisi "No Dokumen" dengan "DED/2023/10/1212"
+        * Admin mengisi "Nama Dokumen" dengan "SK 3 Penerima"
+        * Admin mengisi "Tanggal" dengan "13-03-2023"
+        * Admin mengisi "Referensi" dengan "Penelitian"
+        * Admin mengisi "Tingkat" dengan "Universitas"
+        * Admin mengisi "Status Dokumen" dengan "Lama"
+        * Admin mengisi "Pegawai" dengan "Dede Cahyadi"
+        * "Admin" klik tombol "Tambah Penerima"
+        * Admin mengisi "Pegawai 2" dengan "Andi Eviza"
+        * "Admin" klik tombol "Tambah Penerima"
+        * Admin mengisi "Pegawai 3" dengan "Suhadi"
+        * "Admin" klik tombol "Simpan"
+        * "Admin" klik tombol "Ya, Yakin"
+        Then "Admin" melihat alert "sk baru"
+
     Scenario: Membuat dokumen internal sk penunjang lain
         When Admin mengisi "No Dokumen" dengan "DED/2023/12/1212"
         * Admin mengisi "Nama Dokumen" dengan "SK Penunjang Lain"

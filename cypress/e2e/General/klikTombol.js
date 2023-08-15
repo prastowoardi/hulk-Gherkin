@@ -11,7 +11,8 @@ When("{string} klik tombol {string}", (user,buttonName) => {
         "Unduh": ".btn:contains('Unduh')",
         "Sinkronisasi": ".dropdown-menu:contains('Sinkronisasi')",
         "Tambah Anggota": "#table-pegawai > thead > tr > [style='width: 30px'] > .btn",
-        "Log Pegawai": ":nth-child(3) > .text-left:contains('Log Sinkronisasi')"
+        "Log Pegawai": ":nth-child(3) > .text-left:contains('Log Sinkronisasi')",
+        "Tambah Penerima": "[style='width: 30px'] > .btn"
       }
       
       const selector = buttonSelectors[buttonName]
