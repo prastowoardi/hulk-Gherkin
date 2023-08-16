@@ -8,8 +8,18 @@ Feature: Setting sister di administrasi aplikasi
         When "Admin" menuju ke halaman "admin/ms_setting"
         * Admin ubah filter "Kelompok" dengan "Plugin / Addon"
         * Admin mengaktifkan servis sister
-        * Admin mengisi url sister
+        * Admin mengisi url "sandbox" sister
         * Admin mengisi username sister
         * Admin mengisi password sister
         * Admin mengisi pengguna sister
         Then Admin cek service sister
+
+    # Scenario: Mengubah akun sister ke stikes bwi
+    #     When "Admin" menuju ke halaman "admin/ms_setting"
+    #     * Admin ubah filter "Kelompok" dengan "Plugin / Addon"
+    #     * Admin mengaktifkan servis sister
+    #     * Admin mengisi url "production" sister
+    #     * Admin mengisi username sister
+    #     * Admin mengisi password sister
+    #     * Admin mengisi pengguna sister
+    #     Then Admin cek service sister

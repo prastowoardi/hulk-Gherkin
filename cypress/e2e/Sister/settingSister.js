@@ -21,12 +21,21 @@ When ("Admin mengisi username sister", () => {
     cy.get(':nth-child(57) > :nth-child(4) > .btn-success').click()
 })
 
-When ("Admin mengisi url sister", () => {
-    cy.get('.table').contains('sister_url')
-        .nextAll().should('have.length',3).find('.btn-primary').click()
-    cy.get('#u_valuesetting').clear()
-        .type('https://sister-api.kemdikbud.go.id/ws.php/1.0/')
-    cy.get(':nth-child(56) > :nth-child(4) > .btn-success').click()
+When ("Admin mengisi url {string} sister", (server) => {
+    if (server == 'sandbox') {
+        cy.get('.table').contains('sister_url')
+            .nextAll().should('have.length',3).find('.btn-primary').click()
+        cy.get('#u_valuesetting').clear()
+            .type('https://sister-api.kemdikbud.go.id/ws-sandbox.php/1.0/')
+        cy.get(':nth-child(56) > :nth-child(4) > .btn-success').click()
+    } else {
+        cy.get('.table').contains('sister_url')
+            .nextAll().should('have.length',3).find('.btn-primary').click()
+        cy.get('#u_valuesetting').clear()
+            .type('https://sister-api.kemdikbud.go.id/ws.php/1.0/')
+        cy.get(':nth-child(56) > :nth-child(4) > .btn-success').click()
+    }
+    
 })
 
 When ("Admin mengisi password sister", () => {
