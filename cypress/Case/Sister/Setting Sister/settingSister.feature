@@ -6,7 +6,7 @@ Feature: Setting sister di administrasi aplikasi
     
     Scenario: Mengubah akun sister ke stikes bwi
         When "Admin" menuju ke halaman "admin/ms_setting"
-        * Admin ubah filter "Kelompok" dengan "Plugin / Addon"
+        * Admin ubah filter Kelompok dengan "Plugin / Addon"
         * Admin mengaktifkan servis sister
         * Admin mengisi url "sandbox" sister
         * Admin mengisi username sister

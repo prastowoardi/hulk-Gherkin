@@ -1,9 +1,7 @@
 import { When } from "@badeball/cypress-cucumber-preprocessor"
 
-When ("Admin ubah filter {string} dengan {string}", (filterName,filterValue) => {
-    if(filterName == "Kelompok"){
+When ("Admin ubah filter kelompok dengan {string}", (filterValue) => {
         cy.get('#idjenissetting').select(filterValue)
-    }
 })
 
 When ("Admin mengaktifkan servis sister", () => {
