@@ -1,6 +1,6 @@
 import { When } from "@badeball/cypress-cucumber-preprocessor"
 
-When ("Admin ubah filter kelompok dengan {string}", (filterValue) => {
+When ("Admin ubah filter Kelompok dengan {string}", (filterValue) => {
         cy.get('#idjenissetting').select(filterValue)
 })
 
