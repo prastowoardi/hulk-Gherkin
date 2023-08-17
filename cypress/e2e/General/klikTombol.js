@@ -1,4 +1,4 @@
-import {Given,  When, Then } from "@badeball/cypress-cucumber-preprocessor"
+import { When } from "@badeball/cypress-cucumber-preprocessor"
 
 When("{string} klik tombol {string}", (user,buttonName) => {
     // Menampung nama tombol dan id / class

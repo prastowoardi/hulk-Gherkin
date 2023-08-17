@@ -1,4 +1,4 @@
-import { When, Then } from "@badeball/cypress-cucumber-preprocessor"
+import { When } from "@badeball/cypress-cucumber-preprocessor"
 
 When("{string} melihat alert {string}", (user,alert) => {
     if(alert == "Berhasil"){

@@ -1,4 +1,4 @@
-import {Given,  When, Then } from "@badeball/cypress-cucumber-preprocessor"
+import {Given } from "@badeball/cypress-cucumber-preprocessor"
 
 // Fungsi login diambil dari command.js
 Given("{string} masuk ke siakad", (role) =>{
