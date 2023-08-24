@@ -93,49 +93,44 @@ When("{string} mengubah field {string} dengan {string}", (user,fieldName,fieldVa
     }
 })
 
-When("Admin mengosongkan field {string}",(fieldName) => {
-    if(fieldName == "Judul"){
-        cy.get("#judul").clear()
-    }else if(fieldName == "Tanggal Terbit"){
-        cy.get("#tglterbit").clear()
-    }else if(fieldName == "Peran"){
-        cy.get('[id="peran[0]"]').clear()
-    }else if(fieldName == "Nama Organisasi"){
-        cy.get('#namaorganisasi').clear()
-    }else if(fieldName == "Mulai Keanggotaan"){
-        cy.get('#tglmulai').clear()
-    }else if(fieldName == "Peran Atas"){
-        cy.get('#peran').clear()
-    }else if(fieldName == "TMT Mulai"){
-        cy.get('#tglterhitungmulai').clear()
-    }else if(fieldName == "Modal SK"){
+// Buat objek yang memetakan nama field ke selector
+const fieldSelectors = {
+    "Judul": "#judul",
+    "Tanggal Terbit": "#tglterbit",
+    "Peran": '[id="peran[0]"]',
+    "Nama Organisasi": "#namaorganisasi",
+    "Mulai Keanggotaan": "#tglmulai",
+    "Peran Atas": "#peran",
+    "TMT Mulai": "#tglterhitungmulai",
+    "Modal SK": "#iddokumen_label",
+    "Lokasi Penugasan": "#lokasipenugasan",
+    "TMT Jabatan": "#tmtmulai",
+    "Judul Penelitian": "#judulpenelitian",
+    "Afiliasi": "#iduniversitas_label",
+    "Kelompok Bidang": "#idkelompokbidang_label",
+    "Tahun Pelaksanaan Ke": "#tahunke",
+    "Tanggal Mulai": "#tglmulai",
+    "Dana PT": '[name="value[0]"]',
+    "Dana Pemerintah": '[name="value[1]"]',
+    "Dana DN": '[name="value[2]"]',
+    "Dana LN": '[name="value[3]"]',
+    "Judul Kegiatan": "#namakegiatan",
+    "Tanggal Awal": "#tglawal",
+    // ...tambahkan selector lain sesuai kebutuhan
+  }
+  
+  When("{string} mengosongkan field {string}", (user,fieldName) => {
+    const selector = fieldSelectors[fieldName]
+    
+    if (selector) {
+      if (fieldName === "Modal SK") {
         cy.get('#iddokumen_label').click()
-        cy.get('.btn-wawrning').contains("Hapus").click()
-    }else if(fieldName == "Lokasi Penugasan"){
-        cy.get('#lokasipenugasan').clear()
-    }else if(fieldName == "TMT Jabatan"){
-        cy.get('#tmtmulai').clear()
-    }else if(fieldName == "Judul Penelitian"){
-        cy.get('#judulpenelitian').clear()
-    }else if(fieldName == "Afiliasi"){
-        cy.get('#iduniversitas_label').clear()
-    }else if(fieldName == "Kelompok Bidang"){
-        cy.get('#idkelompokbidang_label').clear()
-    }else if(fieldName == "Tahun Pelaksanaan Ke"){
-        cy.get('#tahunke').clear()
-    }else if(fieldName == "Tanggal Mulai"){
-        cy.get('#tglmulai').clear()
-    }else if(fieldName == "Dana PT"){
-        cy.get('[name="value[0]"]').clear()
-    }else if(fieldName == "Dana Pemerintah"){
-        cy.get('[name="value[1]"]').clear()
-    }else if(fieldName == "Dana DN"){
-        cy.get('[name="value[2]"]').clear()
-    }else if(fieldName == "Dana LN"){
-        cy.get('[name="value[3]"]').clear()
-    }else if(fieldName == "Judul Kegiatan"){
-        cy.get('#namakegiatan').clear()
-    }else if(fieldName == "Tanggal Awal"){
-        cy.get('#tglawal').clear()
+        cy.get('.btn-warning').contains("Hapus").click()
+      } else {
+        cy.get(selector).clear()
+      }
+    } else {
+      // Handle jika nama field tidak ditemukan dalam objek fieldSelectors
+      cy.log(`Field dengan nama ${fieldName} tidak ditemukan.`)
     }
-})
+  })

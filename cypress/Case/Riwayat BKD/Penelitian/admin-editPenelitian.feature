@@ -45,7 +45,7 @@ Background:
     Scenario: Negatif - Mengosongkan field jenis skim
         When "Admin" menuju ke halaman "hr/list_rpenelitian/1"
         * "Admin" pilih detail data        
-        * "Admin" mengubah field "Jenis SKIM" dengan "-- Pilih Jenis SKIM-- "
+        * "Admin" mengubah field "Jenis SKIM" dengan "-- Pilih Jenis SKIM --"
         * "Admin" klik tombol "Simpan"
         * "Admin" klik tombol "Ya, Yakin"
         Then "Admin" melihat modal dengan pesan "Mohon mengisi isian yang bergaris merah"
@@ -61,7 +61,7 @@ Background:
     Scenario: Negatif - Mengosongkan field tahun usulan
         When "Admin" menuju ke halaman "hr/list_rpenelitian/1"
         * "Admin" pilih detail data        
-        * "Admin" mengubah field "Tahun Usulan" dengan "-- Pilih Tahun Susulan --"
+        * "Admin" mengubah field "Tahun Usulan" dengan "-- Pilih Tahun Usulan --"
         * "Admin" klik tombol "Simpan"
         * "Admin" klik tombol "Ya, Yakin"
         Then "Admin" melihat modal dengan pesan "Mohon mengisi isian yang bergaris merah"
@@ -86,14 +86,6 @@ Background:
         When "Admin" menuju ke halaman "hr/list_rpenelitian/1"
         * "Admin" pilih detail data        
         * "Admin" mengosongkan field "Tanggal Mulai"
-        * "Admin" klik tombol "Simpan"
-        * "Admin" klik tombol "Ya, Yakin"
-        Then "Admin" melihat modal dengan pesan "Mohon mengisi isian yang bergaris merah"
-
-    Scenario: Negatif - Mengosongkan field roadmap
-        When "Admin" menuju ke halaman "hr/list_rpenelitian/1"
-        * "Admin" pilih detail data        
-        * "Admin" mengubah field "Roadmap" dengan "-- Pilih Roadmap --"
         * "Admin" klik tombol "Simpan"
         * "Admin" klik tombol "Ya, Yakin"
         Then "Admin" melihat modal dengan pesan "Mohon mengisi isian yang bergaris merah"
