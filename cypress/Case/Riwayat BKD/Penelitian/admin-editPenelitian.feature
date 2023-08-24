@@ -15,7 +15,7 @@ Background:
         * "Admin" mengubah field "Tahun Kegiatan" dengan "2019"
         * "Admin" mengubah field "Tahun Pelaksanaan Ke" dengan "3"
         * "Admin" mengubah field "Tanggal Mulai" dengan "30-06-2023"
-        * "Admin" mengubah field "Roadmap" dengan "Sesuai"
+        * "Admin" mengubah field "Roadmap" dengan "Kurang Sesuai"
         * "Admin" mengubah field "Status Pengajuan" dengan "Disetujui"
         * "Admin" mengubah field "Dana PT" dengan "8900000"
         * "Admin" mengubah field "Dana LN" dengan "440000"
