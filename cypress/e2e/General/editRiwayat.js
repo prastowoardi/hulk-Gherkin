@@ -1,5 +1,6 @@
 import { When } from "@badeball/cypress-cucumber-preprocessor"
 
+// Menampung field yang bisa diinput string
 const inputActions = {
     "Judul": "#judul",
     "Tanggal Terbit": "#tglterbit",
@@ -20,6 +21,7 @@ const inputActions = {
     "Judul Kegiatan": "#namakegiatan"
 }
 
+// Menampung field yang menggunakan select 2
 const select2Actions = {
     "Jenis Publikasi": "#select2-idjenispublikasi-container",
     "Kategori Kegiatan": "#select2-idrubrikkegiatan0-container",
@@ -33,15 +35,17 @@ const select2Actions = {
     "Roadmap": "#select2-kesesuaianroadmap-container"
 }
 
+// Menampung field yang dapat langsung select
 const selectActions = {
     "Peran": '[id="peran[0]"]'
-    
 }
 
+// Menampung field yang menggunakan checkbox
 const checkboxActions = {
     "Corresponding": '[id="corresponding[0]"]'
 }
 
+// Menampung field yang menggunakan auto complete
 const autoCompleteActions = {
     "Afiliasi": {
         selector: "#iduniversitas_label",
