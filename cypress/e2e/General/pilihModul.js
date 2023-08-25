@@ -1,4 +1,4 @@
-import { When, Then } from "@badeball/cypress-cucumber-preprocessor"
+import { When } from "@badeball/cypress-cucumber-preprocessor"
 
 const moduleActions = {
   // Tambah modul lain dan kombinasi user disini
