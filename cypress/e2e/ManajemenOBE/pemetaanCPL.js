@@ -19,9 +19,23 @@ When ("Admin masuk ke detail manajemen obe", () => {
         .should('have.length', 6).find('.btn').click()
 })
 
-When ("Admin masuk ke menu pemetaan pl - cpl", () => {
-    cy.get('.profile').contains("Pemetaan PL -> CPL").click()
-    cy.get('.btn').contains("Edit Pemetaan").click()
+When ("Admin pilih menu {string}", (menu) => {
+    const menuMap = {
+        "profil lulusan": "Profil Lulusan",
+        "manajemen obe": "Manajemen OBE",
+        "pemetaan pl - cpl": "Pemetaan PL -> CPL",
+        "pemetaan cpl - mk": "Pemetaan CPL -> MK"
+      }
+      
+      const menuText = menuMap[menu]
+      
+      if (menuText) {
+        cy.get('.profile').contains(menuText).click()
+        
+        if (menuText.includes("Pemetaan")) {
+          cy.get('.btn').contains("Edit Pemetaan").click()
+        }
+      }      
 })
 
 When ("Admin melakukan checklist secara random", () => {
@@ -61,7 +75,7 @@ When ("Admin melakukan checklist secara random", () => {
         const shouldCheck = (index + 1) % K === 0 // Cek apakah nomor index adalah kelipatan K
         
         if (shouldCheck) {
-            cy.wrap($checkbox).click(); // Klik pada checkbox
+            cy.wrap($checkbox).click() // Klik pada checkbox
         }
     })
 })

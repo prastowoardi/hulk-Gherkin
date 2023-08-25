@@ -8,5 +8,7 @@ Feature: Pemetaan CPL
     Scenario: User melakukan pemetaan CPL
         When Admin menuju halaman manajemen OBE
         * Admin masuk ke detail manajemen obe
-        * Admin masuk ke menu pemetaan pl - cpl
+        * Admin pilih menu "pemetaan pl - cpl"
+        * Admin melakukan checklist secara random
+        * Admin pilih menu "pemetaan cpl - mk"
         * Admin melakukan checklist secara random
