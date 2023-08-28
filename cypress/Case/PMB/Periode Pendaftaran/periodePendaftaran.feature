@@ -68,7 +68,7 @@ Feature: Admin Membuat Periode Pendaftaran
         * "Admin" klik tombol "Simpan"
         * "Admin" klik tombol "Ya, Yakin"
 
-        #-- Admin mengatur syarat pendaftaran --
+        #-- Admin mengatur syarat administrasi --
         * Admin mengatur "syarat pendaftaran"
         * Admin isi field "jenis syarat" dengan "administrasi"
         * Admin isi field "syarat" dengan "kartu keluarga"
@@ -78,8 +78,20 @@ Feature: Admin Membuat Periode Pendaftaran
         * Admin isi field "syarat" dengan "ijazah/skl"
         * Admin isi field "wajib" dengan "ya"
         * Admin isi field "upload" dengan "ya"
-        * Admin klik "simpan syarat"
+        * Admin klik "simpan syarat x"
         * Admin isi field "syarat" dengan "kartu tanda penduduk"
         * Admin isi field "wajib" dengan "ya"
         * Admin isi field "upload" dengan "ya"
+        * Admin klik "simpan syarat x"
+
+        #-- Admin mengatur syarat daftar ulang --
+        # * Admin mengatur "syarat pendaftaran"
+        * Admin isi field "jenis syarat" dengan "daftar ulang"
+        * Admin isi field "syarat" dengan "pas foto"
+        * Admin isi field "wajib" dengan "ya"
+        * Admin isi field "upload" dengan "ya"
         * Admin klik "simpan syarat"
+        * Admin isi field "syarat" dengan "pendukung"
+        * Admin isi field "wajib" dengan "ya"
+        * Admin isi field "upload" dengan "ya"
+        * Admin klik "simpan syarat x"

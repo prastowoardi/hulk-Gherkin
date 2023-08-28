@@ -44,6 +44,7 @@ const button = {
     "Pengaturan": "#item-pengaturan",
     "tambah data": ".btn-success:contains('Tambah Data')",
     "simpan syarat": ":nth-child(6) > .btn",
+    "simpan syarat x": "#insert-row-ms > :nth-child(6) > .btn > .fa",
     "tambah periode": ".btn:contains('Tambah')"
 }
 
