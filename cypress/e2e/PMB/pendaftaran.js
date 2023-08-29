@@ -14,9 +14,9 @@ When ("User mengubah filter sesuai dengan jalur seleksi yang dicari", () => {
 })
 
 When ("User memilih jalur pendaftaran", () => {
-    cy.get('.cards-jalur').contains("Jalur RPL")
-    // cy.get('.cards-jalur').find('.btn').contains("Detail").click()
-    cy.get('.cards-jalur').find('.btn').contains("Daftar").click()
+    cy.contains('.cards-jalur', 'Gelombang 3').within(() => {
+        cy.get('.btn:contains("Daftar")').click()
+    })
 })
 
 const inputField = {
