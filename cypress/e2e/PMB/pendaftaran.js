@@ -55,7 +55,7 @@ const button = {
     "sebelumnya": ".btn:contains('Sebelumnya')",
     "daftar": ".btn:contains('Daftar Sekarang')",
     "konfirmasi pendaftaran": ".btn:contains('Konfirmasi Pendaftaran')",
-    "konfirmasi daftar": ".modal-content > .modal-footer > .btn-primary:contains('OK')",
+    "ok": ".modal-content > .modal-footer > .btn-primary:contains('OK')",
     "masuk": ".login-button > .button:contains('Masuk')",
     "login": ".btn:contains('LOGIN')"
 }

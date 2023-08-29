@@ -24,14 +24,14 @@ Feature: Admin Membuat Periode Pendaftaran
     * Pendaftar klik "daftar"
     * Pendaftar "centang" data valid
     * Pendaftar klik "konfirmasi pendaftaran"
-    * Pendaftar klik "konfirmasi daftar"
+    * Pendaftar klik "ok"
     * Pendaftar berhasil daftar
     * Pendaftar mendapatkan "ID Pendaftar" yang dapat digunakan untuk login
     * Pendaftar mendapatkan "PIN" yang dapat digunakan untuk login
     * Pendaftar klik "masuk"
     * Pendaftar input credentials
     * Pendaftar klik "login"
-    * Pendaftar berhasil masuk kehalaman pendaftar
+    Then Pendaftar berhasil masuk kehalaman pendaftar
 
 Examples:
     | nama      | no_hp          | tgl_lahir   | jenis_kelamin | email          | tempat_lahir | nik              | provinsi      | kab_kota            | jenis_sekolah | th_lulus | jurusan | nama_sekolah | pilihan_1     |
