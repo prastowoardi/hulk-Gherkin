@@ -44,9 +44,13 @@ const select2Actions = {
 }
 
 const autoComplete = {
-    "nama sekolah": {
+    "nama sekolah 1": {
         selector: "#npsn_label",
         suggestionText: "20502725 - SMAN 1 NGORO - KABUPATEN MOJOKERTO"
+    },
+    "nama sekolah 2": {
+        selector: "#npsn_label",
+        suggestionText: "20100211 - SMAN 4 JAKARTA - KOTA JAKARTA PUSAT"
     }
 }
 
