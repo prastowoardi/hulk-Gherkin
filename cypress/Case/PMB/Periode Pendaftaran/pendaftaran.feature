@@ -1,10 +1,6 @@
 Feature: Admin Membuat Periode Pendaftaran
 
-    # Background:
-    #     Given "Admin" masuk ke siakad
-    #     * "Admin" masuk ke modul "PMB"
-
-    Scenario Outline: User melakukan pendaftaran
+    Scenario: User melakukan pendaftaran
     When User menuju halaman "spmbfront/"
     * User masuk ke halaman jalur seleksi
     * User mengubah filter sesuai dengan jalur seleksi yang dicari
@@ -28,6 +24,14 @@ Feature: Admin Membuat Periode Pendaftaran
     * Pendaftar klik "daftar"
     * Pendaftar "centang" data valid
     * Pendaftar klik "konfirmasi pendaftaran"
+    * Pendaftar klik "konfirmasi daftar"
+    * Pendaftar berhasil daftar
+    * Pendaftar mendapatkan "ID Pendaftar" yang dapat digunakan untuk login
+    * Pendaftar mendapatkan "PIN" yang dapat digunakan untuk login
+    * Pendaftar klik "masuk"
+    * Pendaftar input credentials
+    * Pendaftar klik "login"
+    * Pendaftar berhasil masuk kehalaman pendaftar
 
 Examples:
     | nama      | no_hp          | tgl_lahir   | jenis_kelamin | email          | tempat_lahir | nik              | provinsi      | kab_kota            | jenis_sekolah | th_lulus | jurusan | nama_sekolah | pilihan_1     |

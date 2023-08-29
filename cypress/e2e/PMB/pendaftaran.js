@@ -54,7 +54,10 @@ const button = {
     "lanjut": ".btn:contains('Lanjut')",
     "sebelumnya": ".btn:contains('Sebelumnya')",
     "daftar": ".btn:contains('Daftar Sekarang')",
-    "konfirmasi pendaftaran": ".btn:contains('Konfirmasi Pendaftaran')"
+    "konfirmasi pendaftaran": ".btn:contains('Konfirmasi Pendaftaran')",
+    "konfirmasi daftar": ".modal-content > .modal-footer > .btn-primary:contains('OK')",
+    "masuk": ".login-button > .button:contains('Masuk')",
+    "login": ".btn:contains('LOGIN')"
 }
 
 
@@ -88,6 +91,39 @@ When ("Pendaftar {string} data valid", (check) => {
     }
 })
 
-When("Pendaftar klik {string}", (buttonName) => {
+When ("Pendaftar klik {string}", (buttonName) => {
     cy.get(button[buttonName]).click()
+})
+
+When ("Pendaftar berhasil daftar", (buttonName) => {
+    cy.get('.body-pmb').contains('Pendaftaran Berhasil')
+    cy.get('.cards-id').contains('ID Pendaftar')
+})
+
+let globalID
+let globalPIN
+
+When ("Pendaftar mendapatkan {string} yang dapat digunakan untuk login", (access) => {
+    if (access == "ID Pendaftar") {
+        cy.get('.id').invoke('text').then((id) => {
+            globalID = id // Simpan ID dalam variabel global
+            cy.log(globalID)
+        })
+    } else if (access == "PIN"){
+        cy.get('.katasandi').invoke('text').then((pin) => {
+            globalPIN = pin // Simpan PIN dalam variabel global
+            cy.log(globalPIN)
+        })
+    }
+})
+
+When ("Pendaftar input credentials", () => {
+    cy.get('#idpendaftar').type(globalID)
+    cy.get('#pin').type(globalPIN)
+})
+
+When ("Pendaftar berhasil masuk kehalaman pendaftar", () => {
+    cy.get('.main-header').contains('Selamat Datang,')
+    cy.get('.cards-summary').contains('ID Pendaftar')
+    cy.log('ID Pendaftar : ' + globalID)
 })
