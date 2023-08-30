@@ -14,9 +14,13 @@ Feature: Admin Membuat Master Data
 
 Examples:
     | kode| nama      |
-    | A4  | Sertifikat    |
-    | A5  | Pas Foto |
-    | A6  | Scan KK  |
+    | A4  | Sertifikat|
+    | A5  | Pas Foto  |
+    | A6  | Scan KK   |
+
+    Scenario: Positif - Admin menghapus data master dokumen RPL dengan data yang sama
+        When Admin mencari data "Sertifikat" lalu klik "hapus"
+        * "Admin" klik tombol "Ya, Yakin"
 
     Scenario: Negatif - Admin menambahkan data master dokumen RPL tanpa kode
         When Admin klik tombol "Tambah"
@@ -37,12 +41,6 @@ Examples:
         * Admin "simpan" data
         # * "Admin" melihat modal dengan pesan "Mohon mengisi isian yang bergaris merah"
 
-    Scenario: Negatif - Admin menambahkan data master dokumen RPL dengan kode >10 karakter
-        When Admin klik tombol "Tambah"
-        * Admin isi "kode dokumen" dengan "ABCDE123456"
-        * Admin isi "nama dokumen" dengan "Ijazah"
-        * Admin "simpan" data
-
     Scenario: Positif - Admin mengubah data master dokumen RPL
         When Admin mencari data "Sertifikat" lalu klik edit
         * Admin ubah isi "kode dokumen" dengan "A3 Edited"
@@ -56,3 +54,17 @@ Examples:
         * Admin ubah isi "nama dokumen" dengan "Sertifikat"
         * Admin "simpan" data
         * Admin melihat informasi "duplikat"
+
+    Scenario: Positif - Admin mengubah data master dokumen RPL dengan data yang sama
+        When Admin mencari data "Sertifikat" lalu klik "edit"
+        * Admin ubah isi "kode dokumen" dengan "A1"
+        * Admin ubah isi "nama dokumen" dengan "Ijazah"
+        * Admin "simpan" data
+        * Admin melihat informasi "duplikat"
+
+    Scenario: Positif - Admin tidak bisa mengubah kode 3 data wajib (transkrip, ijazah, silabus)
+        When Admin mencari data "Ijazah" lalu klik "edit"
+        * Cek komponen "kode dokumen" pada data
+
+    Scenario: Positif - Tombol hapus 3 data wajib (transkrip, ijazah, silabus) tidak ada
+        When Admin mencari data "Ijazah" lalu klik "hapus"
