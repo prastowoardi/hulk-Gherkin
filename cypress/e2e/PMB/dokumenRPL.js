@@ -18,7 +18,7 @@ When ("Admin ubah isi {string} dengan {string}", (fieldName,fieldValue) => {
     cy.get(edit[fieldName]).clear().type(fieldValue)
 })
 
-const button= {
+const button = {
     "simpan": ":nth-child(3) > .btn-success > .fa",
     "simpan edit": ":nth-child(3) > .btn-success[data-type='updateip']",
     "hapus": ":nth-child(3) > .btn-danger > .fa"
