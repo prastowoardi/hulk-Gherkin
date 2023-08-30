@@ -6,7 +6,7 @@ const input = {
 }
 
 When ("Admin isi {string} dengan {string}", (fieldName,fieldValue) => {
-        cy.get(input[fieldName]).type(fieldValue)
+    cy.get(input[fieldName]).type(fieldValue)
 })
 
 const edit = {
@@ -35,8 +35,8 @@ const alert = {
     "duplikat": ".alert:contains('')"
 }
 
-When ("Admin melihat informasi {string}", (alertMessage) => {
-    cy.get(alert[alertMessage])
+When ("Admin melihat informasi {string}", (alertName) => {
+    cy.get(alert[alertName])
 })
 
 // Data spesial
