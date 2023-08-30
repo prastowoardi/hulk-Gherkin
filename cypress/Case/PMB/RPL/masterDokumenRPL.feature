@@ -13,10 +13,11 @@ Feature: Admin Membuat Master Data
         * Admin melihat informasi "berhasil tambah"
 
 Examples:
-    | kode | nama      |
-    | SRT  | Sertifikat|
-    | PFT  | Pas Foto  |
-    | KK   | Scan KK   |
+    | kode | nama           |
+    | SRT  | Sertifikat     |
+    | PGH  | Penghargaan    |
+    | REF  | Surat Referensi|
+    | BLN  | Bukti Lain     |
 
     Scenario: Negatif - Admin menambahkan data master dokumen RPL tanpa kode
         When Admin klik tombol "Tambah"
@@ -51,11 +52,11 @@ Examples:
         * Admin melihat informasi "duplikat edit"
 
     Scenario: Positif - Admin tidak bisa mengubah kode 3 data wajib (transkrip, ijazah, silabus)
-        When Admin mencari data "Ijazah" lalu klik "edit"
+        When Admin mencari data "Silabus" lalu klik "edit"
         * Cek komponen "kode dokumen" pada data
 
     Scenario: Positif - Tombol hapus 3 data wajib (transkrip, ijazah, silabus) tidak ada
-        When Admin mencari data "Ijazah" lalu klik "hapus"
+        When Admin mencari data "Transkrip" lalu klik "hapus"
 
     Scenario: Positif - Admin menghapus data master dokumen RPL dengan data yang sama
         When Admin mencari data "Sertifikat" lalu klik "hapus"
