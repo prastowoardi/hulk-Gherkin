@@ -85,7 +85,6 @@ Feature: Admin Membuat Periode Pendaftaran
         * Admin klik "simpan syarat x"
 
         #-- Admin mengatur syarat daftar ulang --
-        # * Admin mengatur "syarat pendaftaran"
         * Admin isi field "jenis syarat" dengan "daftar ulang"
         * Admin isi field "syarat" dengan "pas foto"
         * Admin isi field "wajib" dengan "ya"
@@ -95,3 +94,8 @@ Feature: Admin Membuat Periode Pendaftaran
         * Admin isi field "wajib" dengan "ya"
         * Admin isi field "upload" dengan "ya"
         * Admin klik "simpan syarat x"
+
+    Scenario: Lihat detail periode pendaftaran
+        When "Admin" menuju ke halaman "spmb/list_periode"
+        * Admin melihat detail periode "Jalur RPL"
+        # * Admin mengatur ""

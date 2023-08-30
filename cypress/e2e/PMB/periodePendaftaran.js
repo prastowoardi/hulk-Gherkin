@@ -86,3 +86,9 @@ When ("Admin mengatur {string}", (menuName) => {
     const menuSelector = menu[menuName]
     cy.get(menuSelector).click()
 })
+
+When ("Admin melihat detail periode {string}", (periodeName) => {
+    // Cari nama periode, klik tombol detail
+    cy.get("input.form-control.input-sm").type(periodeName + '{enter}')
+    cy.get('.table').contains(periodeName).parent().find('.btn-info').click()
+})
