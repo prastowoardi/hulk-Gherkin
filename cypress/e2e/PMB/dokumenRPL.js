@@ -20,7 +20,7 @@ When ("Admin ubah isi {string} dengan {string}", (fieldName,fieldValue) => {
 
 const button= {
     "simpan": ":nth-child(3) > .btn-success > .fa",
-    "simpan edit": ":nth-child(3) > .btn-success[data-id='8']",
+    "simpan edit": ":nth-child(3) > .btn-success[data-type='updateip']",
     "hapus": ":nth-child(3) > .btn-danger > .fa"
 }
 
@@ -32,7 +32,9 @@ const alert = {
     "berhasil tambah": ".alert:contains('Penambahan data Dokumen RPL berhasil')",
     "berhasil edit": ".alert:contains('Pengubahan data Dokumen RPL berhasil')",
     "hapus berhasil": ".alert:contains('Penghapusan data Dokumen RPL berhasil')",
-    "duplikat": ".alert:contains('')"
+    "duplikat tambah": ".alert:contains('Penambahan data Dokumen RPL gagal, ada duplikasi data')",
+    "duplikat edit": ".alert:contains('Pengubahan data Dokumen RPL gagal, ada duplikasi data')",
+    "gagal tambah": ".alert:contains('Penambahan data Dokumen RPL gagal')"
 }
 
 When ("Admin melihat informasi {string}", (alertName) => {
@@ -46,19 +48,16 @@ When ("Admin mencari data {string} lalu klik {string}", (dataName, action) => {
     if (action === "edit") {
         cy.get('.table').contains(dataName).parent().find('.btn-warning').click()
     } else if (action === "hapus" && specialDataNames.includes(dataName)) { 
-        cy.get('.table').contains(dataName).parent().find('.btn-danger').should('be.hidden')
-        cy.log('Data tidak bisa dihapus !')
+        cy.get('.table').contains(dataName).parent().find('.btn-danger').should('not.exist')
+        cy.log('Data ' +dataName+ ' tidak bisa dihapus !')
     } else {
         cy.get('.table').contains(dataName).parent().find('.btn-danger').click()
     }
 })
 
 When ("Cek komponen {string} pada data", (fieldName) => {
-    if (input[fieldName]) {
-        cy.get(input[fieldName]).should(($input) => {
-            if ($input.is(':disabled')) {
-                cy.log('Field disabled')
-            }
-        })  
+    if (edit[fieldName]) {
+        cy.get(edit[fieldName]).should('not.exist')
+        cy.log(' Field kode pada data wajib tidak bisa diubah') 
     }          
 })
