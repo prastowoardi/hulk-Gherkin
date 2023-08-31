@@ -23,7 +23,7 @@ Examples:
         When Admin klik tombol "Tambah"
         * Admin isi "nama dokumen" dengan "SKCK"
         * Admin "simpan" data
-        * Admin melihat informasi "gagal tambah"
+        * "Admin" melihat modal dengan pesan "Mohon mengisi isian yang bergaris merah"
     
     Scenario: Negatif - Admin menambahkan data master dokumen RPL tanpa nama
         When Admin klik tombol "Tambah"
@@ -59,6 +59,6 @@ Examples:
         When Admin mencari data "Transkrip" lalu klik "hapus"
 
     Scenario: Positif - Admin menghapus data master dokumen RPL dengan data yang sama
-        When Admin mencari data "Sertifikat" lalu klik "hapus"
+        When Admin mencari data "Bukti Lain" lalu klik "hapus"
         * "Admin" klik tombol "Ya, Yakin"
         * Admin melihat informasi "hapus berhasil"
