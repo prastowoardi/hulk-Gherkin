@@ -1,13 +1,13 @@
 Feature: Admin Membuat Periode Pendaftaran
 
-    Background:
-    Given User menuju halaman "spmbfront/"
+        Background:
+            Given User menuju halaman "spmbfront/"
         * User masuk ke halaman jalur seleksi
         * User mengubah filter sesuai dengan jalur seleksi yang dicari
-        * User memilih jalur pendaftaran
+        * User memilih jalur pendaftaran "V1"
 
-    Scenario: User melakukan pendaftaran dengan nama sekolah SMAN 1 NGORO
-        When Pendaftar mengisi data "nama pendaftar" dengan "<nama>"
+        Scenario: User melakukan pendaftaran dengan nama sekolah SMAN 1 NGORO
+             When Pendaftar mengisi data "nama pendaftar" dengan "<nama>"
         * Pendaftar mengisi data "no hp" dengan "<no_hp>"
         * Pendaftar mengisi data "tgl lahir" dengan "<tgl_lahir>"
         * Pendaftar mengisi data "jenis kelamin" dengan "<jenis_kelamin>"
@@ -33,16 +33,16 @@ Feature: Admin Membuat Periode Pendaftaran
         * Pendaftar klik "masuk"
         * Pendaftar input credentials
         * Pendaftar klik "login"
-        Then Pendaftar berhasil masuk kehalaman pendaftar
+             Then Pendaftar berhasil masuk kehalaman pendaftar
 
-Examples:
-    | nama      | no_hp          | tgl_lahir   | jenis_kelamin | email          | tempat_lahir | nik              | provinsi      | kab_kota            | jenis_sekolah | th_lulus | jurusan | nama_sekolah_1 | pilihan_1     |
-    | deka daku | 08971287121111 | 04-04-2005  | laki laki     | deka@mail.com  | kab. ilir    | 3344225566117722 | jawa timur    | kabupaten mojokerto | sman          | 2020     | IPA     | sma n 1        | s1 - hukum    |
-    | luna maya | 081234567890   | 15-09-1998  | perempuan     | luna@mail.com  | jakarta      | 7812918374281273 | jawa timur    | kabupaten mojokerto | sman          | 2016     | IPA     | sma n 1        | s1 - akuntansi|
+        Examples:
+                  | nama      | no_hp          | tgl_lahir  | jenis_kelamin | email         | tempat_lahir | nik              | provinsi   | kab_kota            | jenis_sekolah | th_lulus | jurusan | nama_sekolah_1 | pilihan_1      |
+                  | deka daku | 08971287121111 | 04-04-2005 | laki laki     | deka@mail.com | kab. ilir    | 3344225566117722 | jawa timur | kabupaten mojokerto | sman          | 2020     | IPA     | sma n 1        | s1 - hukum     |
+                  | luna maya | 081234567890   | 15-09-1998 | perempuan     | luna@mail.com | jakarta      | 7812918374281273 | jawa timur | kabupaten mojokerto | sman          | 2016     | IPA     | sma n 1        | s1 - akuntansi |
 
 
-Scenario: User melakukan pendaftaran dengan nama sekola
-        When Pendaftar mengisi data "nama pendaftar" dengan "<nama>"
+        Scenario: User melakukan pendaftaran dengan nama sekola
+             When Pendaftar mengisi data "nama pendaftar" dengan "<nama>"
         * Pendaftar mengisi data "no hp" dengan "<no_hp>"
         * Pendaftar mengisi data "tgl lahir" dengan "<tgl_lahir>"
         * Pendaftar mengisi data "jenis kelamin" dengan "<jenis_kelamin>"
@@ -68,9 +68,9 @@ Scenario: User melakukan pendaftaran dengan nama sekola
         * Pendaftar klik "masuk"
         * Pendaftar input credentials
         * Pendaftar klik "login"
-        Then Pendaftar berhasil masuk kehalaman pendaftar
+             Then Pendaftar berhasil masuk kehalaman pendaftar
 
-Examples:
-    | nama      | no_hp          | tgl_lahir   | jenis_kelamin | email          | tempat_lahir | nik              | provinsi  | kab_kota      | jenis_sekolah | th_lulus | jurusan | nama_sekolah_2 | pilihan_1     |
-    | rani yanti| 089712871211   | 04-04-2005  | perempuan     | reni@mail.com  | kab. ilir    | 3344225546117722 | jakarta   | jakarta pusat | sman          | 2020     | IPA     | sma n 4        | s1 - teknik informatika    |
-    | ari yanto | 081234567890   | 15-09-1998  | laki laki     | yanto@mail.com  | jakarta     | 7812918374221273 | jakarta   | jakarta pusat | sman          | 2016     | IPA     | sma n 4        | s1 - hukum|
+        Examples:
+                  | nama       | no_hp        | tgl_lahir  | jenis_kelamin | email          | tempat_lahir | nik              | provinsi | kab_kota      | jenis_sekolah | th_lulus | jurusan | nama_sekolah_2 | pilihan_1               |
+                  | rani yanti | 089712871211 | 04-04-2005 | perempuan     | reni@mail.com  | kab. ilir    | 3344225546117722 | jakarta  | jakarta pusat | sman          | 2020     | IPA     | sma n 4        | s1 - teknik informatika |
+                  | ari yanto  | 081234567890 | 15-09-1998 | laki laki     | yanto@mail.com | jakarta      | 7812918374221273 | jakarta  | jakarta pusat | sman          | 2016     | IPA     | sma n 4        | s1 - hukum              |

@@ -13,10 +13,16 @@ When ("User mengubah filter sesuai dengan jalur seleksi yang dicari", () => {
     cy.get('#select2-sistem-container').type('reguler{enter}')
 })
 
-When ("User memilih jalur pendaftaran", () => {
-    cy.contains('.cards-jalur', 'Gelombang 3').within(() => {
-        cy.get('.btn:contains("Daftar")').click()
-    })
+When ("User memilih jalur pendaftaran {string}", (version) => {
+    if (version == "V1") {
+        cy.contains('.cards-jalur', 'Gelombang 3').within(() => {
+            cy.get('.btn:contains("Daftar")').click()
+        })
+    } else {
+        cy.get('.main-section').contains('Jalur RPL')
+            .parent().parent().parent().find('.button').click()
+    }
+    
 })
 
 const inputField = {
@@ -40,7 +46,8 @@ const select2Actions = {
     "jenis sekolah": "#select2-idjenisinstitusi-container",
     "th lulus": "#select2-thnlulus-container",
     "pilihan 1": "#select2-pilihan_1-container",
-    "pilihan 2": "#select2-pilihan_2-container"
+    "pilihan 2": "#select2-pilihan_2-container",
+    "prodi": ".select2-selection__rendered"
 }
 
 const autoComplete = {
@@ -76,7 +83,7 @@ When ("Pendaftar mengisi data {string} dengan {string}", (fieldName,fieldValue) 
         }
     } else if (select2Actions[fieldName]) {
         const selectSelector = select2Actions[fieldName]
-        cy.get(selectSelector).type(fieldValue + '{enter}')
+        cy.get(selectSelector, { timeout: 10000 }).should('be.visible').type(fieldValue + '{enter}')
     } else if (autoComplete[fieldName]) {
         const autoCompleteSelector = autoComplete[fieldName].selector
         const suggestionText = autoComplete[fieldName].suggestionText
