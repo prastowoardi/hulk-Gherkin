@@ -37,6 +37,14 @@ const autoComplete = {
     "nama sekolah 2": {
         selector: "#npsn_label",
         suggestionText: "20100211 - SMAN 4 JAKARTA - KOTA JAKARTA PUSAT"
+    },
+    "nama pt": {
+        selector: "#iduniversitas_label",
+        suggestionText: "005035 - Politeknik Negeri Banyuwangi"
+    },
+    "prodi": {
+        selector: "#iduniversitasprodi_label",
+        suggestionText: "55401 - Teknik Informatika (D3)"
     }
 }
 
@@ -97,7 +105,7 @@ When ("Pendaftar mengisi data {string} dengan {string} di v2", (fieldName,fieldV
 })
 
 When ("Pendaftar klik {string} di v2", (buttonName) => {
-    cy.get(button[buttonName]).click()
+    cy.get(button[buttonName]).click({force: true})
 })
 
 When ( "Pendaftar berhasil daftar di V2", () => {
