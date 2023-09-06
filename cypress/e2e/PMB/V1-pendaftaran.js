@@ -4,8 +4,12 @@ When ("User menuju halaman {string}", (page) => {
     cy.visit(page)
 })
 
-When ("User masuk ke halaman jalur seleksi", () => {
-    cy.get('.container-fluid > :nth-child(2)').contains('Jalur Seleksi').click()
+When ("User masuk ke halaman jalur seleksi {string}", (version) => {
+    if (version == "V1") {
+        cy.get('.container-fluid > :nth-child(2)').contains('Jalur Seleksi').click()
+    } else {
+        cy.get('.navbar-item').contains('Jalur Pendaftaran').click()
+    }
 })
 
 When ("User mengubah filter sesuai dengan jalur seleksi yang dicari", () => {
@@ -20,7 +24,7 @@ When ("User memilih jalur pendaftaran {string}", (version) => {
         })
     } else {
         cy.get('.main-section').contains('Jalur RPL')
-            .parent().parent().parent().find('.button').click()
+          .parent().parent().parent().find('.button').click()
     }
     
 })
@@ -46,8 +50,8 @@ const select2Actions = {
     "jenis sekolah": "#select2-idjenisinstitusi-container",
     "th lulus": "#select2-thnlulus-container",
     "pilihan 1": "#select2-pilihan_1-container",
-    "pilihan 2": "#select2-pilihan_2-container",
-    "prodi": ".select2-selection__rendered"
+    "pilihan 2": "#select2-pilihan_2-container"
+    // "prodi": ".select2.select2-container.select2-container--default"
 }
 
 const autoComplete = {
@@ -68,7 +72,8 @@ const button = {
     "konfirmasi pendaftaran": ".btn:contains('Konfirmasi Pendaftaran')",
     "ok": ".modal-content > .modal-footer > .btn-primary:contains('OK')",
     "masuk": ".login-button > .button:contains('Masuk')",
-    "login": ".btn:contains('LOGIN')"
+    "login": ".btn:contains('LOGIN')",
+    "lanjutkan mendaftar": ".button-pmb_primary",
 }
 
 
@@ -106,7 +111,7 @@ When ("Pendaftar klik {string}", (buttonName) => {
     cy.get(button[buttonName]).click()
 })
 
-When ("Pendaftar berhasil daftar", (buttonName) => {
+When ("Pendaftar berhasil daftar", () => {
     cy.get('.body-pmb').contains('Pendaftaran Berhasil')
     cy.get('.cards-id').contains('ID Pendaftar')
 })
