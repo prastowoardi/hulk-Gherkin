@@ -86,8 +86,7 @@ When ("Admin isi field {string} dengan {string}", (fieldName,fieldValue) => {
     if (inputActions[fieldName]) {
         if (fieldName == "tgl mulai" || fieldName ==  "tgl akhir" || fieldName == "akhir finalisasi" 
             || fieldName == "awal daftar ulang" || fieldName == "akhir daftar ulang"){
-            cy.get(inputActions[fieldName]).type(fieldValue)
-            cy.get('#sc-footer').click()
+            cy.get(inputActions[fieldName]).type(fieldValue).tab()
         } else {
             cy.get(inputActions[fieldName]).type(fieldValue)
         }
