@@ -58,7 +58,7 @@ Examples:
     Scenario: Positif - Tombol hapus 3 data wajib (transkrip, ijazah, silabus) tidak ada
         When Admin mencari data "Transkrip" lalu klik "hapus"
 
-    Scenario: Positif - Admin menghapus data master dokumen RPL dengan data yang sama
+    Scenario: Positif - Admin menghapus data master dokumen RPL
         When Admin mencari data "Bukti Lain" lalu klik "hapus"
         * "Admin" klik tombol "Ya, Yakin"
         * Admin melihat informasi "hapus berhasil"
