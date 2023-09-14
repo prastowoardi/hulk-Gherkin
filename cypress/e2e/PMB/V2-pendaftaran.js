@@ -64,7 +64,7 @@ When ('Pendaftar memilih prodi {string} di V2', (prodiName) => {
     // var index03 = null
     // cy.get('.select2-results').each(($el, index) => {
     //     if ($el.text() === 'S1 - Akuntansi') {
-    //         index03 = index;
+    //         index03 = index
 
     //         cy.get('.select2-results__option').eq(index03).click({ force: true })
     //     }
@@ -83,12 +83,17 @@ When ("Pendaftar mengisi data {string} dengan {string} di v2", (fieldName,fieldV
         }
     } else if (select2Actions[fieldName]) {
         const selectSelector = select2Actions[fieldName]
-        if (fieldName === 'pendidikan terakhir' || fieldName === 'provinsi' || fieldName === 'kab/kota' 
-             || fieldName === 'th lulus' || fieldName === 'jenis sekolah') {
-            cy.get(selectSelector, { timeout: 10000 }).click({force: true})
-            cy.get('.select2-search__field').type(fieldValue + '{enter}')
-        } else {
-            cy.get(selectSelector, { timeout: 10000 }).should('be.visible').type(fieldValue + '{enter}',{force: true})
+        switch(fieldName) {
+            case 'pendidikan terakhir':
+            case 'provinsi':
+            case 'kab/kota':
+            case 'th lulus':
+            case 'jenis sekolah':
+                cy.get(selectSelector, { timeout: 10000 }).click({force: true})
+                cy.get('.select2-search__field').type(fieldValue + '{enter}')
+                break;
+            default:
+                cy.get(selectSelector, { timeout: 10000 }).should('be.visible').type(fieldValue + '{enter}',{force: true})
         }
     } else if (autoComplete[fieldName]) {
         const autoCompleteSelector = autoComplete[fieldName].selector

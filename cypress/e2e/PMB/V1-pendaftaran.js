@@ -24,7 +24,7 @@ When ("User memilih jalur pendaftaran {string}", (version) => {
         })
     } else {
         cy.get('.main-section').contains('Jalur RPL')
-          .parent().parent().parent().find('.button').click()
+          .parent().parent().parent().find('.button').click({force: true})
     }
     
 })

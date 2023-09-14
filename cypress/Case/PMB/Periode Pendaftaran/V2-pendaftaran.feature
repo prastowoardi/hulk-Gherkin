@@ -33,8 +33,8 @@ Feature: User melakukan pendaftaran pada jalur yang dipilih
         
         Examples:
                   | nama | no_hp       | tgl_lahir  | jenis_kelamin | email         | tempat_lahir | nik              | pendidikan        | provinsi   | kab_kota            | jenis_sekolah | th_lulus | jurusan | nama_sekolah_1 | menyetujui |
-                  | tari | 08971281211 | 04-04-2005 | perempuan     | tari@mail.com | kab. ilir    | 3344225566117722 | SMA/SMK Sederajat | jawa timur | kabupaten mojokerto | sman          | 2020     | IPA     | sma n 1        | ya         |
-                  | deni | 08971181211 | 04-04-2005 | laki laki     | deni@mail.com | kab. ilir    | 3340986166117722 | SMA/SMK Sederajat | jawa timur | kabupaten mojokerto | sman          | 2020     | IPA     | sma n 1        | ya         |
+                  | rani | 08957281211 | 04-04-2005 | perempuan     | rani@mail.com | kab. ilir    | 3344225873117722 | SMA/SMK Sederajat | jawa timur | kabupaten mojokerto | sman          | 2020     | IPA     | sma n 1        | ya         |
+                  | janu | 08971186711 | 04-04-2005 | laki laki     | janu@mail.com | kab. ilir    | 3340980976117722 | SMA/SMK Sederajat | jawa timur | kabupaten mojokerto | sman          | 2020     | IPA     | sma n 1        | ya         |
 
         Scenario: User melakukan pendaftaran pendidikan terakhir D3
              When Pendaftar memilih prodi "S1 - Teknik Informatika" di V2
