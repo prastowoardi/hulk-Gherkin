@@ -40,17 +40,11 @@ Feature: Admin Membuat Periode Pendaftaran
              When "Admin" menuju ke halaman "spmb/list_periode"
             * Admin melihat detail periode "Jalur RPL"
 
-            -- Admin mengatur jenis program --
-            * Admin mengatur "jenis program"
-            * Admin isi field "jenis program" dengan "RPL"
-            * Admin isi field "jumlah prodi" dengan "1"
-            * Admin klik "simpan jenis program"
-
             #-- Admin mengatur program studi 1 --
             * Admin mengatur "program studi"
             * Admin klik "tambah data"
             * Admin isi field "program studi" dengan "akuntansi"
-            * Admin isi field "admin prodi agus" dengan "agustamar"
+            * Admin isi field "admin prodi" dengan "0428047904 - IRWAN  HERMAWAN, SE., ME"
             * Admin isi field "jns program" dengan "RPL"
             * Admin isi field "prefix nim" dengan "A22.2023."
             * Admin isi field "kuota" dengan "10"
@@ -59,16 +53,17 @@ Feature: Admin Membuat Periode Pendaftaran
             * Admin isi field "transfer kredit" dengan "ya"
             * Admin isi field "perolehan kredit" dengan "ya"
 
-            * Admin mengatur "sebaran pilihan"
-            * Admin isi field "pilihan 1" dengan "ya"
-            * "Admin" klik tombol "Simpan"
-            * "Admin" klik tombol "Ya, Yakin"
+            #--Admin mewajibkan syarat transfer kredit --
+            * Admin mewajibkan dokumen "Ijazah" pada syarat transfer kredit
+
+            #-- Admin mengisi dokumen syarat perolehan kredit --
+            * Admin mengisi dokumen syarat perolehan kredit
 
             #-- Admin mengatur program studi 2 --
             * Admin mengatur "program studi"
             * Admin klik "tambah data"
             * Admin isi field "program studi" dengan "hukum"
-            * Admin isi field "admin prodi budi" dengan "budi"
+            * Admin isi field "admin prodi" dengan "0411068302 - FERDY  FERDIAN, SH., MH."
             * Admin isi field "jns program" dengan "RPL"
             * Admin isi field "prefix nim" dengan "A15.2023."
             * Admin isi field "kuota" dengan "10"
@@ -76,16 +71,14 @@ Feature: Admin Membuat Periode Pendaftaran
             * Admin mengatur "syarat dokumen rpl"
             * Admin isi field "transfer kredit" dengan "ya"
 
-            * Admin mengatur "sebaran pilihan"
-            * Admin isi field "pilihan 1" dengan "ya"
-            * "Admin" klik tombol "Simpan"
-            * "Admin" klik tombol "Ya, Yakin"
+            #--Admin mewajibkan syarat transfer kredit --
+            * Admin mewajibkan dokumen "Ijazah" pada syarat transfer kredit
 
-            #-- Admin mengatur program studi 3 --
+            #-- Admin mengatur program studi  3 --
             * Admin mengatur "program studi"
             * Admin klik "tambah data"
             * Admin isi field "program studi" dengan "teknik informatika"
-            * Admin isi field "admin prodi afliz" dengan "afliz"
+            * Admin isi field "admin prodi" dengan "9907147829 - RIAN  HIDAYAT, S.Hum, M.I.Kom."
             * Admin isi field "jns program" dengan "IPA"
             * Admin isi field "prefix nim" dengan "A15.2023."
             * Admin isi field "kuota" dengan "10"
@@ -93,10 +86,8 @@ Feature: Admin Membuat Periode Pendaftaran
             * Admin mengatur "syarat dokumen rpl"
             * Admin isi field "perolehan kredit" dengan "ya"
 
-            * Admin mengatur "sebaran pilihan"
-            * Admin isi field "pilihan 1" dengan "ya"
-            * "Admin" klik tombol "Simpan"
-            * "Admin" klik tombol "Ya, Yakin"
+            #-- Admin mengisi dokumen syarat perolehan kredit --
+            * Admin mengisi dokumen syarat perolehan kredit
 
             #-- Admin mengatur syarat administrasi --
             * Admin mengatur "syarat pendaftaran"

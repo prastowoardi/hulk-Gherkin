@@ -2,3 +2,6 @@ cypress.config.js
 node_modules
 videos
 screenshots
+
+// file hasil running di CLI
+xunit.xml

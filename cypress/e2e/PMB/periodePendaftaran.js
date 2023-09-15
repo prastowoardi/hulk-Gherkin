@@ -33,7 +33,8 @@ const select2Actions = {
 }
 
 const select = {
-    "jenis pendaftaran" : "#i_istransfer"
+    "jenis pendaftaran" : "#i_istransfer",
+    "admin prodi" : "#idadminprodi",
 }
 
 const checkBox = {
@@ -42,23 +43,8 @@ const checkBox = {
     "pilihan 2" : "#block-pilihan\\[2\\] > .col-md-7 > .labelinput > .icheckbox_minimal",
     "wajib" : ":nth-child(3) > .labelinput > .icheckbox_minimal",
     "upload" : ":nth-child(4) > .labelinput > .icheckbox_minimal > .iCheck-helper",
-    "transfer kredit" : ":nth-child(3) > .icheckbox_minimal > .iCheck-helper",
-    "perolehan kredit" : ":nth-child(5) > .icheckbox_minimal > .iCheck-helper"
-}
-
-const autoComplete = {
-    "admin prodi agus": {
-        selector: "#adminprodi_label",
-        suggestionText: "0409077901 - AGUSTAMAR, M.Sn"
-    },
-    "admin prodi budi": {
-        selector: "#adminprodi_label",
-        suggestionText: "8961550022 - Dr BUDI SETIADI, M.Pd"
-    },
-    "admin prodi afliz": {
-        selector: "#adminprodi_label",
-        suggestionText: "012018032 - AFLIZAR, Ph.D"
-    }
+    "transfer kredit" : "#dokumen-rpl > :nth-child(2) > .labelinput > .icheckbox_minimal > .iCheck-helper",
+    "perolehan kredit" : ":nth-child(3) > .labelinput > .icheckbox_minimal > .iCheck-helper",
 }
 
 const button = {
@@ -102,11 +88,6 @@ When ("Admin isi field {string} dengan {string}", (fieldName,fieldValue) => {
         } else {
             cy.get("@checkbox")
         }
-    } else if (autoComplete[fieldName]) {
-        const autoCompleteSelector = autoComplete[fieldName].selector
-        const suggestionText = autoComplete[fieldName].suggestionText
-        cy.get(autoCompleteSelector).type(fieldValue)
-        cy.get('.tt-suggestions').contains(suggestionText).click()
     }
 })
 
@@ -124,4 +105,19 @@ When ("Admin melihat detail periode {string}", (periodeName) => {
     // Cari nama periode, klik tombol detail
     cy.get("input.form-control.input-sm").type(periodeName + '{enter}')
     cy.get('.table').contains(periodeName).parent().find('.btn-info').click()
+})
+
+When ("Admin mewajibkan dokumen {string} pada syarat transfer kredit", (document) => {
+    cy.get(':nth-child(2) > .table').contains(document)
+        .parent().find('.labelinput > .icheckbox_minimal > .iCheck-helper').click()
+})
+
+When("Admin mengisi dokumen syarat perolehan kredit", () => {
+    const dokumen = ["Sertifikat", "Penghargaan", "Surat Referensi", "Bukti Lain"]
+    dokumen.forEach((dokumen, index) => {
+        cy.get(`#dokumen_a2_${index}`).should('exist').select(dokumen)
+        if (index < dokumen.length - 1) {
+            cy.get('.col-md-3 > .btn').click() // Klik tombol tambah dokumen
+        }
+    })
 })
