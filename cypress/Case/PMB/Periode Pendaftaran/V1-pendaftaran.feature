@@ -37,11 +37,11 @@ Feature: User melakukan pendaftaran pada jalur yang dipilih
 
      Examples:
                | nama      | no_hp          | tgl_lahir  | jenis_kelamin | email         | tempat_lahir | nik              | provinsi   | kab_kota            | jenis_sekolah | th_lulus | jurusan | nama_sekolah_1 | pilihan_1      |
-               | deka daku | 08971287121111 | 04-04-2005 | laki laki     | deka@mail.com | kab. ilir    | 3344225566117722 | jawa timur | kabupaten mojokerto | sman          | 2020     | IPA     | sma n 1        | s1 - hukum     |
+               | deka daku | 08971287121111 | 04-04-2005 | laki laki     | deka@mail.com | kab. ilir    | 3344225981217722 | jawa timur | kabupaten mojokerto | sman          | 2020     | IPA     | sma n 1        | s1 - hukum     |
                | luna maya | 081234567890   | 15-09-1998 | perempuan     | luna@mail.com | jakarta      | 7812918374281273 | jawa timur | kabupaten mojokerto | sman          | 2016     | IPA     | sma n 1        | s1 - akuntansi |
 
 
-     Scenario: User melakukan pendaftaran dengan nama sekola
+     Scenario: User melakukan pendaftaran dengan nama universitas
           When Pendaftar mengisi data "nama pendaftar" dengan "<nama>"
           * Pendaftar mengisi data "no hp" dengan "<no_hp>"
           * Pendaftar mengisi data "tgl lahir" dengan "<tgl_lahir>"
