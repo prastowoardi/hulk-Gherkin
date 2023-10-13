@@ -24,6 +24,10 @@ const moduleActions = {
     Admin: () => {
       cy.get(".spmb").click()
       cy.get('#spmb').contains('Administrator Perguruan Tinggi').should('be.visible', { timeout: 1000 }).click()
+    },
+    Asesor: () => {
+      cy.get(".spmb").click()
+      cy.get('#spmb').contains('Asesor RPL').should('be.visible', { timeout: 1000 }).click()
     }
   },
   Siakad: {
