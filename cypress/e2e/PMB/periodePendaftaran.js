@@ -13,7 +13,10 @@ const inputActions = {
     "umumkan lulus" : "#tglumumkankelulusan",
     "waktu umumkan lulus" : "#waktuumumkankelulusan",
     "prefix nim" : "#prefixnim",
-    "kuota" : "#jmlditerima"
+    "kuota" : "#jmlditerima",
+    "kode jalur": "#i_idjalurpendaftaran",
+    "nama jalur" : "#i_namajalurpendaftaran",
+    "keterangan jalur" : "#i_keterangan"
 }
 
 const select2Actions = {
@@ -29,14 +32,20 @@ const select2Actions = {
     "syarat" : "#select2-i_idsyarat-container"
 }
 
+const select = {
+    "jenis pendaftaran" : "#i_istransfer",
+    "admin prodi" : "#idadminprodi",
+}
+
 const checkBox = {
     "tampil nilai" : "#block-istampilnilai > .col-md-7 > .labelinput > .icheckbox_minimal",
     "pilihan 1" : "#block-pilihan\\[1\\] > .col-md-7 > .labelinput > .icheckbox_minimal",
     "pilihan 2" : "#block-pilihan\\[2\\] > .col-md-7 > .labelinput > .icheckbox_minimal",
     "wajib" : ":nth-child(3) > .labelinput > .icheckbox_minimal",
-    "upload" : ":nth-child(4) > .labelinput > .icheckbox_minimal > .iCheck-helper"
+    "upload" : ":nth-child(4) > .labelinput > .icheckbox_minimal > .iCheck-helper",
+    "transfer kredit" : "#dokumen-rpl > :nth-child(2) > .labelinput > .icheckbox_minimal > .iCheck-helper",
+    "perolehan kredit" : ":nth-child(3) > .labelinput > .icheckbox_minimal > .iCheck-helper",
 }
-
 
 const button = {
     "simpan jenis program": "#insert-row-ms > :nth-child(5) > .btn",
@@ -45,28 +54,33 @@ const button = {
     "tambah data": ".btn-success:contains('Tambah Data')",
     "simpan syarat": ":nth-child(6) > .btn",
     "simpan syarat x": "#insert-row-ms > :nth-child(6) > .btn > .fa",
-    "tambah periode": ".btn:contains('Tambah')"
+    "tambah periode": ".btn:contains('Tambah')",
+    "simpan jalur": ":nth-child(5) > .btn-success"
 }
 
 const menu = {
     "jenis program" : "#sidebar-menu-list > :nth-child(2) > a:contains('Jenis Program')",
     "program studi" : "#sidebar-menu-list > :nth-child(3) > a:contains('Program Studi')",
     "seleksi pendaftaran" : "#sidebar-menu-list > :nth-child(4) > a:contains('Seleksi Pendaftaran')",
-    "syarat pendaftaran" : "#sidebar-menu-list > :nth-child(6) > a:contains('Syarat Pendaftaran')"
+    "syarat pendaftaran" : "#sidebar-menu-list > :nth-child(6) > a:contains('Syarat Pendaftaran')",
+    "syarat dokumen rpl" : "#item-dokumen-rpl > a",
+    "sebaran pilihan" : "#item-sebaran-pilihan > a",
+    "sebaran jurusan" : "#item-sebaran-jurusan > a"
 }
 
 When ("Admin isi field {string} dengan {string}", (fieldName,fieldValue) => {
     if (inputActions[fieldName]) {
         if (fieldName == "tgl mulai" || fieldName ==  "tgl akhir" || fieldName == "akhir finalisasi" 
             || fieldName == "awal daftar ulang" || fieldName == "akhir daftar ulang"){
-            cy.get(inputActions[fieldName]).type(fieldValue)
-            cy.get('#sc-footer').click()
+            cy.get(inputActions[fieldName]).type(fieldValue).tab()
         } else {
             cy.get(inputActions[fieldName]).type(fieldValue)
         }
     } else if (select2Actions[fieldName]) {
         const selectSelector = select2Actions[fieldName]
         cy.get(selectSelector).type(fieldValue + '{enter}')
+    } else if (select[fieldName]) {
+        cy.get(select[fieldName]).select(fieldValue)
     } else if (checkBox[fieldName]) {
         cy.get(checkBox[fieldName]).as("checkbox")
         if (fieldValue === "ya") {
@@ -91,4 +105,19 @@ When ("Admin melihat detail periode {string}", (periodeName) => {
     // Cari nama periode, klik tombol detail
     cy.get("input.form-control.input-sm").type(periodeName + '{enter}')
     cy.get('.table').contains(periodeName).parent().find('.btn-info').click()
+})
+
+When ("Admin mewajibkan dokumen {string} pada syarat transfer kredit", (document) => {
+    cy.get(':nth-child(2) > .table').contains(document)
+        .parent().find('.labelinput > .icheckbox_minimal > .iCheck-helper').click()
+})
+
+When("Admin mengisi dokumen syarat perolehan kredit", () => {
+    const dokumen = ["Sertifikat", "Penghargaan", "Surat Referensi", "Bukti Lain"]
+    dokumen.forEach((dokumen, index) => {
+        cy.get(`#dokumen_a2_${index}`).should('exist').select(dokumen)
+        if (index < dokumen.length - 1) {
+            cy.get('.col-md-3 > .btn').click() // Klik tombol tambah dokumen
+        }
+    })
 })

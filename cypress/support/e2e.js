@@ -12,10 +12,12 @@
 // You can read more here:
 // https://on.cypress.io/configuration
 // ***********************************************************
+require('cypress-plugin-tab')
 
 // Import commands.js using ES2015 syntax:
 import './commands'
 import './General/login'
+import 'cypress-audit/commands'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')

@@ -60,8 +60,7 @@ const autoCompleteActions = {
 When("{string} mengubah field {string} dengan {string}", (user, fieldName, fieldValue) => {
     if (inputActions[fieldName]) {
         if (fieldName == "Tanggal Mulai" || fieldName ==  "Tanggal Awal"){
-            cy.get(inputActions[fieldName]).clear().type(fieldValue)
-            cy.get('#sc-footer').click()
+            cy.get(inputActions[fieldName]).clear().type(fieldValue).tab()
         } else {
             cy.get(inputActions[fieldName]).clear().type(fieldValue)
         }

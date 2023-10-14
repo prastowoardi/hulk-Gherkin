@@ -22,6 +22,12 @@
       "role" : "Dosen",
       "username": "0016076902",
       "password": "password"
+    },
+    {
+      "id" : "4",
+      "role" : "Asesor Akuntansi",
+      "username": "8851101019",
+      "password": "8851101019"
     }
   ]
   

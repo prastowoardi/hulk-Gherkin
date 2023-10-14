@@ -3,6 +3,10 @@ import { When } from "@badeball/cypress-cucumber-preprocessor"
 const moduleActions = {
   // Tambah modul lain dan kombinasi user disini
   SDM: {
+    SuperAdmin: () => {
+      cy.get('.hr > .inner').click()
+      cy.get('#hr').contains("Super Administrator").should('be.visible', { timeout: 1000 }).click()
+    },
     Admin: () => {
       cy.get('.hr > .inner').click()
       cy.get('#hr').contains("Administrator Perguruan Tinggi").should('be.visible', { timeout: 1000 }).click()
@@ -13,12 +17,24 @@ const moduleActions = {
     }
   },
   PMB: {
+    SuperAdmin: () => {
+      cy.get(".spmb").click()
+      cy.get('#spmb').contains("Super Administrator").should('be.visible', { timeout: 1000 }).click()
+    },
     Admin: () => {
       cy.get(".spmb").click()
       cy.get('#spmb').contains('Administrator Perguruan Tinggi').should('be.visible', { timeout: 1000 }).click()
+    },
+    Asesor: () => {
+      cy.get(".spmb").click()
+      cy.get('#spmb').contains('Asesor RPL').should('be.visible', { timeout: 1000 }).click()
     }
   },
   Siakad: {
+    SuperAdmin: () => {
+      cy.get(".siakad > .inner").click()
+      cy.get("#siakad").contains("Super Administrator").should('be.visible', { timeout: 1000 }).click()
+    },
     Admin: () => {
       cy.get(".siakad > .inner").click()
       cy.get("#siakad").contains("Administrator Perguruan Tinggi").should('be.visible', { timeout: 1000 }).click()
@@ -29,6 +45,10 @@ const moduleActions = {
     }
   },
   Keuangan: {
+    SuperAdmin: () => {
+      cy.get(".keuangan > .inner").click()
+      cy.get("#keuangan").contains("Super Administrator").should('be.visible', { timeout: 1000 }).click()
+    },
     Admin: () => {
       cy.get(".keuangan > .inner").click()
       cy.get("#keuangan").contains("Administrator Perguruan Tinggi").should('be.visible', { timeout: 1000 }).click()
