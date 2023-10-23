@@ -4,6 +4,12 @@ When ("Asesor berada pada halaman seleksi RPL", () => {
     cy.url().should('eq', 'http://localhost/siacloud/spmb/seleksi_rpl')
 })
 
+When ("User melihat statistik pendaftar", () => {
+    cy.get('.statistik').invoke('text').then((text) => {
+        cy.log(text)
+    })
+})
+
 When ("Asesor melakukan penilaian RPL pendaftar {string}", (namaPendaftar) => {
     cy.get("#sub-peminat-penilaian_rpl").click()
     cy.get('#sub-peminat-penilaian_rpl > h4 > .badge').invoke('text').then((text) => {
