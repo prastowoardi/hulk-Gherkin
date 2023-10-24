@@ -7,3 +7,9 @@ When ('User klik tombol tampilkan', () => {
         expect(text).contains("LAPORAN REKAPITULASI PENDAFTAR RPL")
     })
 })
+
+When ('User klik tombol lihat di tab baru', () => {
+    cy.get('.btn').contains('Lihat di Tab Baru').click()
+
+    // Akan membuka window baru, karena tidak bisa dihandle untuk open new window nya
+})
