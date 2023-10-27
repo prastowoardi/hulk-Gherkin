@@ -43,7 +43,7 @@ When ("Asesor melakukan penilaian RPL pendaftar {string}", (namaPendaftar) => {
               const matches = nameAttribute.match(/nangka-(\d+)/)
               if (matches && matches.length > 1) {
                 const angka = matches[1] // Mengambil angka yang cocok
-                cy.log(angka)
+                // cy.log(angka)
                 // Memilih nilai pada select yang sesuai
                 cy.get(`select[name^="nangka-${angka}"]`).select(nilaiAcak)
               }
