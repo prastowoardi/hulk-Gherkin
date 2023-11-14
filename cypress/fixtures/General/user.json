@@ -2,7 +2,7 @@
     {
       "id" : "0",
       "role" : "Administrator Perguruan Tinggi",
-      "username": "adminpt",
+      "username": "adminptsvm",
       "password": "password"
     },
     {
@@ -28,6 +28,12 @@
       "role" : "Asesor Akuntansi",
       "username": "8851101019",
       "password": "8851101019"
+    },
+    {
+      "id" : "5",
+      "role" : "Admin Support Sevima",
+      "username": "adminptsvm",
+      "password": "password"
     }
   ]
   
