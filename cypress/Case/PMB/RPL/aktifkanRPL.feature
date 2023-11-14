@@ -1,10 +1,10 @@
 Feature: Setting RPL di administrasi aplikasi
 
     Background: 
-        Given "Admin" masuk ke siakad
-        * "SuperAdmin" masuk ke modul "Aplikasi"
+        Given "Admin Support Sevima" masuk ke siakad
+        * "AdminSupport" masuk ke modul "Aplikasi"
 
     Scenario: Mengubah akun sister ke stikes bwi
         When "Admin" menuju ke halaman "admin/ms_setting"
-        * Admin ubah filter Kelompok dengan "Plugin / Addon"
+        * Admin ubah filter Kelompok dengan "Penerimaan Mahasiswa Baru"
         * Admin mengaktifkan servis RPL
