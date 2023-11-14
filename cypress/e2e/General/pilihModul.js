@@ -14,6 +14,10 @@ const moduleActions = {
     Dosen: () => {
       cy.get('.hr > .inner').click()
       cy.get('#hr').contains("Dosen").should('be.visible', { timeout: 1000 }).click()
+    },
+    AdminSupport: () => {
+      cy.get('.hr > .inner').click()
+      cy.get('#hr').contains("Admin Support Sevima").should('be.visible', { timeout: 1000 }).click()
     }
   },
   PMB: {
@@ -28,6 +32,10 @@ const moduleActions = {
     Asesor: () => {
       cy.get(".spmb").click()
       cy.get('#spmb').contains('Asesor RPL').should('be.visible', { timeout: 1000 }).click()
+    },
+    AdminSupport: () => {
+      cy.get(".spmb").click()
+      cy.get('#spmb').contains('Admin Support Sevima').should('be.visible', { timeout: 1000 }).click()
     }
   },
   Siakad: {
@@ -42,6 +50,10 @@ const moduleActions = {
     Dosen: () => {
       cy.get(".siakad > .inner").click()
       cy.get("#siakad").contains("Dosen").should('be.visible', { timeout: 1000 }).click()
+    },
+    AdminSupport: () => {
+      cy.get(".siakad > .inner").click()
+      cy.get("#siakad").contains("Admin Support Sevima").should('be.visible', { timeout: 1000 }).click()
     }
   },
   Keuangan: {
@@ -58,6 +70,10 @@ const moduleActions = {
     SuperAdmin: () => {
       cy.get(".admin > .inner").click()
       cy.get("#admin").contains("Super Administrator").should('be.visible', { timeout: 1000 }).click()
+    },
+    AdminSupport: () => {
+      cy.get(".admin > .inner").click()
+      cy.get("#admin").contains("Admin Support Sevima").should('be.visible', { timeout: 1000 }).click()
     }
   }
 }
