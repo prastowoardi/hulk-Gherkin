@@ -64,6 +64,10 @@ const moduleActions = {
     Admin: () => {
       cy.get(".keuangan > .inner").click()
       cy.get("#keuangan").contains("Administrator Perguruan Tinggi").should('be.visible', { timeout: 1000 }).click()
+    },
+    AdminSupport: () => {
+      cy.get(".keuangan > .inner").click()
+      cy.get("#keuangan").contains("Admin Support Sevima").should('be.visible', { timeout: 1000 }).click()
     }
   },
   Aplikasi: {
