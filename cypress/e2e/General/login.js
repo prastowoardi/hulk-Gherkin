@@ -11,6 +11,8 @@ Given("{string} masuk ke siakad", (role) =>{
         cy.login(2)
     } else if (role == "Asesor Akuntansi"){
         cy.login(4)
+    } else if (role == "Asesor TI"){
+        cy.login(6)
     } else if (role == "Admin Support Sevima"){
         cy.login(5)
     }
