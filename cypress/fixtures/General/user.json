@@ -34,6 +34,12 @@
       "role" : "Admin Support Sevima",
       "username": "adminptsvm",
       "password": "password"
+    },
+    {
+      "id": "6",
+      "role": "Asesor Akuntansi",
+      "username": "0730018504",
+      "password": "0403047903"
     }
   ]
   
