@@ -6,7 +6,8 @@ Feature: User Login Sebagai Asesor
 
     Scenario: Asesor mengakses halaman asesor
         When "Asesor" menuju ke halaman "spmb/seleksi_rpl"
-        # * User melihat statistik pendaftar
-        # * Asesor berada pada halaman seleksi RPL
+        * User melihat statistik pendaftar
+        * Asesor berada pada halaman seleksi RPL
         * Asesor melakukan penilaian RPL pendaftar "DENI"
+        * Asesor "menyimpan" nilai pendaftar
         * Asesor kembali ke halaman list dan melihat status pendaftar "DENI"
