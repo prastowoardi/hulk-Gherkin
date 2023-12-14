@@ -54,22 +54,31 @@ const button = {
     "masuk": ".button-pmb_primary"
 }
 
-When ('Pendaftar memilih prodi {string} di V2', (prodiName) => {      
-    cy.get('.select2-selection').type(prodiName + '{enter}',{force:true})
-
-    // // Jika ingin mengambil hasil search di dropdown
-    // cy.get('.select2-search__field').type(prodiName + '{enter}')
+When ('Pendaftar memilih jenjang {string} prodi {string}', (jenjang,prodiName) => {      
     
-    // cy.scrollTo('top')
-    // var index03 = null
-    // cy.get('.select2-results').each(($el, index) => {
-    //     if ($el.text() === 'S1 - Akuntansi') {
-    //         index03 = index
+    cy.get(`#pills-${jenjang}-tab`).click({force: true})
+    cy.get('#search_prodi').type(prodiName + '{enter}',{force:true})
 
-    //         cy.get('.select2-results__option').eq(index03).click({ force: true })
-    //     }
-    // })
-    cy.get('#btn-lanjut-daftar').click({ force: true })
+    cy.get(`#pills-${jenjang} > .table`).contains(prodiName)
+        .parent().parent().parent().next().next().next().children()
+
+    cy.get(`[data-prodi="${prodiName}"] > :nth-child(4) > .button-pmb_primary-outline`)
+        .contains('Daftar Sekarang')
+        .should('have.attr', 'target', '_blank')
+        .invoke('attr', 'href')
+        .then(href => {
+            cy.visit(`localhost/siacloud/spmbfront/${href}`);
+        });
+})
+
+When ('Pendaftar memilih jalur pendaftaran {string}', (jalurName) => {
+    cy.get('#jalur').children().children().contains(jalurName)
+        .parent().parent().parent().next()
+        .find('.button').click({force: true})
+})
+
+When ('Pendaftar klik tombol isi fomulir pendaftaran', () => {
+    cy.get('.button-pmb_primary').click()
 })
 
 When ("Pendaftar mengisi data {string} dengan {string} di v2", (fieldName,fieldValue) => {
