@@ -7,8 +7,6 @@ When ("User menuju halaman {string}", (page) => {
 When ("User masuk ke halaman jalur seleksi {string}", (version) => {
     if (version == "V1") {
         cy.get('.container-fluid > :nth-child(2)').contains('Jalur Seleksi').click()
-    } else {
-        cy.get('.navbar-item').contains('Jalur Pendaftaran').click()
     }
 })
 
@@ -22,11 +20,7 @@ When ("User memilih jalur pendaftaran {string}", (version) => {
         cy.contains('.cards-jalur', 'Gelombang 3').within(() => {
             cy.get('.btn:contains("Daftar")').click()
         })
-    } else {
-        cy.get('.main-section').contains('Jalur RPL')
-          .parent().parent().parent().find('.button').click({force: true})
     }
-    
 })
 
 const inputField = {
