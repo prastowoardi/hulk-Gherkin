@@ -139,7 +139,8 @@ When ("Pendaftar mendapatkan {string}", (access) => {
             cy.log(globalIDV2)
         })
     } else if (access == "PIN"){
-        cy.get('#pinpendaftar').invoke('text').then((pin) => {
+        cy.get('#icon-pin').click()
+        cy.get('#pinpendaftar_real').invoke('text').then((pin) => {
             globalPINV2 = pin // Simpan PIN dalam variabel global
             cy.log(globalPINV2)
         })
