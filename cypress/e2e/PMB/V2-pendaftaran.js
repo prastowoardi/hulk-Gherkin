@@ -67,7 +67,7 @@ When ('Pendaftar memilih jenjang {string} prodi {string}', (jenjang,prodiName) =
         .should('have.attr', 'target', '_blank')
         .invoke('attr', 'href')
         .then(href => {
-            cy.visit(`localhost/siacloud/spmbfront/${href}`);
+            cy.visit(`/spmbfront/${href}`);
         });
 })
 
@@ -139,7 +139,8 @@ When ("Pendaftar mendapatkan {string}", (access) => {
             cy.log(globalIDV2)
         })
     } else if (access == "PIN"){
-        cy.get('#pinpendaftar').invoke('text').then((pin) => {
+        cy.get('#icon-pin').click()
+        cy.get('#pinpendaftar_real').invoke('text').then((pin) => {
             globalPINV2 = pin // Simpan PIN dalam variabel global
             cy.log(globalPINV2)
         })
