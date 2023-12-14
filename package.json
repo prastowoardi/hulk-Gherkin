@@ -1,7 +1,7 @@
 {
   "devDependencies": {
     "@badeball/cypress-cucumber-preprocessor": "^18.0.5",
-    "cypress": "^12.17.4",
+    "cypress": "^13.6.1",
     "cypress-audit": "^1.1.0",
     "cypress-multi-reporters": "^1.6.3",
     "moment": "^2.29.4"
