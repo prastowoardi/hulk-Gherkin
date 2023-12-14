@@ -67,7 +67,7 @@ When ('Pendaftar memilih jenjang {string} prodi {string}', (jenjang,prodiName) =
         .should('have.attr', 'target', '_blank')
         .invoke('attr', 'href')
         .then(href => {
-            cy.visit(`localhost/siacloud/spmbfront/${href}`);
+            cy.visit(`/spmbfront/${href}`);
         });
 })
 
